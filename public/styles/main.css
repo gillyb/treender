@@ -24,6 +24,7 @@ body {
     line-height: 35px;
     text-align: center;
     margin: 0 40px 16px 40px;
+    cursor: pointer;
 }
 .button.primary {
     color: #fff;
@@ -56,6 +57,14 @@ body {
 
 
 @media only screen and (min-width: 768px) {
+    .no-mobile-message {
+        display: block !important;
+        width: 600px;
+        text-align: center;
+        margin: 0 auto;
+        margin-top: 40px;
+        margin-bottom: 40px;
+    }
     .page-container {
         margin: 0 auto;
         height: auto; min-height: auto;
@@ -69,5 +78,8 @@ body {
         min-height: 452px; height: 452px;
         padding: 92px 42px 80px 24px;
     }
-    
+    .splash-screen .logo {
+        margin-top: 0;
+        width: 100%;
+    }
   }
