@@ -29,11 +29,13 @@
     <div class="page-container">
 
         <div class="full-screen splash-screen">
-            <img src="../images/logo.png" alt="Treender!" class="logo">
+            <img src="../images/logo.svg" alt="Treender!" class="logo">
         </div>
 
         <div class="full-screen login-screen hidden">
-            <div class="logo"></div>
+            <div class="logo">
+                <img src="../images/logo.svg" alt="Treender!" class="logo">
+            </div>
             <div class="header">Welcome to<br/>Treender</div>
             <div class="sub-header">The dating app for trees</div>
 
@@ -44,6 +46,21 @@
                 <div class="share-this-brilliance button">Share this brilliance</div>
                 <div class="link">Who did dis?</div>
             </div>
+        </div>
+
+        <div class="full-screen match-with hidden">
+            <div class="text">I want to match with</div>
+            <div class="match-options">
+                <div class="button radio male">Male Trees</div>
+                <div class="button radio female">Female Trees</div>
+            </div>
+            <div class="bottom">
+                <div class="button primary continue">Continue</div>
+            </div>
+        </div>
+
+        <div class="full-screen upload-image hidden">
+            <input type="file" name="image" accept="image/*" capture="user">
         </div>
 
         <div class="trees full-screen hidden">
