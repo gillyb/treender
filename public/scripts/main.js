@@ -23,6 +23,16 @@ $(function() {
     $('.trees').removeClass('hidden');
     setupTreeCards();
   });
+  $('.who-did-dis.link').click(function() {
+    $('.login-screen').addClass('hidden');
+    $('.who-did-dis.full-screen').removeClass('hidden');
+  });
+
+  // who did dis
+  $('.back.link').click(function() {
+    $('.who-did-dis.full-screen').addClass('hidden');
+    $('.login-screen').removeClass('hidden');
+  });
 
   // Match options
   $('.button.radio.male, .button.radio.female').click(function() {
