@@ -29,7 +29,9 @@
     <div class="page-container">
 
         <div class="full-screen splash-screen">
-            <img src="../images/logo.svg" alt="Treender!" class="logo">
+            <div class="top-heart"></div>
+            <img class="logo" src="../images/logo.svg" alt="Treender!" class="logo">
+            <div class="bottom-heart"></div>
         </div>
 
         <div class="full-screen login-screen hidden">
@@ -63,7 +65,9 @@
             <div class="text">Add a photo</div>
             <div class="sub-text light">We don't keep these photos.<br/>It will just make the experience more fun.</div>
             <div class="camera-area">
-                <div class="camera-icon"></div>
+                <div class="camera-icon">
+                    <input type="file" accept="image/*" capture="camera" />
+                </div>
             </div>
             <div class="bottom light">
                 Or <a class="link" href="#">choose an avatar</a> instead
@@ -72,11 +76,12 @@
 
         <div class="trees full-screen hidden">
             <div class="trees-wrapper">
+                <div class="header">
+                    <img class="logo" src="../images/logo.svg" alt="Treender!" class="logo">
+                </div>
                 <div id="tree-cards">
                     <ul>
-                        <li class="tree_1">
-                            <div class="card-wrapper">
-                                <div class="img"></div>
+                        <li class="tree_1"><div class="card-wrapper"><div class="img"></div>
                                 <div class="tree-details">
                                     <div class="name">
                                         Alon
@@ -140,6 +145,7 @@
         </div>
 
         <div class="full-screen who-did-dis hidden">
+            <div class="top-heart"></div>
             <div class="text">
                 The Treender app was created by the creative minds of the magical due Gil and Gilly,  to fill the need to hug more trees (from the inside).
                 <br/>
@@ -151,6 +157,7 @@
                 The duo love the Internet more than life and they also made Wasted Humanity.
             </div>
             <div class="back link">Back</div>
+            <div class="bottom-heart"></div>
         </div>
 
     </div>

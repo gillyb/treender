@@ -1,37 +1,38 @@
 $(function() {
 
+  function hideAllScreens() { $('.full-screen').addClass('hidden'); }
+  function showLoginScreen() { hideAllScreens(); $('.full-screen.login-screen').removeClass('hidden'); }
+  function showAboutScreen() { hideAllScreens(); $('.full-screen.who-did-dis').removeClass('hidden'); }
+  function showGender() { hideAllScreens(); $('.full-screen.match-with').removeClass('hidden'); }
+  function showTrees() { hideAllScreens(); $('.full-screen.trees').removeClass('hidden'); }
+
+
   // splash screen
   setTimeout(function() {
-    $('.splash-screen').addClass('hidden');
-    $('.login-screen').removeClass('hidden');
+    showLoginScreen();
   }, 2000);
 
-  function moveToNextPage(fullScreenPage) {
-    var f = fullScreenPage;
-    if (!f.hasClass('full-screen'))
-      f = f.parents('.full-screen');
-    f.addClass('hidden');
-    f.next('.full-screen').removeClass('hidden');
-  }
 
   // homepage
   $('.how-does-it-work.button').click(function() {
     alert('not ready yet...');
   });
   $('.lets-start.button').click(function() {
-    $('.login-screen').addClass('hidden');
-    $('.trees').removeClass('hidden');
-    setupTreeCards();
+    showGender();
   });
   $('.who-did-dis.link').click(function() {
-    $('.login-screen').addClass('hidden');
-    $('.who-did-dis.full-screen').removeClass('hidden');
+    showAboutScreen();
+  });
+
+  // choosing gender match
+  $('.match-with .continue').click(function() {
+    showTrees();
+    setupTreeCards();
   });
 
   // who did dis
   $('.back.link').click(function() {
-    $('.who-did-dis.full-screen').addClass('hidden');
-    $('.login-screen').removeClass('hidden');
+    showLoginScreen();
   });
 
   // Match options
@@ -40,9 +41,6 @@ $(function() {
       $(this).removeClass('selected');
     else
       $(this).addClass('selected');
-  });
-  $('.match-with .button.continue').click(function() {
-    moveToNextPage($(this));
   });
 
   // treender cards
