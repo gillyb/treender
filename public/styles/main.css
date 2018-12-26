@@ -60,6 +60,7 @@ body {
     position: relative;
     height: 100%; min-height: 100%;
     text-align: center;
+    justify-content: space-around;
 }
 
 .splash-screen {
@@ -153,7 +154,7 @@ body {
 
 
 
-.who-did-dis.full-screen { justify-content: space-between; }
+.who-did-dis.full-screen { justify-content: space-between; align-items: center; }
 .who-did-dis .text {
     margin: 0 40px;
     text-align: left;
@@ -163,6 +164,25 @@ body {
 .who-did-dis .top-heart, .who-did-dis .bottom-heart { background-size: 100% 100%; }
 .who-did-dis .top-heart { height: 114px; }
 .who-did-dis .bottom-heart { height: 90px; }
+
+
+
+
+
+/* STEPS */
+.full-screen.steps .step {
+    border: 1px solid #C6C6C6;
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    margin: 0 10px;
+}
+.full-screen.steps .step.selected {
+    background-color: #15CC57;
+}
+
+
 
 
 

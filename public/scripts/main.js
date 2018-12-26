@@ -6,10 +6,51 @@ $(function() {
   function showGender() { hideAllScreens(); $('.full-screen.match-with').removeClass('hidden'); }
   function showTrees() { hideAllScreens(); $('.full-screen.trees').removeClass('hidden'); }
 
+  var step1 = $('.full-screen.how-this-works-1');
+  var step2 = $('.full-screen.how-this-works-2');
+  var step3 = $('.full-screen.how-this-works-3');
+  var step4 = $('.full-screen.how-this-works-4');
+
+  function stepForward() {
+    if (!step1.hasClass('hidden')) {
+      hideAllScreens();
+      step2.removeClass('hidden');
+    }
+    else if (!step2.hasClass('hidden')) {
+      hideAllScreens();
+      step3.removeClass('hidden');
+    }
+    else if (!step3.hasClass('hidden')) {
+      hideAllScreens();
+      step4.removeClass('hidden');
+    }
+    else
+      // TODO: finished with walkthrough
+      alert('hello');
+  }
+  function stepBack() {
+    if (!step1.hasClass('hidden')) {
+      hideAllScreens();
+      showLoginScreen();
+    }
+    else if (!step2.hasClass('hidden')) {
+      hideAllScreens();
+      step1.removeClass('hidden');
+    }
+    else if (!step3.hasClass('hidden')) {
+      hideAllScreens();
+      step2.removeClass('hidden');
+    }
+    else {
+      hideAllScreens();
+      step3.removeClass('hidden');
+    }
+  }
+
 
   // splash screen
   setTimeout(function() {
-    showLoginScreen();
+    // showLoginScreen();
   }, 2000);
 
 
@@ -67,5 +108,66 @@ $(function() {
       $("#tree-cards").jTinder($(this).attr('class'));
     });
   }
+
+
+
+
+  // tutorial steps
+
+  var touchStart = false;
+  var xStart = 0, yStart = 0;
+  var swipeThreshold = 1;
+
+  var handleSwipe = function(ev) {
+    ev.preventDefault();
+
+    switch (ev.type) {
+      case 'touchstart':
+        if (touchStart === false) {
+          touchStart = true;
+          xStart = ev.originalEvent.touches[0].pageX;
+          yStart = ev.originalEvent.touches[0].pageY;
+        }
+      case 'mousedown':
+        if(touchStart === false) {
+          touchStart = true;
+          xStart = ev.pageX;
+          yStart = ev.pageY;
+        }
+      case 'mousemove':
+      case 'touchmove':
+        break;
+      case 'mouseup':
+      case 'touchend':
+        touchStart = false;
+        var pageX = (typeof ev.pageX == 'undefined') ? ev.originalEvent.changedTouches[0].pageX : ev.pageX;
+        var pageY = (typeof ev.pageY == 'undefined') ? ev.originalEvent.changedTouches[0].pageY : ev.pageY;
+        var deltaX = parseInt(pageX) - parseInt(xStart);
+        var deltaY = parseInt(pageY) - parseInt(yStart);
+
+        // posX = deltaX + lastPosX;
+        // posY = deltaY + lastPosY;
+        var opa = Math.abs((Math.abs(deltaX) / swipeThreshold) / 100 + 0.2);
+
+        if (opa >= 1) {
+          if (deltaX > 0) {
+            // swiped right - move back
+            // TODO: implement scroll
+            stepBack();
+          } else {
+            // swiped left - move forward
+            // TODO: implement scroll
+            stepForward();
+          }
+        }
+        break;
+    }
+  };
+
+
+  var steps = $('.full-screen.steps');
+  $(steps).bind('touchstart mousedown', handleSwipe);
+  $(steps).bind('touchmove mousemove', handleSwipe);
+  $(steps).bind('touchend mouseup', handleSwipe);
 
 });
