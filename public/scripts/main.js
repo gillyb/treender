@@ -25,9 +25,6 @@ $(function() {
       hideAllScreens();
       step4.removeClass('hidden');
     }
-    else
-      // TODO: finished with walkthrough
-      alert('hello');
   }
   function stepBack() {
     if (!step1.hasClass('hidden')) {
@@ -51,7 +48,6 @@ $(function() {
 
   // splash screen
   setTimeout(function() {
-    // TODO: make nice animation here
     const heart = $('.splash-screen .top-heart, .splash-screen .bottom-heart');
 
     const originalLogo = $('.splash-screen .logo');
@@ -63,7 +59,6 @@ $(function() {
       'top': originalPosition.top
     });
 
-    // heart.css({'opacity': '0'});
     heart.animate({
       'opacity': '0'
     }, 1000, function() {
@@ -148,6 +143,7 @@ $(function() {
 
   // tutorial steps
 
+
   var touchStart = false;
   var xStart = 0, yStart = 0;
   var swipeThreshold = 1;
@@ -199,7 +195,7 @@ $(function() {
   };
 
 
-  var steps = $('.full-screen.steps');
+  var steps = $('.full-screen.steps .swipe-area');
   $(steps).bind('touchstart mousedown', handleSwipe);
   $(steps).bind('touchmove mousemove', handleSwipe);
   $(steps).bind('touchend mouseup', handleSwipe);

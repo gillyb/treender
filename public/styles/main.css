@@ -137,6 +137,9 @@ body {
 .match-with .match-options {
     flex-grow: 3;
 }
+.match-with .button.male {
+    margin-bottom: 20px;
+}
 .match-with .bottom {
     flex-grow: 0;
 }

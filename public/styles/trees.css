@@ -1,5 +1,9 @@
+.trees.full-screen {
+    justify-content: flex-start;
+}
 .trees .header {
     position: absolute;
+    z-index: 100;
     top: 0; left: 0; right: 0;
     height: 60px; width: 100%;
     line-height: 60px;
