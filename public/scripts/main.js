@@ -1,10 +1,11 @@
 $(function() {
 
   function hideAllScreens() { $('.full-screen').addClass('hidden'); }
-  function showLoginScreen() { hideAllScreens(); $('.full-screen.login-screen').removeClass('hidden'); }
+  function showSplashScreen() { hideAllScreens(); $('.full-screen.splash-screen').removeClass('hidden'); }
   function showAboutScreen() { hideAllScreens(); $('.full-screen.who-did-dis').removeClass('hidden'); }
   function showGender() { hideAllScreens(); $('.full-screen.match-with').removeClass('hidden'); }
   function showTrees() { hideAllScreens(); $('.full-screen.trees').removeClass('hidden'); }
+  function showWalkthrough() { hideAllScreens(); $('.full-screen.how-this-works-1').removeClass('hidden'); }
 
   var step1 = $('.full-screen.how-this-works-1');
   var step2 = $('.full-screen.how-this-works-2');
@@ -31,7 +32,7 @@ $(function() {
   function stepBack() {
     if (!step1.hasClass('hidden')) {
       hideAllScreens();
-      showLoginScreen();
+      showSplashScreen();
     }
     else if (!step2.hasClass('hidden')) {
       hideAllScreens();
@@ -50,13 +51,46 @@ $(function() {
 
   // splash screen
   setTimeout(function() {
-    // showLoginScreen();
+    // TODO: make nice animation here
+    const heart = $('.splash-screen .top-heart, .splash-screen .bottom-heart');
+
+    const originalLogo = $('.splash-screen .logo');
+    const originalPosition = originalLogo.position();
+
+    originalLogo.css({
+      'height': originalLogo.height(),
+      'position': 'absolute',
+      'top': originalPosition.top
+    });
+
+    // heart.css({'opacity': '0'});
+    heart.animate({
+      'opacity': '0'
+    }, 1000, function() {
+      heart.css({'display': 'none'});
+      $('.splash-screen .fade-in').css({'display': 'block'});
+
+      const logoWrapper = $('.splash-screen .logo-wrapper');
+
+      const finalLogoPosition = parseInt(logoWrapper.css('marginTop')) + parseInt(logoWrapper.css('paddingTop')) + (logoWrapper.height() - originalLogo.height()) / 2;
+
+      originalLogo.animate({
+        'top': finalLogoPosition,
+        'width': '70px'
+      }, 1000, function() {
+        $('.splash-screen .fade-in').css({'opacity': '1'});
+      });
+    });
   }, 2000);
+
+  $('.go-home').click(function() {
+    showSplashScreen();
+  });
 
 
   // homepage
   $('.how-does-it-work.button').click(function() {
-    alert('not ready yet...');
+    showWalkthrough();
   });
   $('.lets-start.button').click(function() {
     showGender();
@@ -73,7 +107,7 @@ $(function() {
 
   // who did dis
   $('.back.link').click(function() {
-    showLoginScreen();
+    showSplashScreen();
   });
 
   // Match options
