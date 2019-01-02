@@ -5,6 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Treender</title>
 
+    <meta property="og:url"           content="http://treenderapp.com" />
+    <meta property="og:type"          content="website" />
+    <meta property="og:title"         content="Treender" />
+    <meta property="og:description"   content="A dating app for trees" />
+    <meta property="og:image"         content="http://www.your-domain.com/path/image.jpg" />
+
     <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
 
     <link rel="stylesheet" href="../styles/reset.css"/>
@@ -20,6 +26,14 @@
     <script src="../scripts/main.js"></script>
 </head>
 <body>
+
+    <script>(function(d, s, id) {
+      var js, fjs = d.getElementsByTagName(s)[0];
+      if (d.getElementById(id)) return;
+      js = d.createElement(s); js.id = id;
+      js.src = "https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v3.0";
+      fjs.parentNode.insertBefore(js, fjs);
+    }(document, 'script', 'facebook-jssdk'));</script>
 
     <div class="no-mobile-message hidden">
         This page is best viewed on a mobile device.<br/>
@@ -44,7 +58,7 @@
             </div>
 
             <div class="bottom fade-in">
-                <div class="share-this-brilliance button">Share this brilliance</div>
+                <a class="share-this-brilliance button" href="https://www.facebook.com/sharer/sharer.php?u=treenderapp.com" target="_blank">Share this brilliance</a>
                 <div class="link who-did-dis">Who did dis?</div>
             </div>
         </div>
@@ -148,68 +162,71 @@
                 <div class="header">
                     <img class="logo go-home" src="../images/logo.svg" alt="Treender!" class="logo">
                 </div>
-                <div id="tree-cards">
-                    <ul>
+                <div class="cards-area-wrapper">
+                    <div id="tree-cards">
+                      <ul>
                         <li class="tree_1"><div class="card-wrapper"><div class="img"></div>
-                                <div class="tree-details">
-                                    <div class="name">
-                                        Alon
-                                        <span class="age">352</span>
-                                    </div>
-                                    <div class="description">The strongest tree in the forrest</div>
-                                </div>
-                                <div class="like"></div>
-                                <div class="dislike"></div>
+                          <div class="tree-details">
+                            <div class="name">
+                              Alon
+                              <span class="age">352</span>
                             </div>
+                            <div class="description">The strongest tree in the forrest</div>
+                          </div>
+                          <div class="like"></div>
+                          <div class="dislike"></div>
+                        </div>
                         </li>
                         <li class="tree_2">
-                            <div class="card-wrapper">
-                                <div class="img"></div>
-                                <div class="tree-details">
-                                    <div class="name">
-                                        Alon
-                                        <span class="age">352</span>
-                                    </div>
-                                    <div class="description">The strongest tree in the forrest</div>
-                                </div>
-                                <div class="like"></div>
-                                <div class="dislike"></div>
+                          <div class="card-wrapper">
+                            <div class="img"></div>
+                            <div class="tree-details">
+                              <div class="name">
+                                Alon
+                                <span class="age">352</span>
+                              </div>
+                              <div class="description">The strongest tree in the forrest</div>
                             </div>
+                            <div class="like"></div>
+                            <div class="dislike"></div>
+                          </div>
                         </li>
                         <li class="tree_3">
-                            <div class="card-wrapper">
-                                <div class="img"></div>
-                                <div class="tree-details">
-                                    <div class="name">
-                                        Alon
-                                        <span class="age">352</span>
-                                    </div>
-                                    <div class="description">The strongest tree in the forrest</div>
-                                </div>
-                                <div class="like"></div>
-                                <div class="dislike"></div>
+                          <div class="card-wrapper">
+                            <div class="img"></div>
+                            <div class="tree-details">
+                              <div class="name">
+                                Alon
+                                <span class="age">352</span>
+                              </div>
+                              <div class="description">The strongest tree in the forrest</div>
                             </div>
+                            <div class="like"></div>
+                            <div class="dislike"></div>
+                          </div>
                         </li>
                         <li class="tree_4">
-                            <div class="card-wrapper">
-                                <div class="img"></div>
-                                <div class="tree-details">
-                                    <div class="name">
-                                        Alon
-                                        <span class="age">352</span>
-                                    </div>
-                                    <div class="description">The strongest tree in the forrest</div>
-                                </div>
-                                <div class="like"></div>
-                                <div class="dislike"></div>
+                          <div class="card-wrapper">
+                            <div class="img"></div>
+                            <div class="tree-details">
+                              <div class="name">
+                                Alon
+                                <span class="age">352</span>
+                              </div>
+                              <div class="description">The strongest tree in the forrest</div>
                             </div>
+                            <div class="like"></div>
+                            <div class="dislike"></div>
+                          </div>
                         </li>
-                    </ul>
+                      </ul>
+                    </div>
+                    <div class="card-actions clearfix">
+                      <div class="like"></div>
+                      <div class="dislike"></div>
+                    </div>
                 </div>
-                <div class="card-actions">
-                    <div class="like"></div>
-                    <div class="dislike"></div>
-                </div>
+
             </div>
         </div>
 
