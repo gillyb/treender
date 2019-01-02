@@ -135,7 +135,7 @@ $(function() {
         $('#status').html('Like image ' + (item.index() + 1));
       },
       animationRevertSpeed: 200,
-      animationSpeed: 400,
+      animationSpeed: 100,
       threshold: 1,
       likeSelector: '.like',
       dislikeSelector: '.dislike'
