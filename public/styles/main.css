@@ -5,7 +5,7 @@ html {
 body {
     background-color: #fff;
     color: #565656;
-    font-size: 18px;
+    font-size: 14px;
     line-height: 22px;
     font-family: 'Lato', sans-serif;
     -webkit-font-smoothing: antialiased;
@@ -33,6 +33,8 @@ body {
 .button.primary {
     color: #fff;
     background: linear-gradient(180deg, #15CC57 12.95%, #15CC57 22.2%, #15CC57 33%, #15826A 100%);
+    border: none;
+    font-weight: bold;
 }
 .button.radio.selected {
     background-color: rgba(21,204,87,0.3);
@@ -43,6 +45,7 @@ body {
     color: #fff;
 }
 
+.header { font-size: 18px; }
 .small-text { font-size: 14px; line-height: 17px; }
 .link {
     color: #0D8037;
@@ -109,6 +112,7 @@ body {
 }
 
 .splash-screen .bottom-heart { position:absolute; bottom:0; }
+.splash-screen .link.who-did-dis { margin-top: 24px; }
 
 
 
@@ -205,11 +209,23 @@ body {
     width: 10px;
     height: 10px;
     border-radius: 50%;
-    margin: 0 10px;
+    margin: 0 5px;
 }
 .full-screen.steps .step.selected {
     background-color: #15CC57;
+    border-color: #15CC57;
 }
+.full-screen.steps .swipe-area {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    flex-grow: 3;
+    padding: 0 60px;
+}
+.full-screen.steps .bottom {
+    flex-grow: 1;
+}
+.how-this-works-3 .tree-image .user-two { margin-left: -30px; }
 
 
 

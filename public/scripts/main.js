@@ -76,7 +76,7 @@ $(function() {
         $('.splash-screen .fade-in').css({'opacity': '1'});
       });
     });
-  }, 2000);
+  }, 200);
 
   $('.go-home').click(function() {
     showSplashScreen();
@@ -135,7 +135,7 @@ $(function() {
         $('#status').html('Like image ' + (item.index() + 1));
       },
       animationRevertSpeed: 200,
-      animationSpeed: 100,
+      animationSpeed: 200,
       threshold: 1,
       likeSelector: '.like',
       dislikeSelector: '.dislike'
