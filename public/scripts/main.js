@@ -96,6 +96,8 @@ $(function() {
 
   // choosing gender match
   $('.match-with .continue').click(function() {
+    if (!$('.match-with .button.radio.male').hasClass('selected') && !$('.match-with .button.radio.female').hasClass('selected'))
+      return;
     showTrees();
     setupTreeCards();
   });
@@ -109,8 +111,14 @@ $(function() {
   $('.button.radio.male, .button.radio.female').click(function() {
     if ($(this).hasClass('selected'))
       $(this).removeClass('selected');
-    else
+    else {
       $(this).addClass('selected');
+      $('.match-with .button.continue').removeClass('disabled').addClass('primary');
+    }
+
+    if (!$('.button.radio.male').hasClass('selected') && !$('.button.radio.female').hasClass('selected')) {
+      $('.match-with .button.continue').removeClass('primary').addClass('disabled');
+    }
   });
 
   // treender cards
