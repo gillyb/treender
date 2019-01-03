@@ -1,22 +1,27 @@
 ## GAMEPLAN
 =============
 
-Open questions
+Open Issues
 --------------
-[ ] favicon ?
-[ ] What to show at the end of the swipes ?
-[ ] Will gender choice affect the trees being displayed ?
+[ ] favicon ?  
+[ ] What to show at the end of the swipes ?  
+[ ] Will gender choice affect the trees being displayed ?  
+[ ] Randomize the tree matches
+[ ] Smaller resolution images  
+[ ] Taking image of user on mobile
+[ ] Testing on all screens/devices
+[ ] Avatar selection  
 
 
 Needs Improvement
 -----------------
-[ ] Trees pages - need to decide how to size the image on the page to be responsive
-[ ] Desktop experience
+[ ] Trees pages - need to decide how to size the image on the page to be responsive  
+[ ] Desktop experience  
 
 
-Open Issues
------------
-[ ] Randomize the tree matches
-[ ] Taking image of user on mobile?
-
-[ ] Testing on all screens
+For Production
+--------------
+[ ] Direct domain to website  
+[ ] Minify resources  
+[ ] Share info (facebook open graph data)  
+[ ] 
