@@ -93,9 +93,6 @@ $(function() {
   $('.who-did-dis.link').click(function() {
     showAboutScreen();
   });
-  // $('.share-this-brilliance').click(function() {
-  //
-  // });
 
   // choosing gender match
   $('.match-with .continue').click(function() {
