@@ -6,10 +6,10 @@ Open Issues
 [ ] favicon ?  
 [ ] What to show at the end of the swipes ?  
 [ ] Will gender choice affect the trees being displayed ?  
-[ ] Randomize the tree matches
+[ ] Randomize the tree matches  
 [ ] Smaller resolution images  
-[ ] Taking image of user on mobile
-[ ] Testing on all screens/devices
+[ ] Taking image of user on mobile  
+[ ] Testing on all screens/devices  
 [ ] Avatar selection  
 
 
