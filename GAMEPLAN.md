@@ -16,7 +16,8 @@ Open Issues
 
 Needs Improvement
 -----------------
-[ ] Splash screen doesnt look good on big mobile devices
+[X] Splash screen doesnt look good on big mobile devices
+[ ] Animation on mobile is slow - might be because of huge image sizes
 [X] Trees pages - need to decide how to size the image on the page to be responsive
 [ ] Trees page - corners are white, should be transparent
 [-] Desktop experience

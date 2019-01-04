@@ -3,6 +3,14 @@ $(function() {
   var viewportHeight = $(window).height();
   var headerHeight = $('.trees .header').outerHeight(true);
 
+  function adjustSplashScreenLogo() {
+    var logoHeight = parseInt($('.splash-screen .logo').height());
+    var heartTop = (viewportHeight / 2) - (logoHeight / 2);
+    var logo = $('.splash-screen .logo');
+    logo.css('top', heartTop);
+  }
+  adjustSplashScreenLogo();
+
   function setTreesImagesHeight() {
     var treeActionsHeight = $('.trees .card-actions').outerHeight(true);
     var treeImagesPadding = parseInt($('#tree-cards ul').css('marginTop')) + parseInt($('#tree-cards ul').css('marginBottom'));
@@ -58,8 +66,7 @@ $(function() {
   }
 
 
-  // splash screen
-  setTimeout(function() {
+  function animateSplashScreen() {
     var heart = $('.splash-screen .top-heart, .splash-screen .bottom-heart');
 
     var originalLogo = $('.splash-screen .logo');
@@ -88,6 +95,10 @@ $(function() {
         $('.splash-screen .fade-in').css({'opacity': '1'});
       });
     });
+  }
+
+  setTimeout(function() {
+    animateSplashScreen();
   }, 200);
 
   $('.go-home').click(function() {
