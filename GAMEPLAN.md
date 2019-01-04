@@ -9,14 +9,18 @@ Open Issues
 [ ] Randomize the tree matches  
 [ ] Smaller resolution images  
 [ ] Taking image of user on mobile  
-[ ] Testing on all screens/devices  
+[ ] Testing on all screens/devices
+
 [ ] Avatar selection  
 
 
 Needs Improvement
 -----------------
-[ ] Trees pages - need to decide how to size the image on the page to be responsive  
-[ ] Desktop experience  
+[ ] Splash screen doesnt look good on big mobile devices
+[X] Trees pages - need to decide how to size the image on the page to be responsive
+[ ] Trees page - corners are white, should be transparent
+[-] Desktop experience
+  [ ] Get good mobile border image
 
 
 For Production

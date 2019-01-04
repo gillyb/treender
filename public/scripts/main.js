@@ -1,10 +1,22 @@
 $(function() {
 
+  var viewportHeight = $(window).height();
+  var headerHeight = $('.trees .header').outerHeight(true);
+
+  function setTreesImagesHeight() {
+    var treeActionsHeight = $('.trees .card-actions').outerHeight(true);
+    var treeImagesPadding = parseInt($('#tree-cards ul').css('marginTop')) + parseInt($('#tree-cards ul').css('marginBottom'));
+    var treeImagesHeight = viewportHeight - (headerHeight + treeActionsHeight + treeImagesPadding);
+    $('#tree-cards li').css('height', treeImagesHeight);
+  };
+
+
+
   function hideAllScreens() { $('.full-screen').addClass('hidden'); }
   function showSplashScreen() { hideAllScreens(); $('.full-screen.splash-screen').removeClass('hidden'); }
   function showAboutScreen() { hideAllScreens(); $('.full-screen.who-did-dis').removeClass('hidden'); }
   function showGender() { hideAllScreens(); $('.full-screen.match-with').removeClass('hidden'); }
-  function showTrees() { hideAllScreens(); $('.full-screen.trees').removeClass('hidden'); }
+  function showTrees() { hideAllScreens(); $('.full-screen.trees').removeClass('hidden'); setTreesImagesHeight(); }
   function showWalkthrough() { hideAllScreens(); $('.full-screen.how-this-works-1').removeClass('hidden'); }
 
   var step1 = $('.full-screen.how-this-works-1');
@@ -48,10 +60,10 @@ $(function() {
 
   // splash screen
   setTimeout(function() {
-    const heart = $('.splash-screen .top-heart, .splash-screen .bottom-heart');
+    var heart = $('.splash-screen .top-heart, .splash-screen .bottom-heart');
 
-    const originalLogo = $('.splash-screen .logo');
-    const originalPosition = originalLogo.position();
+    var originalLogo = $('.splash-screen .logo');
+    var originalPosition = originalLogo.position();
 
     originalLogo.css({
       'height': originalLogo.height(),
@@ -65,9 +77,9 @@ $(function() {
       heart.css({'display': 'none'});
       $('.splash-screen .fade-in').css({'display': 'block'});
 
-      const logoWrapper = $('.splash-screen .logo-wrapper');
+      var logoWrapper = $('.splash-screen .logo-wrapper');
 
-      const finalLogoPosition = parseInt(logoWrapper.css('marginTop')) + parseInt(logoWrapper.css('paddingTop')) + (logoWrapper.height() - originalLogo.height()) / 2;
+      var finalLogoPosition = parseInt(logoWrapper.css('marginTop')) + parseInt(logoWrapper.css('paddingTop')) + (logoWrapper.height() - originalLogo.height()) / 2;
 
       originalLogo.animate({
         'top': finalLogoPosition,
