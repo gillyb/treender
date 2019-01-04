@@ -37,7 +37,7 @@
     overflow: hidden;
     text-align: center;
     padding: 0;
-    background: #fff;
+    /*background: #fff;*/
     font-size: 1.71rem;
     color: #000;
     -webkit-transform: translate3d(0%,0,0) scale3d(1,1,1);
