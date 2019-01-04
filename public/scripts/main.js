@@ -80,7 +80,7 @@ $(function() {
 
     heart.animate({
       'opacity': '0'
-    }, 1000, function() {
+    }, 400, function() {
       heart.css({'display': 'none'});
       $('.splash-screen .fade-in').css({'display': 'block'});
 
@@ -88,9 +88,9 @@ $(function() {
 
       var finalLogoPosition = parseInt(logoWrapper.css('marginTop')) + parseInt(logoWrapper.css('paddingTop')) + (logoWrapper.height() - originalLogo.height()) / 2;
 
+      var scaleValue = 70 / originalLogo.width();
       originalLogo.animate({
-        'top': finalLogoPosition,
-        'width': '70px'
+        'transform': 'translateY(-' + (originalPosition.top - finalLogoPosition) + 'px) scale(' + scaleValue + ')'
       }, 1000, function() {
         $('.splash-screen .fade-in').css({'opacity': '1'});
       });
@@ -99,7 +99,7 @@ $(function() {
 
   setTimeout(function() {
     animateSplashScreen();
-  }, 200);
+  }, 400);
 
   $('.go-home').click(function() {
     showSplashScreen();

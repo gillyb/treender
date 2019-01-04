@@ -5,7 +5,8 @@ Open Issues
 --------------
 [ ] favicon ?  
 [ ] What to show at the end of the swipes ?  
-[ ] Will gender choice affect the trees being displayed ?  
+[X] Will gender choice affect the trees being displayed ?
+  [X] Doc here: https://docs.google.com/document/d/1TQtgeaMNlZoa_MR5y2ruxkF8BcvyRKnCjECWduCYm-o/edit?ts=5c2e6931
 [ ] Randomize the tree matches  
 [ ] Smaller resolution images  
 [ ] Taking image of user on mobile  
