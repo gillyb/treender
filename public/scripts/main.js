@@ -110,6 +110,7 @@ $(function() {
     }, 400, function() {
       heart.css({'display': 'none'});
       $('.splash-screen .fade-in').css({'display': 'block'});
+      $('.splash-screen .fade-in.inline-block').css({'display': 'inline-block'});
 
       var logoWrapper = $('.splash-screen .logo-wrapper');
 
