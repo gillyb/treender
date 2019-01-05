@@ -88,7 +88,7 @@ a {
     align-items: center;
 }
 .splash-screen .treender {
-    font-size: 1.78rem;
+    font-size: 2.64rem;
 }
 .splash-screen .logo {
     position: absolute;
@@ -140,6 +140,7 @@ a {
     height: 100px;
 }
 .splash-screen .header { font-weight: bold; margin-bottom: 3px; }
+.splash-screen .header.welcome { font-size: 1.93rem; margin-bottom: 10px; }
 .splash-screen .treender { margin-bottom: 11px; }
 .splash-screen .sub-header {  }
 .splash-screen .bottom { margin-bottom: 50px; }

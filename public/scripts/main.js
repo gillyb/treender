@@ -116,7 +116,7 @@ $(function() {
 
       var finalLogoPosition = parseInt(logoWrapper.css('marginTop')) + parseInt(logoWrapper.css('paddingTop')) + (logoWrapper.height() - originalLogo.height()) / 2;
 
-      var scaleValue = 70 / originalLogo.width();
+      var scaleValue = 50 / originalLogo.width();
       originalLogo.animate({
         'transform': 'translateY(-' + (originalPosition.top - finalLogoPosition) + 'px) scale(' + scaleValue + ')'
       }, 1000, function() {
