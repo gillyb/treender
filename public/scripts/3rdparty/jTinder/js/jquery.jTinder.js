@@ -104,8 +104,10 @@
 						var deltaY = parseInt(pageY) - parseInt(yStart);
 						var percent = ((100 / pane_width) * deltaX) / pane_count;
 						posX = deltaX + lastPosX;
-						posY = deltaY + lastPosY;
+						// posY = deltaY + lastPosY;
+						posY = lastPosY;
 
+						// panes.eq(current_pane).css("transform", "translate(" + posX + "px," + posY + "px) rotate(" + (percent / 2) + "deg)");
 						panes.eq(current_pane).css("transform", "translate(" + posX + "px," + posY + "px) rotate(" + (percent / 2) + "deg)");
 
 						var opa = (Math.abs(deltaX) / $that.settings.threshold) / 100 + 0.2;
