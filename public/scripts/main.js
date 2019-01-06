@@ -52,7 +52,7 @@ $(function() {
   function showAboutScreen() { hideAllScreens(); $('.full-screen.who-did-dis').removeClass('hidden'); }
   function showGender() { hideAllScreens(); $('.full-screen.match-with').removeClass('hidden'); }
   function showTrees() { hideAllScreens(); $('.full-screen.trees').removeClass('hidden'); setTreesImagesHeight(); }
-  function showWalkthrough() { hideAllScreens(); $('.full-screen.how-this-works-1').removeClass('hidden'); }
+  function showWalkthrough() { hideAllScreens(); $('.full-screen.steps').removeClass('hidden'); $('.steps .swipe-container').flickity({ contain: true, prevNextButtons: false }); }
 
   var step1 = $('.full-screen.how-this-works-1');
   var step2 = $('.full-screen.how-this-works-2');
@@ -201,64 +201,64 @@ $(function() {
 
 
   // tutorial steps
+  // $('.steps .swipe-container').flickity({ contain: true });
 
-
-  var touchStart = false;
-  var xStart = 0, yStart = 0;
-  var swipeThreshold = 1;
-
-  var handleSwipe = function(ev) {
-    ev.preventDefault();
-
-    switch (ev.type) {
-      case 'touchstart':
-        if (touchStart === false) {
-          touchStart = true;
-          xStart = ev.originalEvent.touches[0].pageX;
-          yStart = ev.originalEvent.touches[0].pageY;
-        }
-      case 'mousedown':
-        if(touchStart === false) {
-          touchStart = true;
-          xStart = ev.pageX;
-          yStart = ev.pageY;
-        }
-      case 'mousemove':
-      case 'touchmove':
-        break;
-      case 'mouseup':
-      case 'touchend':
-        touchStart = false;
-        var pageX = (typeof ev.pageX == 'undefined') ? ev.originalEvent.changedTouches[0].pageX : ev.pageX;
-        var pageY = (typeof ev.pageY == 'undefined') ? ev.originalEvent.changedTouches[0].pageY : ev.pageY;
-        var deltaX = parseInt(pageX) - parseInt(xStart);
-        var deltaY = parseInt(pageY) - parseInt(yStart);
-
-        // posX = deltaX + lastPosX;
-        // posY = deltaY + lastPosY;
-        var opa = Math.abs((Math.abs(deltaX) / swipeThreshold) / 100 + 0.2);
-
-        if (opa >= 1) {
-          if (deltaX > 0) {
-            // swiped right - move back
-            // TODO: implement scroll
-            stepBack();
-          } else {
-            // swiped left - move forward
-            // TODO: implement scroll
-            stepForward();
-          }
-        }
-        break;
-    }
-  };
-
-  // randomize trees order
-  $('#tree-cards ul li').shuffle();
-
-  var steps = $('.full-screen.steps .swipe-area');
-  $(steps).bind('touchstart mousedown', handleSwipe);
-  $(steps).bind('touchmove mousemove', handleSwipe);
-  $(steps).bind('touchend mouseup', handleSwipe);
+  // var touchStart = false;
+  // var xStart = 0, yStart = 0;
+  // var swipeThreshold = 1;
+  //
+  // var handleSwipe = function(ev) {
+  //   ev.preventDefault();
+  //
+  //   switch (ev.type) {
+  //     case 'touchstart':
+  //       if (touchStart === false) {
+  //         touchStart = true;
+  //         xStart = ev.originalEvent.touches[0].pageX;
+  //         yStart = ev.originalEvent.touches[0].pageY;
+  //       }
+  //     case 'mousedown':
+  //       if(touchStart === false) {
+  //         touchStart = true;
+  //         xStart = ev.pageX;
+  //         yStart = ev.pageY;
+  //       }
+  //     case 'mousemove':
+  //     case 'touchmove':
+  //       break;
+  //     case 'mouseup':
+  //     case 'touchend':
+  //       touchStart = false;
+  //       var pageX = (typeof ev.pageX == 'undefined') ? ev.originalEvent.changedTouches[0].pageX : ev.pageX;
+  //       var pageY = (typeof ev.pageY == 'undefined') ? ev.originalEvent.changedTouches[0].pageY : ev.pageY;
+  //       var deltaX = parseInt(pageX) - parseInt(xStart);
+  //       var deltaY = parseInt(pageY) - parseInt(yStart);
+  //
+  //       // posX = deltaX + lastPosX;
+  //       // posY = deltaY + lastPosY;
+  //       var opa = Math.abs((Math.abs(deltaX) / swipeThreshold) / 100 + 0.2);
+  //
+  //       if (opa >= 1) {
+  //         if (deltaX > 0) {
+  //           // swiped right - move back
+  //           // TODO: implement scroll
+  //           stepBack();
+  //         } else {
+  //           // swiped left - move forward
+  //           // TODO: implement scroll
+  //           stepForward();
+  //         }
+  //       }
+  //       break;
+  //   }
+  // };
+  //
+  // // randomize trees order
+  // $('#tree-cards ul li').shuffle();
+  //
+  // var steps = $('.full-screen.steps .swipe-area');
+  // $(steps).bind('touchstart mousedown', handleSwipe);
+  // $(steps).bind('touchmove mousemove', handleSwipe);
+  // $(steps).bind('touchend mouseup', handleSwipe);
 
 });

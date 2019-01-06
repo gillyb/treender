@@ -251,11 +251,21 @@ a {
     justify-content: space-around;
     flex-grow: 3;
     padding: 0 60px;
+    width: calc(100% - 120px);
+}
+.full-screen.steps .swipe-container {
+    flex-grow: 1;
+}
+.full-screen.steps .swipe-container .header {
+    margin: 40px 0;
+}
+.full-screen.steps .spacer {
+    flex-grow: 3;
 }
 .full-screen.steps .bottom {
     flex-grow: 1;
 }
-.how-this-works-3 .tree-image .user-two { margin-left: -30px; }
+.full-screen.steps .step-3 .tree-image .user-two { margin-left: -30px; }
 
 
 
