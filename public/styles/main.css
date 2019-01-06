@@ -233,18 +233,8 @@ a {
 
 
 /* STEPS */
-.full-screen.steps .step {
-    border: 1px solid #C6C6C6;
-    display: inline-block;
-    width: 10px;
-    height: 10px;
-    border-radius: 50%;
-    margin: 0 5px;
-}
-.full-screen.steps .step.selected {
-    background-color: #15CC57;
-    border-color: #15CC57;
-}
+.full-screen.steps .dot { opacity: 1 !important; background-color: #C6C6C6; }
+.full-screen.steps .dot.is-selected { background-color: #15CC57; }
 .full-screen.steps .swipe-area {
     display: flex;
     flex-direction: column;
@@ -265,6 +255,7 @@ a {
 .full-screen.steps .bottom {
     flex-grow: 1;
 }
+.full-screen.steps .match-message { font-size: 1.93rem; color: #0D8037; font-weight: bold; margin-top: 60px; margin-bottom: 30px; }
 .full-screen.steps .step-3 .tree-image .user-two { margin-left: -30px; }
 
 
