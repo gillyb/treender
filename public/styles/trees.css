@@ -55,6 +55,11 @@
     display: inline-block;
     width: 100%; height: 100%;
 }
+.card-wrapper .like {
+    background-image: url('../images/like.svg');
+    display: inline-block;
+    width: 126px; height: 85px;
+}
 .trees .tree-details {
     margin: 20px;
     position: absolute;
@@ -129,6 +134,32 @@
 .trees .tree_3 .img { background-image: url("../images/trees/tree3.jpg"); }
 .trees .tree_4 .img { background-image: url("../images/trees/tree4.jpg"); }
 
+.trees .trees-wrapper {
+    height: 100%; min-height: 100%;
+}
+.trees .empty-message .main-text {
+    font-size: 1.29rem;
+    margin-top: 120px;
+}
+
+.trees .empty-message {
+    height: 100%; min-height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    opacity: 0;
+    transition: opacity 400ms;
+}
+.trees .empty-message .forest-trees {
+    width: 200px;
+}
+.trees .empty-message .buttons-wrapper {
+    margin-bottom: 80px;
+}
+.trees .empty-message .buttons-wrapper .button.start-over {
+    margin-bottom: 20px;
+}
 
 
 @media only screen and (min-width: 768px) {

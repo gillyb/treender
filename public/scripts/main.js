@@ -172,6 +172,10 @@ $(function() {
     }
   });
 
+  $('.button.start-over').click(function() {
+    window.location.reload();
+  });
+
   // treender cards
   function setupTreeCards() {
     $("#tree-cards").jTinder({
@@ -185,6 +189,10 @@ $(function() {
         // set the status text
         $('#status').html('Like image ' + (item.index() + 1));
       },
+      doneCallback: function() {
+        $('.full-screen.trees .cards-area-wrapper').addClass('hidden');
+        $('.full-screen.trees .empty-message').css('opacity', 1);
+      },
       animationRevertSpeed: 200,
       animationSpeed: 200,
       threshold: 1,
@@ -196,69 +204,5 @@ $(function() {
       $("#tree-cards").jTinder($(this).attr('class'));
     });
   }
-
-
-
-
-  // tutorial steps
-  // $('.steps .swipe-container').flickity({ contain: true });
-
-  // var touchStart = false;
-  // var xStart = 0, yStart = 0;
-  // var swipeThreshold = 1;
-  //
-  // var handleSwipe = function(ev) {
-  //   ev.preventDefault();
-  //
-  //   switch (ev.type) {
-  //     case 'touchstart':
-  //       if (touchStart === false) {
-  //         touchStart = true;
-  //         xStart = ev.originalEvent.touches[0].pageX;
-  //         yStart = ev.originalEvent.touches[0].pageY;
-  //       }
-  //     case 'mousedown':
-  //       if(touchStart === false) {
-  //         touchStart = true;
-  //         xStart = ev.pageX;
-  //         yStart = ev.pageY;
-  //       }
-  //     case 'mousemove':
-  //     case 'touchmove':
-  //       break;
-  //     case 'mouseup':
-  //     case 'touchend':
-  //       touchStart = false;
-  //       var pageX = (typeof ev.pageX == 'undefined') ? ev.originalEvent.changedTouches[0].pageX : ev.pageX;
-  //       var pageY = (typeof ev.pageY == 'undefined') ? ev.originalEvent.changedTouches[0].pageY : ev.pageY;
-  //       var deltaX = parseInt(pageX) - parseInt(xStart);
-  //       var deltaY = parseInt(pageY) - parseInt(yStart);
-  //
-  //       // posX = deltaX + lastPosX;
-  //       // posY = deltaY + lastPosY;
-  //       var opa = Math.abs((Math.abs(deltaX) / swipeThreshold) / 100 + 0.2);
-  //
-  //       if (opa >= 1) {
-  //         if (deltaX > 0) {
-  //           // swiped right - move back
-  //           // TODO: implement scroll
-  //           stepBack();
-  //         } else {
-  //           // swiped left - move forward
-  //           // TODO: implement scroll
-  //           stepForward();
-  //         }
-  //       }
-  //       break;
-  //   }
-  // };
-  //
-  // // randomize trees order
-  // $('#tree-cards ul li').shuffle();
-  //
-  // var steps = $('.full-screen.steps .swipe-area');
-  // $(steps).bind('touchstart mousedown', handleSwipe);
-  // $(steps).bind('touchmove mousemove', handleSwipe);
-  // $(steps).bind('touchend mouseup', handleSwipe);
 
 });

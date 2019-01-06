@@ -4,7 +4,7 @@
 Open Issues
 --------------
 [X] favicon ?
-[ ] What to show at the end of the swipes ?  
+[X] What to show at the end of the swipes ?
 [X] Will gender choice affect the trees being displayed ?
   [X] Doc here: https://docs.google.com/document/d/1TQtgeaMNlZoa_MR5y2ruxkF8BcvyRKnCjECWduCYm-o/edit?ts=5c2e6931
 [X] Randomize the tree matches
