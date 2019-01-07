@@ -17,7 +17,9 @@
 			threshold: 1,
 			likeSelector: '.like',
 			dislikeSelector: '.dislike',
-			doneCallback: function() { }
+			doneCallback: function() { },
+			startDragEvent: function() { },
+			endDragEvent: function() { }
 		};
 
 	var container = null;
@@ -85,6 +87,9 @@
 		},
 
 		handler: function (ev) {
+			if ($(ev.target).hasClass('no-swipe') || $(ev.target.parentElement).hasClass('no-swipe'))
+				return true;
+
 			ev.preventDefault();
 
 			switch (ev.type) {
@@ -103,6 +108,8 @@
 				case 'mousemove':
 				case 'touchmove':
 					if(touchStart === true) {
+						$that.settings.startDragEvent(panes.eq(current_pane));
+
 						var pageX = typeof ev.pageX == 'undefined' ? ev.originalEvent.touches[0].pageX : ev.pageX;
 						var pageY = typeof ev.pageY == 'undefined' ? ev.originalEvent.touches[0].pageY : ev.pageY;
 						var deltaX = parseInt(pageX) - parseInt(xStart);
@@ -133,6 +140,8 @@
 					break;
 				case 'mouseup':
 				case 'touchend':
+					$that.settings.endDragEvent(panes.eq(current_pane));
+
 					touchStart = false;
 					var pageX = (typeof ev.pageX == 'undefined') ? ev.originalEvent.changedTouches[0].pageX : ev.pageX;
 					var pageY = (typeof ev.pageY == 'undefined') ? ev.originalEvent.changedTouches[0].pageY : ev.pageY;
@@ -141,7 +150,10 @@
 
 					posX = deltaX + lastPosX;
 					posY = deltaY + lastPosY;
-					var opa = Math.abs((Math.abs(deltaX) / $that.settings.threshold) / 100 + 0.2);
+					// var opa = Math.abs((Math.abs(deltaX) / $that.settings.threshold) / 100 + 0.2);
+          var opa = (Math.abs(deltaX) / $that.settings.threshold) / 70;
+
+          panes.eq(current_pane).css('opacity', 1);
 
 					if (opa >= 1) {
 						if (posX > 0) {

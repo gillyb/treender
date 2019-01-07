@@ -30,6 +30,31 @@ $(function() {
   var viewportHeight = $(window).height();
   var headerHeight = $('.trees .header').outerHeight(true);
 
+  function bindInfoButton() {
+    // $('.tree-details').click(function () {
+    $('.tree-details').on('click', function() {
+
+      var wrapper = $(this).parents('.card-wrapper');
+      wrapper.css({
+        'background-color': '#fff',
+        'overflow-y': 'scroll'
+      });
+
+      wrapper.find('.tree-details .name').css('color', '#444');
+      wrapper.find('.img').animate({
+        'top': '-80px'
+      }, 400, function() {});
+      // wrapper.find('.tree-details').animate({
+      //   'bottom': '-80px',
+      //   'scrollTop': '80'
+      // }, 400, function() {
+      //   // animation is done here..
+      // });
+      // wrapper.find('.tree-details').css('bottom', '-80px');
+      // window.scrollTo(0, 80);
+    });
+  }
+
   function adjustSplashScreenLogo() {
     var logoHeight = parseInt($('.splash-screen .logo').height());
     var heartTop = (viewportHeight / 2) - (logoHeight / 2);
@@ -51,46 +76,8 @@ $(function() {
   function showSplashScreen() { hideAllScreens(); $('.full-screen.splash-screen').removeClass('hidden'); }
   function showAboutScreen() { hideAllScreens(); $('.full-screen.who-did-dis').removeClass('hidden'); }
   function showGender() { hideAllScreens(); $('.full-screen.match-with').removeClass('hidden'); }
-  function showTrees() { hideAllScreens(); $('.full-screen.trees').removeClass('hidden'); setTreesImagesHeight(); }
+  function showTrees() { hideAllScreens(); $('.full-screen.trees').removeClass('hidden'); setTreesImagesHeight(); bindInfoButton(); }
   function showWalkthrough() { hideAllScreens(); $('.full-screen.steps').removeClass('hidden'); $('.steps .swipe-container').flickity({ contain: true, prevNextButtons: false }); }
-
-  var step1 = $('.full-screen.how-this-works-1');
-  var step2 = $('.full-screen.how-this-works-2');
-  var step3 = $('.full-screen.how-this-works-3');
-  var step4 = $('.full-screen.how-this-works-4');
-
-  function stepForward() {
-    if (!step1.hasClass('hidden')) {
-      hideAllScreens();
-      step2.removeClass('hidden');
-    }
-    else if (!step2.hasClass('hidden')) {
-      hideAllScreens();
-      step3.removeClass('hidden');
-    }
-    else if (!step3.hasClass('hidden')) {
-      hideAllScreens();
-      step4.removeClass('hidden');
-    }
-  }
-  function stepBack() {
-    if (!step1.hasClass('hidden')) {
-      hideAllScreens();
-      showSplashScreen();
-    }
-    else if (!step2.hasClass('hidden')) {
-      hideAllScreens();
-      step1.removeClass('hidden');
-    }
-    else if (!step3.hasClass('hidden')) {
-      hideAllScreens();
-      step2.removeClass('hidden');
-    }
-    else {
-      hideAllScreens();
-      step3.removeClass('hidden');
-    }
-  }
 
 
   function animateSplashScreen() {
@@ -191,7 +178,18 @@ $(function() {
       },
       doneCallback: function() {
         $('.full-screen.trees .cards-area-wrapper').addClass('hidden');
-        $('.full-screen.trees .empty-message').css('opacity', 1);
+        $('.full-screen.trees .empty-message').removeClass('hidden');
+        requestAnimationFrame(function() {
+          $('.full-screen.trees .empty-message').css('opacity', 1);
+        });
+      },
+      startDragEvent: function(card) {
+        card.find('.card-wrapper').css('background-color', 'transparent');
+        card.find('.tree-details .name').css('color', '#fff');
+        card.find('.img').css('top', '0');
+      },
+      endDragEvent: function(card) {
+        // debugger;
       },
       animationRevertSpeed: 200,
       animationSpeed: 200,
