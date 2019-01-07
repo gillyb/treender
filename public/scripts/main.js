@@ -40,18 +40,16 @@ $(function() {
         'overflow-y': 'scroll'
       });
 
+      $('.card-actions').addClass('bordered');
       wrapper.find('.tree-details .name').css('color', '#444');
+      wrapper.find('.tree-details .description').css('opacity', 1).removeClass('hidden');
       wrapper.find('.img').animate({
         'top': '-80px'
-      }, 400, function() {});
-      // wrapper.find('.tree-details').animate({
-      //   'bottom': '-80px',
-      //   'scrollTop': '80'
-      // }, 400, function() {
-      //   // animation is done here..
-      // });
-      // wrapper.find('.tree-details').css('bottom', '-80px');
-      // window.scrollTo(0, 80);
+      }, 400, function() {
+        wrapper.animate({
+          'scrollTop': wrapper.height()
+        }, 400, function() { });
+      });
     });
   }
 
@@ -184,9 +182,11 @@ $(function() {
         });
       },
       startDragEvent: function(card) {
+        $('.card-actions').removeClass('bordered');
         card.find('.card-wrapper').css('background-color', 'transparent');
         card.find('.tree-details .name').css('color', '#fff');
         card.find('.img').css('top', '0');
+        card.find('.tree-details .description').css('opacity', 0).addClass('hidden');
       },
       endDragEvent: function(card) {
         // debugger;
