@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+<head> 
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="shortcut icon" type="image/png" href="images/icons/favicon.png"/>
+
+    <title>treender :: a dating app for trees</title>
+
+    <meta property="og:url"           content="http://treenderapp.com" />
+    <meta property="og:type"          content="website" />
+    <meta property="og:title"         content="treender :: a dating app for trees" />
+    <meta property="og:description"   content="match. chat. blossom" />
+    <meta property="og:image"         content="http://treenderapp.com/images/fb-share-image.png" />
+
+    <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
+
+    <link rel="stylesheet" href="styles/reset.css"/>
+    <link rel="stylesheet" href="styles/main.css"/>
+    <link rel="stylesheet" href="styles/trees.css"/>
+
+    <script src="scripts/3rdparty/jquery-3.1.1.min.js"></script>
+
+    <!-- Flickity plugin -->
+    <link rel="stylesheet" href="https://unpkg.com/flickity@2/dist/flickity.min.css">
+    <script src="https://unpkg.com/flickity@2/dist/flickity.pkgd.min.js"></script>
+
+    <!-- jTinder plugin -->
+    <script src="scripts/3rdparty/jTinder/js/jquery.transform2d.js"></script>
+    <script src="scripts/3rdparty/jTinder/js/jquery.jTinder.js"></script>
+
+    <script src="scripts/main.js"></script>
+</head>
+<body>
+
+    <script>(function(d, s, id) {
+      var js, fjs = d.getElementsByTagName(s)[0];
+      if (d.getElementById(id)) return;
+      js = d.createElement(s); js.id = id;
+      js.src = "https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v3.0";
+      fjs.parentNode.insertBefore(js, fjs);
+    }(document, 'script', 'facebook-jssdk'));</script>
+
+    <div class="no-mobile-message hidden">
+        This page is best viewed on a mobile device.<br/>
+        Since you clearly don't have one, here's an amazing mobile simulator! wow....
+    </div>
+
+    <div class="page-container">
+
+        <div class="full-screen splash-screen">
+            <div class="top-heart"></div>
+            <img class="logo" src="images/treender-logo.svg" alt="Treender!" class="logo">
+            <div class="bottom-heart"></div>
+
+            <div class="welcome-text">
+                <div class="logo-wrapper fade-in inline-block"></div>
+                <div class="header fade-in welcome">welcome to</div>
+                <div class="header fade-in treender">treender</div>
+                <div class="sub-header fade-in">The dating app for trees</div>
+            </div>
+
+            <div class="buttons-wrapper">
+                <div class="how-does-it-work button fade-in">How does it work?</div>
+                <div class="lets-start button primary fade-in">Let's start!</div>
+            </div>
+
+            <div class="bottom fade-in">
+                <a class="share-this-brilliance button" href="https://www.facebook.com/sharer/sharer.php?u=treenderapp.com" target="_blank">Share this brilliance</a>
+                <div class="link who-did-dis">Who did dis?</div>
+            </div>
+        </div>
+
+        <div class="full-screen match-with hidden">
+            <div class="text header">I want to match with</div>
+            <div class="match-options">
+                <div class="button radio male">Male Trees</div>
+                <div class="button radio female">Female Trees</div>
+            </div>
+            <div class="bottom">
+                <div class="button disabled continue">Continue</div>
+            </div>
+        </div>
+
+        <div class="full-screen upload-image hidden">
+            <div class="text">Add a photo</div>
+            <div class="sub-text light">We don't keep these photos.<br/>It will just make the experience more fun.</div>
+            <div class="camera-area">
+                <div class="camera-icon">
+                    <input type="file" accept="image/*" capture="camera" />
+                </div>
+            </div>
+            <div class="bottom light">
+                Or <a class="link" href="#">choose an avatar</a> instead
+            </div>
+        </div>
+
+        <div class="full-screen steps hidden">
+            <div class="swipe-container">
+                <div class="swipe-area step-1">
+                    <div class="text header">Find blossoming trees with colorful leaves nearby</div>
+                    <div class="tree-image">
+                        <img src="images/pic.svg" alt="" class="tree" />
+                    </div>
+                </div>
+
+                <div class="swipe-area step-2">
+                    <div class="text header">Swipe right to water them or swipe left to cut them off</div>
+                    <div class="tree-image">
+                        <img src="images/pic.svg" alt="" class="tree" />
+                    </div>
+                </div>
+
+                <div class="swipe-area step-3">
+                    <div class="text header">If they also give you water,<br/>It's a match</div>
+                    <div class="wrapper">
+                        <div class="match-message">It's a match</div>
+                        <div class="tree-image">
+                            <img src="images/user-one.svg" alt="" class="user-one" />
+                            <img src="images/user-two.svg" alt="" class="user-two" />
+                        </div>
+                    </div>
+                </div>
+
+                <div class="swipe-area">
+                    <div class="text header">Only people you've matched with can message you</div>
+                    <div class="tree-image">
+                        <img src="images/guide-chat.png" width="230" />
+                    </div>
+                </div>
+            </div>
+
+            <div class="spacer"></div>
+            <div class="bottom">
+                <div class="button primary lets-start">Let's start!</div>
+            </div>
+        </div>
+
+        <div class="trees full-screen hidden">
+            <div class="trees-wrapper">
+                <div class="header">
+                    <img class="logo go-home" src="images/logo.svg" alt="Treender!" class="logo">
+                </div>
+                <div class="cards-area-wrapper">
+                    <div id="tree-cards">
+                      <ul>
+                        <li class="tree_1">
+                          <div class="card-wrapper">
+                            <div class="img"></div>
+                            <div class="tree-details">
+                              <div class="name">
+                                <span class="info-button no-swipe">
+                                  <img src="images/icons/info.svg" />
+                                </span>
+                                Alon
+                                <span class="age">, 352</span>
+                              </div>
+                            </div>
+                            <div class="like"></div>
+                            <div class="dislike"></div>
+                          </div>
+                        </li>
+                        <li class="tree_2">
+                          <div class="card-wrapper">
+                            <div class="img"></div>
+                            <div class="tree-details">
+                              <span class="info-button no-swipe">
+                                  <img src="images/icons/info.svg" />
+                              </span>
+                              <div class="name">
+                                  Dekel
+                                  <span class="age">, 81</span>
+                              </div>
+                              <div class="description hidden">
+                                  This is just some silly description of the tree.<br/>
+                                  Hi, whatsup ? Cool, me too...
+                              </div>
+                            </div>
+                            <div class="like"></div>
+                            <div class="dislike"></div>
+                          </div>
+                        </li>
+                        <li class="tree_3">
+                          <div class="card-wrapper">
+                            <div class="img"></div>
+                            <div class="tree-details">
+                              <span class="info-button no-swipe">
+                                  <img src="images/icons/info.svg" />
+                              </span>
+                              <div class="name">
+                                  Ilan
+                                  <span class="age">, 906</span>
+                              </div>
+                              <div class="description hidden">
+                                  This is just some silly description of the tree.<br/>
+                                  Hi, whatsup ? Cool, me too...
+                              </div>
+                            </div>
+                            <div class="like"></div>
+                            <div class="dislike"></div>
+                          </div>
+                        </li>
+                        <li class="tree_4">
+                          <div class="card-wrapper">
+                            <div class="img"></div>
+                            <div class="tree-details">
+                              <span class="info-button no-swipe">
+                                <img src="images/icons/info.svg" />
+                              </span>
+                              <div class="name">
+                                Alon 2
+                                <span class="age">, 32</span>
+                              </div>
+                              <div class="description hidden">
+                                This is just some silly description of the tree.<br/>
+                                Hi, whatsup ? Cool, me too...
+                              </div>
+                            </div>
+                            <div class="like"></div>
+                            <div class="dislike"></div>
+                          </div>
+                        </li>
+                      </ul>
+                    </div>
+                    <div class="card-actions clearfix">
+                        <div class="dislike"></div>
+                        <div class="like"></div>
+                    </div>
+                </div>
+
+                <div class="empty-message hidden">
+                  <div class="main-text">
+                    Can't see the forest for the trees?
+                  </div>
+                  <img class="forest-trees" src="images/end-tress.svg" alt="">
+                  <div class="text">
+                    You've checked all the trees on treender
+                  </div>
+                  <div class="buttons-wrapper">
+                    <div class="button start-over">Let's start over</div>
+                    <a class="share-this-brilliance button" href="https://www.facebook.com/sharer/sharer.php?u=treenderapp.com" target="_blank">Share this brilliance</a>
+                  </div>
+                </div>
+
+            </div>
+        </div>
+
+        <div class="full-screen who-did-dis hidden">
+            <div class="top-heart">
+                <img src="images/topheart.svg" />
+            </div>
+            <div class="text">
+                The Treender app was created by the creative minds of the magical due Gil and Gilly,  to fill the need to hug more trees (from the inside).
+                <br/>
+                Gil is a product designer, actor, artist and a bunch of other made up titles he likes to give to himself to feel better as human beings. He likes long walkes by the beach and fast runaways from the mobs.
+                You can view his Instagram to see his stupid photos or his YouTube channel to see his stupid videos.<br/>
+                <br/>
+                Gilly is A GIANT HALF CHICKEN HALF SQUIRREL!……..<br/>
+                <br/>
+                The duo love the Internet more than life and they also made Wasted Humanity.
+            </div>
+            <div class="back link">Back</div>
+            <div class="bottom-heart">
+                <img src="images/bottomheart.svg" />
+            </div>
+        </div>
+
+    </div>
+
+</body>
+</html>

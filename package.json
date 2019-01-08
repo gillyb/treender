@@ -1,16 +1,14 @@
 {
   "name": "treender",
   "version": "1.0.0",
-  "description": "An app for TuBishvat",
+  "description": "a dating app for trees",
   "main": "index.js",
   "scripts": {
-    "dev": "nodemon index.js --watch ./",
+    "build": "./bin/build.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Gilly Barr",
   "license": "ISC",
   "dependencies": {
-    "express": "^4.16.4",
-    "nodemon": "^1.18.7"
   }
 }
