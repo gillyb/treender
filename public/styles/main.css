@@ -133,6 +133,7 @@ a {
 
 .splash-screen .bottom-heart { position:absolute; bottom:0; }
 .splash-screen .link.who-did-dis { margin-top: 20px; text-transform: uppercase; }
+.empty-message .link.who-did-dis { margin-top: 20px; margin-bottom: 50px; text-transform: uppercase; }
 
 
 
@@ -247,17 +248,29 @@ a {
     flex-grow: 1;
 }
 .full-screen.steps .swipe-container .header {
-    margin: 40px 0;
+    margin: 50px 0;
 }
 .full-screen.steps .spacer {
-    flex-grow: 3;
+    flex-grow: 1;
 }
 .full-screen.steps .bottom {
     flex-grow: 0;
     margin-bottom: 80px;
 }
 .full-screen.steps .match-message { font-size: 1.93rem; color: #0D8037; font-weight: bold; margin-top: 60px; margin-bottom: 30px; }
-.full-screen.steps .step-3 .tree-image .user-two { margin-left: -30px; }
+.full-screen.steps .step-1 .tree-image, .full-screen.steps .step-2 .tree-image { position: relative; margin: 0 40px; }
+.full-screen.steps .step-3 .tree-image img { width: 100%; }
+.full-screen.steps .step-1 .tree-image img { width: 100%; position:absolute; left: 0; }
+.full-screen.steps .step-2 .tree-image img { width: 100%; position:absolute; left: 0; }
+
+.full-screen.steps .step-2 .tree-image .tree-heart {
+    transition: transform 200ms, left 200ms, top 800ms;
+}
+.full-screen.steps .step-2 .tree-image .tree-heart.swiped {
+    transform: rotate(10deg);
+    left: 16px;
+    /*top: -16px;*/
+}
 
 
 

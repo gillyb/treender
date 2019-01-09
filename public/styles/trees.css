@@ -5,18 +5,18 @@
     position: absolute;
     z-index: 100;
     top: 0; left: 0; right: 0;
-    height: 60px; width: 100%;
-    line-height: 60px;
+    height: 56px; width: 100%;
+    line-height: 56px;
     background-color: #fff;
     box-shadow: 0 2px 3px 0 rgba(0,0,0,0.3);
 }
 .trees .header .logo {
-    width: 28px;
+    height: 32px;
     vertical-align: middle;
 }
 
 #tree-cards {
-    margin-top: 60px;
+    margin-top: 56px;
 }
 
 .trees { position: relative; }
@@ -57,9 +57,25 @@
     scroll-behavior: smooth;
 }
 .card-wrapper .like {
-    background-image: url('../images/like.svg');
     display: inline-block;
-    width: 126px; height: 85px;
+    float: left;
+    background-image: url(../images/like.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+    width: 150px; height: 98px;
+    margin: 20px;
+}
+.card-wrapper .dislike {
+    opacity: 0;
+    position: absolute;
+    right: 0px;
+    width: 200px; height: 140px;
+    display: inline-block;
+    float: right;
+    background-image: url(../images/hellno.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+    margin: 20px;
 }
 .trees .tree-details {
     margin: 20px;
@@ -73,6 +89,7 @@
     margin-top: 10px;
     margin-bottom: 4px;
     font-weight: 900;
+    font-size: 2.2rem;
 }
 .trees .card-wrapper .age {
     font-weight: 400;
@@ -160,10 +177,10 @@
     transition: opacity 400ms;
 }
 .trees .empty-message .forest-trees {
-    width: 200px;
+    width: 160px;
 }
 .trees .empty-message .buttons-wrapper {
-    margin-bottom: 80px;
+    /*margin-bottom: 80px;*/
 }
 .trees .empty-message .buttons-wrapper .button.start-over {
     margin-bottom: 20px;

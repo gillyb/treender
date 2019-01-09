@@ -78,13 +78,23 @@ $(function() {
   };
 
 
-
   function hideAllScreens() { $('.full-screen').addClass('hidden'); }
   function showSplashScreen() { hideAllScreens(); $('.full-screen.splash-screen').removeClass('hidden'); }
   function showAboutScreen() { hideAllScreens(); $('.full-screen.who-did-dis').removeClass('hidden'); }
   function showGender() { hideAllScreens(); $('.full-screen.match-with').removeClass('hidden'); }
   function showTrees() { hideAllScreens(); $('.full-screen.trees').removeClass('hidden'); setTreesImagesHeight(); bindInfoButton(); }
-  function showWalkthrough() { hideAllScreens(); $('.full-screen.steps').removeClass('hidden'); $('.steps .swipe-container').flickity({ contain: true, prevNextButtons: false }); }
+  function showWalkthrough() {
+    hideAllScreens();
+    $('.full-screen.steps').removeClass('hidden');
+    var carousel = $('.steps .swipe-container').flickity({ contain: true, prevNextButtons: false });
+    carousel.on( 'change.flickity', function( event, index ) {
+      if (index === 1) {
+        setTimeout(function () {
+          $('.full-screen.steps .step-2 .tree-image .tree-heart').addClass('swiped');
+        }, 600);
+      }
+    });
+  }
 
 
   function animateSplashScreen() {
