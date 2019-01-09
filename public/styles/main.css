@@ -253,7 +253,8 @@ a {
     flex-grow: 3;
 }
 .full-screen.steps .bottom {
-    flex-grow: 1;
+    flex-grow: 0;
+    margin-bottom: 80px;
 }
 .full-screen.steps .match-message { font-size: 1.93rem; color: #0D8037; font-weight: bold; margin-top: 60px; margin-bottom: 30px; }
 .full-screen.steps .step-3 .tree-image .user-two { margin-left: -30px; }
