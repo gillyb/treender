@@ -35,20 +35,29 @@ $(function() {
     $('.tree-details').on('click', function() {
 
       var wrapper = $(this).parents('.card-wrapper');
+      var treeDetails = wrapper.find('.tree-details');
+      var treeDescription = treeDetails.find('.description');
+
       wrapper.css({
         'background-color': '#fff',
         'overflow-y': 'scroll'
       });
+      treeDescription.css({
+        'position': 'relative',
+        'color': '#444',
+        'opacity': 1
+      }).removeClass('invisible');
 
       $('.card-actions').addClass('bordered');
       wrapper.find('.tree-details .name').css('color', '#444');
-      wrapper.find('.tree-details .description').css('opacity', 1).removeClass('hidden');
-      wrapper.find('.img').animate({
-        'top': '-80px'
-      }, 400, function() {
-        wrapper.animate({
+
+      requestAnimationFrame(function() {
+        // wrapper.find('.tree-details .description').css('opacity', 1).removeClass('hidden');
+        var treeDetailsHeight = treeDetails.outerHeight(true);
+        wrapper.find('.img').animate({
+          'top': -1 * treeDetailsHeight,
           'scrollTop': wrapper.height()
-        }, 400, function() { });
+        }, 300, function() { });
       });
     });
   }
@@ -186,7 +195,11 @@ $(function() {
         card.find('.card-wrapper').css('background-color', 'transparent');
         card.find('.tree-details .name').css('color', '#fff');
         card.find('.img').css('top', '0');
-        card.find('.tree-details .description').css('opacity', 0).addClass('hidden');
+        card.find('.tree-details .description')
+          .css({
+            'opacity': 0,
+            'position': 'absolute'
+          }).addClass('invisible');
       },
       endDragEvent: function(card) {
         // debugger;
