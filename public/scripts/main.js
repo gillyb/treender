@@ -106,7 +106,17 @@ $(function() {
   function showSplashScreen() { hideAllScreens(); $('.full-screen.splash-screen').removeClass('hidden'); }
   function showAboutScreen() { hideAllScreens(); $('.full-screen.who-did-dis').removeClass('hidden'); }
   function showGender() { hideAllScreens(); $('.full-screen.match-with').removeClass('hidden'); }
-  function showTrees() { hideAllScreens(); $('.full-screen.trees').removeClass('hidden'); setTreesImagesHeight(); bindInfoButton(); }
+  function showTrees() {
+    hideAllScreens();
+    var treesScreen = $('.full-screen.trees');
+    treesScreen.removeClass('hidden');
+    if (!$('.match-with .button.radio.male').hasClass('selected'))
+      treesScreen.find('.male').addClass('hidden');
+    if (!$('.match-with .button.radio.female').hasClass('selected'))
+      treesScreen.find('.female').addClass('hidden');
+    setTreesImagesHeight();
+    bindInfoButton();
+  }
   function showWalkthrough() {
     hideAllScreens();
     $('.full-screen.steps').removeClass('hidden');

@@ -44,7 +44,7 @@
 		init: function (element) {
 
 			container = $(">ul", element);
-			panes = $(">ul>li", element);
+			panes = $(">ul>li:not(.hidden)", element);
 			pane_width = container.width();
 			pane_count = panes.length;
 			current_pane = panes.length - 1;
