@@ -96,7 +96,17 @@
     color: inherit;
 }
 .trees .card-wrapper .info-button {
+    position: relative;
     float: right;
+}
+.trees .card-wrapper .info-button .close {
+    position: absolute;
+    opacity: 0;
+    top: -40px; right: 10px;
+    transition: opacity 300ms;
+}
+.trees .card-wrapper .info-button .close.active {
+    opacity: 1;
 }
 .trees .card-wrapper .description {
     opacity: 0;

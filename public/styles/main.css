@@ -127,6 +127,15 @@ a {
 }
 
 .who-did-dis .top-heart, .who-did-dis .bottom-heart { width: 100%; }
+.who-did-dis .top-heart .logo-white {
+    position: absolute;
+    height: 38px;
+    top: 0;
+    left: 50%;
+    width: auto;
+    margin-left: -13px;
+    margin-top: 16px;
+}
 .who-did-dis .top-heart img, .who-did-dis .bottom-heart img {
     width: 100%; height: 100%;
 }
@@ -149,8 +158,8 @@ a {
     height: 100px;
 }
 .splash-screen .header { font-weight: bold; margin-bottom: 3px; }
-.splash-screen .header.welcome { font-size: 1.93rem; margin-bottom: 10px; }
-.splash-screen .treender { margin-bottom: 11px; }
+.splash-screen .header.welcome { font-size: 1.57rem; margin-bottom: 10px; }
+.splash-screen .treender { margin-bottom: 22px; }
 .splash-screen .sub-header {  }
 .splash-screen .bottom { margin-bottom: 50px; }
 .splash-screen .buttons-wrapper .button.how-does-it-work { margin-bottom: 20px; }
@@ -257,7 +266,7 @@ a {
     flex-grow: 0;
     margin-bottom: 80px;
 }
-.full-screen.steps .match-message { font-size: 1.93rem; color: #0D8037; font-weight: bold; margin-top: 60px; margin-bottom: 30px; }
+.full-screen.steps .match-message { font-size: 1.93rem; color: #0D8037; font-weight: bold; margin: 30px 0; }
 .full-screen.steps .step-1 .tree-image, .full-screen.steps .step-2 .tree-image { position: relative; margin: 0 40px; }
 .full-screen.steps .step-3 .tree-image img { width: 100%; }
 .full-screen.steps .step-1 .tree-image img { width: 100%; position:absolute; left: 0; }

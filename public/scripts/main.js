@@ -27,15 +27,19 @@
 
 $(function() {
 
+  var treeImagesHeight;
   var viewportHeight = $(window).height();
   var headerHeight = $('.trees .header').outerHeight(true);
 
   function bindInfoButton() {
-    // $('.tree-details').click(function () {
-    $('.tree-details').on('click', function() {
+    $('.tree-details .info-button .info').on('click', function() {
 
       var wrapper = $(this).parents('.card-wrapper');
+      var surround = $(this).parents('li');
       var treeDetails = wrapper.find('.tree-details');
+      var treeName = treeDetails.find('.name');
+      var infoButton = treeDetails.find('.info');
+      var closeInfoButton = treeDetails.find('.close');
       var treeDescription = treeDetails.find('.description');
 
       wrapper.css({
@@ -47,9 +51,13 @@ $(function() {
         'color': '#444',
         'opacity': 1
       }).removeClass('invisible');
+      surround.css('top', 0);
+      surround.css('height', treeImagesHeight + 20);
+
+      infoButton.addClass('hidden');
 
       $('.card-actions').addClass('bordered');
-      wrapper.find('.tree-details .name').css('color', '#444');
+      treeName.css('color', '#444');
 
       requestAnimationFrame(function() {
         // wrapper.find('.tree-details .description').css('opacity', 1).removeClass('hidden');
@@ -57,7 +65,23 @@ $(function() {
         wrapper.find('.img').animate({
           'top': -1 * treeDetailsHeight,
           'scrollTop': wrapper.height()
-        }, 300, function() { });
+        }, 300, function() {
+          closeInfoButton.addClass('active');
+          closeInfoButton.one('click', function() {
+            $(this).removeClass('active');
+            // TODO: close info
+            infoButton.removeClass('hidden');
+            treeName.css('color', '#fff');
+            treeDescription.css({
+              'position': 'absolute',
+              'color': 'transparent',
+              'opacity': 0
+            });
+            wrapper.find('.img').animate({
+              'top': 0
+            }, 300, function() { });
+          });
+        });
       });
     });
   }
@@ -73,7 +97,7 @@ $(function() {
   function setTreesImagesHeight() {
     var treeActionsHeight = $('.trees .card-actions').outerHeight(true);
     var treeImagesPadding = parseInt($('#tree-cards ul').css('marginTop')) + parseInt($('#tree-cards ul').css('marginBottom'));
-    var treeImagesHeight = viewportHeight - (headerHeight + treeActionsHeight + treeImagesPadding);
+    treeImagesHeight = viewportHeight - (headerHeight + treeActionsHeight + treeImagesPadding);
     $('#tree-cards li').css('height', treeImagesHeight);
   };
 
@@ -132,10 +156,6 @@ $(function() {
   setTimeout(function() {
     animateSplashScreen();
   }, 400);
-
-  $('.go-home').click(function() {
-    showSplashScreen();
-  });
 
 
   // homepage
@@ -203,6 +223,8 @@ $(function() {
       startDragEvent: function(card) {
         $('.card-actions').removeClass('bordered');
         card.find('.card-wrapper').css('background-color', 'transparent');
+        card.css('top', '20px');
+        card.css('height', treeImagesHeight);
         card.find('.tree-details .name').css('color', '#fff');
         card.find('.img').css('top', '0');
         card.find('.tree-details .description')
