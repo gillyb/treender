@@ -31,6 +31,36 @@ $(function() {
   var viewportHeight = $(window).height();
   var headerHeight = $('.trees .header').outerHeight(true);
 
+  function preloadImages() {
+    var treeImages = [
+    "images/trees/dekel1.jpg",
+    "images/trees/hadar1.jpg",
+    "images/trees/hadas1.jpg",
+    "images/trees/arava1.jpg",
+    "images/trees/Klilhachoresh01.jpg",
+    "images/trees/moran1.jpg",
+    "images/trees/shaked1.jpg",
+    "images/trees/shikma1.JPG",
+    "images/trees/shaked1.jpg",
+    "images/trees/tooti1.jpg",
+    "images/trees/tamar1.jpg",
+    "images/trees/oren1.jpg",
+    "images/trees/alon1.jpg",
+    "images/trees/ilan1.jpg",
+    "images/trees/erez1.jpg",
+    "images/trees/eshel1.jpg",
+    "images/trees/dolev1.jpg",
+    "images/trees/shaked1.jpg",
+    "images/trees/dekel1.jpg",
+    "images/trees/ashor1.JPG",
+    "images/trees/hadar1.jpg",
+    "images/trees/bonsai.jpg"];
+    for (var i=0; i<treeImages.length; i++) {
+      (new Image()).src = treeImages[i];
+    }
+  }
+  preloadImages();
+
   function bindInfoButton() {
     $('.tree-details .info-button .info').on('click', function() {
 
@@ -77,6 +107,10 @@ $(function() {
               'color': 'transparent',
               'opacity': 0
             });
+            surround.css({
+              'height': treeImagesHeight,
+              'top': 20
+            });
             wrapper.find('.img').animate({
               'top': 0
             }, 300, function() { });
@@ -106,6 +140,7 @@ $(function() {
   function showSplashScreen() { hideAllScreens(); $('.full-screen.splash-screen').removeClass('hidden'); }
   function showAboutScreen() { hideAllScreens(); $('.full-screen.who-did-dis').removeClass('hidden'); }
   function showGender() { hideAllScreens(); $('.full-screen.match-with').removeClass('hidden'); }
+  function showChat() { hideAllScreens(); $('.full-screen.chat').removeClass('hidden'); }
   function showTrees() {
     hideAllScreens();
     var treesScreen = $('.full-screen.trees');
@@ -185,6 +220,11 @@ $(function() {
       return;
     showTrees();
     setupTreeCards();
+
+    // make the trees visible now (small delay so rendering isn't messed up)
+    setTimeout(function() {
+      $('#tree-cards ul li').removeClass('invisible');
+    }, 200);
   });
 
   // who did dis
@@ -208,6 +248,11 @@ $(function() {
 
   $('.button.start-over').click(function() {
     window.location.reload();
+  });
+
+  // header buttons
+  $('.full-screen .header .chat-icon').click(function() {
+    showChat();
   });
 
   // treender cards

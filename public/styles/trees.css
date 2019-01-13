@@ -1,7 +1,7 @@
 .trees.full-screen {
     justify-content: flex-start;
 }
-.trees .header {
+.trees .header, .chat .header {
     position: absolute;
     z-index: 100;
     top: 0; left: 0; right: 0;
@@ -10,12 +10,25 @@
     background-color: #fff;
     box-shadow: 0 2px 3px 0 rgba(0,0,0,0.3);
 }
-.trees .header .logo {
+.trees .header .logo, .chat .header .logo {
     height: 32px;
     vertical-align: middle;
 }
-.trees .header .profile-icon { float: left; margin: 14px 0 0 20px; }
-.trees .header .chat-icon { float: right; margin: 14px 20px 0 0; }
+.trees .header .profile-icon, .chat .header .profile-icon { float: left; margin: 14px 0 0 20px; }
+.trees .header .chat-icon, .chat .header .chat-icon { float: right; margin: 11px 20px 0 0; }
+.trees .header .chat-icon.selected .chat-svg, .chat .header .chat-icon.selected .chat-svg { fill: #0D8037; }
+
+.chat .empty-icon { margin: 0 110px; }
+.chat .empty-message {
+    height: 100%;
+    margin-top: 60px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+.chat .empty-message .main-text {
+    font-size: 1.29rem;
+}
 
 #tree-cards {
     margin-top: 56px;

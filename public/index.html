@@ -35,6 +35,7 @@
     <meta property="og:image"         content="http://treenderapp.com/images/fb-share-image.png" />
 
     <link href="https://fonts.googleapis.com/css?family=Lato:400,400i,700,700i,900,900i|Open+Sans" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Yellowtail" rel="stylesheet">
 
     <link rel="stylesheet" href="styles/reset.css"/>
     <link rel="stylesheet" href="styles/main.css"/>
@@ -162,12 +163,22 @@
                 <div class="header">
                     <img class="profile-icon" src="images/icons/profile-icon.svg">
                     <img class="logo" src="images/logo.svg" alt="Treender!">
-                    <img class="chat-icon" src="images/icons/chat-icon.svg">
+                    <span class="chat-icon">
+                      <svg width="28px" height="32px" viewBox="0 0 28 32" version="1.1" xmlns="http://www.w3.org/2000/svg">
+                        <g id="Treender" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                            <g id="07-done" transform="translate(-298.000000, -14.000000)" fill="#C6C6C6">
+                                <g class="chat-svg">
+                                    <path d="M309.388277,41.9534127 L298.920277,46 L302.146143,38.1145193 C299.585835,35.5595422 298,32.0158575 298,28.0991579 C298,20.312408 304.268013,14 312,14 C319.731986,14 325.999999,20.312408 325.999999,28.0991579 C325.999999,35.8859078 319.731986,42.1983158 312,42.1983158 C311.107454,42.1983158 310.234417,42.1142008 309.388277,41.9534127 Z M306,30.1133233 C307.104569,30.1133233 308,29.2115507 308,28.0991579 C308,26.986765 307.104569,26.0849925 306,26.0849925 C304.89543,26.0849925 304,26.986765 304,28.0991579 C304,29.2115507 304.89543,30.1133233 306,30.1133233 Z M312,30.1133233 C313.104569,30.1133233 314,29.2115507 314,28.0991579 C314,26.986765 313.104569,26.0849925 312,26.0849925 C310.89543,26.0849925 310,26.986765 310,28.0991579 C310,29.2115507 310.89543,30.1133233 312,30.1133233 Z M318,30.1133233 C319.104569,30.1133233 320,29.2115507 320,28.0991579 C320,26.986765 319.104569,26.0849925 318,26.0849925 C316.89543,26.0849925 316,26.986765 316,28.0991579 C316,29.2115507 316.89543,30.1133233 318,30.1133233 Z" id="chat-icon"></path>
+                                </g>
+                            </g>
+                        </g>
+                      </svg>
+                    </span>
                 </div>
                 <div class="cards-area-wrapper">
                     <div id="tree-cards">
                       <ul>
-                        <li class="tree_1 male">
+                        <li class="tree_1 male invisible">
                           <div class="card-wrapper">
                             <div class="img"></div>
                             <div class="tree-details">
@@ -188,7 +199,7 @@
                             <div class="dislike"></div>
                           </div>
                         </li>
-                        <li class="tree_2 male">
+                        <li class="tree_2 male invisible">
                           <div class="card-wrapper">
                             <div class="img"></div>
                             <div class="tree-details">
@@ -209,7 +220,7 @@
                             <div class="dislike"></div>
                           </div>
                         </li>
-                        <li class="tree_3 male">
+                        <li class="tree_3 male invisible">
                           <div class="card-wrapper">
                             <div class="img"></div>
                             <div class="tree-details">
@@ -230,7 +241,7 @@
                             <div class="dislike"></div>
                           </div>
                         </li>
-                        <li class="tree_4 male">
+                        <li class="tree_4 male invisible">
                           <div class="card-wrapper">
                             <div class="img"></div>
                             <div class="tree-details">
@@ -251,7 +262,7 @@
                             <div class="dislike"></div>
                           </div>
                         </li>
-                        <li class="tree_5 male">
+                        <li class="tree_5 male invisible">
                           <div class="card-wrapper">
                             <div class="img"></div>
                             <div class="tree-details">
@@ -272,7 +283,7 @@
                             <div class="dislike"></div>
                           </div>
                         </li>
-                        <li class="tree_6 male">
+                        <li class="tree_6 male invisible">
                           <div class="card-wrapper">
                             <div class="img"></div>
                             <div class="tree-details">
@@ -293,7 +304,7 @@
                             <div class="dislike"></div>
                           </div>
                         </li>
-                        <li class="tree_7 male">
+                        <li class="tree_7 male invisible">
                           <div class="card-wrapper">
                             <div class="img"></div>
                             <div class="tree-details">
@@ -314,7 +325,7 @@
                             <div class="dislike"></div>
                           </div>
                         </li>
-                        <li class="tree_8 male">
+                        <li class="tree_8 male invisible">
                           <div class="card-wrapper">
                             <div class="img"></div>
                             <div class="tree-details">
@@ -335,7 +346,7 @@
                             <div class="dislike"></div>
                           </div>
                         </li>
-                        <li class="tree_9 male">
+                        <li class="tree_9 male invisible">
                           <div class="card-wrapper">
                             <div class="img"></div>
                             <div class="tree-details">
@@ -356,7 +367,7 @@
                             <div class="dislike"></div>
                           </div>
                         </li>
-                        <li class="tree_10 male">
+                        <li class="tree_10 male invisible">
                           <div class="card-wrapper">
                             <div class="img"></div>
                             <div class="tree-details">
@@ -377,7 +388,7 @@
                             <div class="dislike"></div>
                           </div>
                         </li>
-                        <li class="tree_11 male">
+                        <li class="tree_11 male invisible">
                           <div class="card-wrapper">
                             <div class="img"></div>
                             <div class="tree-details">
@@ -399,7 +410,7 @@
                           </div>
                         </li>
 
-                        <li class="tree_1 female">
+                        <li class="tree_1 female invisible">
                           <div class="card-wrapper">
                             <div class="img"></div>
                             <div class="tree-details">
@@ -420,7 +431,7 @@
                             <div class="dislike"></div>
                           </div>
                         </li>
-                        <li class="tree_2 female">
+                        <li class="tree_2 female invisible">
                           <div class="card-wrapper">
                             <div class="img"></div>
                             <div class="tree-details">
@@ -441,7 +452,7 @@
                             <div class="dislike"></div>
                           </div>
                         </li>
-                        <li class="tree_3 female">
+                        <li class="tree_3 female invisible">
                           <div class="card-wrapper">
                             <div class="img"></div>
                             <div class="tree-details">
@@ -462,7 +473,7 @@
                             <div class="dislike"></div>
                           </div>
                         </li>
-                        <li class="tree_4 female">
+                        <li class="tree_4 female invisible">
                           <div class="card-wrapper">
                             <div class="img"></div>
                             <div class="tree-details">
@@ -483,7 +494,7 @@
                             <div class="dislike"></div>
                           </div>
                         </li>
-                        <li class="tree_5 female">
+                        <li class="tree_5 female invisible">
                           <div class="card-wrapper">
                             <div class="img"></div>
                             <div class="tree-details">
@@ -504,7 +515,7 @@
                             <div class="dislike"></div>
                           </div>
                         </li>
-                        <li class="tree_6 female">
+                        <li class="tree_6 female invisible">
                           <div class="card-wrapper">
                             <div class="img"></div>
                             <div class="tree-details">
@@ -525,7 +536,7 @@
                             <div class="dislike"></div>
                           </div>
                         </li>
-                        <li class="tree_7 female">
+                        <li class="tree_7 female invisible">
                           <div class="card-wrapper">
                             <div class="img"></div>
                             <div class="tree-details">
@@ -546,7 +557,7 @@
                             <div class="dislike"></div>
                           </div>
                         </li>
-                        <li class="tree_8 female">
+                        <li class="tree_8 female invisible">
                           <div class="card-wrapper">
                             <div class="img"></div>
                             <div class="tree-details">
@@ -567,7 +578,7 @@
                             <div class="dislike"></div>
                           </div>
                         </li>
-                        <li class="tree_9 female">
+                        <li class="tree_9 female invisible">
                           <div class="card-wrapper">
                             <div class="img"></div>
                             <div class="tree-details">
@@ -588,7 +599,7 @@
                             <div class="dislike"></div>
                           </div>
                         </li>
-                        <li class="tree_10 female">
+                        <li class="tree_10 female invisible">
                           <div class="card-wrapper">
                             <div class="img"></div>
                             <div class="tree-details">
@@ -609,7 +620,7 @@
                             <div class="dislike"></div>
                           </div>
                         </li>
-                        <li class="tree_11 female">
+                        <li class="tree_11 female invisible">
                           <div class="card-wrapper">
                             <div class="img"></div>
                             <div class="tree-details">
@@ -657,20 +668,50 @@
             </div>
         </div>
 
+        <div class="full-screen chat hidden">
+            <div class="header">
+                <img class="profile-icon" src="images/icons/profile-icon.svg">
+                <img class="logo" src="images/logo.svg" alt="Treender!">
+                <span class="chat-icon selected">
+                    <svg width="28px" height="32px" viewBox="0 0 28 32" version="1.1" xmlns="http://www.w3.org/2000/svg">
+                      <g id="Treender" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                          <g id="07-done" transform="translate(-298.000000, -14.000000)" fill="#C6C6C6">
+                              <g class="chat-svg">
+                                  <path d="M309.388277,41.9534127 L298.920277,46 L302.146143,38.1145193 C299.585835,35.5595422 298,32.0158575 298,28.0991579 C298,20.312408 304.268013,14 312,14 C319.731986,14 325.999999,20.312408 325.999999,28.0991579 C325.999999,35.8859078 319.731986,42.1983158 312,42.1983158 C311.107454,42.1983158 310.234417,42.1142008 309.388277,41.9534127 Z M306,30.1133233 C307.104569,30.1133233 308,29.2115507 308,28.0991579 C308,26.986765 307.104569,26.0849925 306,26.0849925 C304.89543,26.0849925 304,26.986765 304,28.0991579 C304,29.2115507 304.89543,30.1133233 306,30.1133233 Z M312,30.1133233 C313.104569,30.1133233 314,29.2115507 314,28.0991579 C314,26.986765 313.104569,26.0849925 312,26.0849925 C310.89543,26.0849925 310,26.986765 310,28.0991579 C310,29.2115507 310.89543,30.1133233 312,30.1133233 Z M318,30.1133233 C319.104569,30.1133233 320,29.2115507 320,28.0991579 C320,26.986765 319.104569,26.0849925 318,26.0849925 C316.89543,26.0849925 316,26.986765 316,28.0991579 C316,29.2115507 316.89543,30.1133233 318,30.1133233 Z" id="chat-icon"></path>
+                              </g>
+                          </g>
+                      </g>
+                    </svg>
+                </span>
+            </div>
+            <div class="empty-message">
+              <div class="main-text">When you match with someone,<br/>they'll show here</div>
+              <div class="empty-icon">
+                <img src="images/chat-empty.svg" />
+              </div>
+              <div style="height: 80px;"></div>
+            </div>
+        </div>
+
         <div class="full-screen who-did-dis hidden">
             <div class="top-heart">
                 <img src="images/topheart.svg" />
                 <img src="images/treender-logo-white.svg" class="logo-white" />
             </div>
             <div class="text">
-                The Treender app was created by the creative minds of the magical due Gil and Gilly,  to fill the need to hug more trees (from the inside).
-                <br/>
-                Gil is a product designer, actor, artist and a bunch of other made up titles he likes to give to himself to feel better as human beings. He likes long walkes by the beach and fast runaways from the mobs.
-                You can view his Instagram to see his stupid photos or his YouTube channel to see his stupid videos.<br/>
-                <br/>
-                Gilly is A GIANT HALF CHICKEN HALF SQUIRREL!……..<br/>
-                <br/>
-                The duo love the Internet more than life and they also made Wasted Humanity.
+                <p>
+                  The <span class="strong">treender</span> app was created by the creative due Gil and Gilly,  to fill the need to hug more trees (from the inside).
+                </p>
+                <p>
+                  <span class="strong">Gil</span> is a product designer, actor and artist. He likes long walks on the beach and fast runs from the mob.<br/>
+                  His <a href="https://www.instagram.com/flying_eggplant/" class="link">Instagram</a> has photos of things and his <a href="https://www.youtube.com/channel/UCI7Oq_RoU_m0kW9rqAvc-GA" class="link">YouTube channel</a> has videos of stuff.
+                </p>
+                <p>
+                  <span class="strong">Gilly</span> is a Front End genius and maker. He relights fires and desires nothing but your love.
+                </p>
+                <p class="small-text">
+                  All the photos used in the app are from Wikipedia and are the property of their respectful owners. If you get the kick out of copyrights, <a href="https://docs.google.com/document/d/1Dunr-qhxLgjNEUM2EZJ4eggXt6NVYn3seJVtHFrRWic" class="link">here</a>'s an entire list with links.
+                </p>
             </div>
             <div class="back link">Back</div>
             <div class="bottom-heart">
