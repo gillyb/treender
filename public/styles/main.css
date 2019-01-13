@@ -101,7 +101,7 @@ a {
 .splash-screen .logo {
     position: absolute;
     top: 230px;
-    height: 170px;
+    /*height: 170px;*/
     width: 30%;
     flex-grow: 10;
 }
@@ -138,6 +138,10 @@ a {
 }
 .who-did-dis .top-heart img, .who-did-dis .bottom-heart img {
     width: 100%; height: 100%;
+}
+.who-did-dis .back.link {
+    text-transform: uppercase;
+    letter-spacing: 3px;
 }
 
 .splash-screen .bottom-heart { position:absolute; bottom:0; }
@@ -352,7 +356,7 @@ a {
 
     .who-did-dis .top-heart { height: 92px; }
     .who-did-dis .bottom-heart { height: 56px; }
-    .who-did-dis .back.link { margin-top: 1em; text-transform: uppercase; letter-spacing: 3px; }
+    .who-did-dis .back.link { margin-top: 1em; }
     .who-did-dis .text {
         margin: 0 1em;
         overflow-y: scroll;
@@ -368,3 +372,14 @@ a {
         margin-bottom: 48px;
     }
   }
+
+
+/* For extra small screens - Especially if the height is small */
+@media only screen and (max-height: 600px) {
+
+    .splash-screen  .logo-wrapper { margin-bottom: 20px; }
+    .full-screen.steps .bottom { margin-bottom: 40px; }
+    .full-screen.steps .swipe-area { padding: 0 40px; width: calc(100% - 80px); }
+    .match-with .bottom .button { margin-bottom: 40px; }
+
+}
