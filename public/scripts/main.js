@@ -96,7 +96,6 @@ $(function() {
           closeInfoButton.addClass('active');
           closeInfoButton.one('click', function() {
             $(this).removeClass('active');
-            // TODO: close info
             infoButton.removeClass('hidden');
             treeName.css('color', '#fff');
             treeDescription.css({
@@ -287,6 +286,8 @@ $(function() {
             'opacity': 0,
             'position': 'absolute'
           }).addClass('invisible');
+        card.find('.tree-details .info-button .close').removeClass('active');
+        card.find('.tree-details .info-button .info').removeClass('hidden');
       },
       endDragEvent: function(card) {
         // debugger;
