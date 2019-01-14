@@ -14,7 +14,7 @@
     height: 32px;
     vertical-align: middle;
 }
-.trees .header .profile-icon, .chat .header .profile-icon { float: left; margin: 14px 0 0 20px; }
+.trees .header .share-icon, .chat .header .share-icon { float: left; margin: 14px 0 0 20px; }
 .trees .header .chat-icon, .chat .header .chat-icon { float: right; margin: 11px 20px 0 0; }
 .trees .header .chat-icon.selected .chat-svg, .chat .header .chat-icon.selected .chat-svg { fill: #0D8037; }
 

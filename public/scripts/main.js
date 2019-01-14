@@ -196,7 +196,7 @@ $(function() {
 
   setTimeout(function() {
     animateSplashScreen();
-  }, 400);
+  }, 1200);
 
 
   // homepage
