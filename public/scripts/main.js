@@ -37,10 +37,10 @@ $(function() {
     "images/trees/hadar1.jpg",
     "images/trees/hadas1.jpg",
     "images/trees/arava1.jpg",
-    "images/trees/Klilhachoresh01.jpg",
+    "images/trees/klilhachoresh01.jpg",
     "images/trees/moran1.jpg",
     "images/trees/shaked1.jpg",
-    "images/trees/shikma1.JPG",
+    "images/trees/shikma1.jpg",
     "images/trees/shaked1.jpg",
     "images/trees/tooti1.jpg",
     "images/trees/tamar1.jpg",
@@ -50,10 +50,7 @@ $(function() {
     "images/trees/erez1.jpg",
     "images/trees/eshel1.jpg",
     "images/trees/dolev1.jpg",
-    "images/trees/shaked1.jpg",
-    "images/trees/dekel1.jpg",
-    "images/trees/ashor1.JPG",
-    "images/trees/hadar1.jpg",
+    "images/trees/ashor1.jpg",
     "images/trees/bonsai.jpg"];
     for (var i=0; i<treeImages.length; i++) {
       (new Image()).src = treeImages[i];
