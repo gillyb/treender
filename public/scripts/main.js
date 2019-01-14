@@ -253,6 +253,9 @@ $(function() {
   // header buttons
   $('.full-screen .header .chat-icon').click(function() {
     showChat();
+    $('.full-screen.chat .header .logo').one('click', function() {
+      showTrees();
+    });
   });
 
   // treender cards

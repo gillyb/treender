@@ -230,6 +230,26 @@
     margin-bottom: 20px;
 }
 
+.trees .location-wrapper {
+    margin-bottom: 6px;
+    color: #aeaeae;
+}
+.trees .instagram-wrapper {
+    margin-bottom: 12px;
+    color: #aeaeae;
+}
+.trees .location-wrapper .location-icon {
+    vertical-align: middle;
+    margin-right: 6px;
+    margin-left: 2px;
+}
+.trees .instagram-wrapper .instagram-icon {
+    width: 16px;
+    vertical-align: middle;
+    padding-bottom: 2px;
+    margin-right: 4px;
+}
+
 
 @media only screen and (min-width: 768px) {
     .trees ul {
