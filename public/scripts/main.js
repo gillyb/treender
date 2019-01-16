@@ -29,6 +29,8 @@ $(function() {
 
   $('.hacks').addClass('hidden');
 
+  savePageState({ home: true }, 'home', '/');
+
   var treeImagesHeight;
   var viewportHeight = $(window).height();
   var headerHeight = $('.trees .header').outerHeight(true);
@@ -87,6 +89,7 @@ $(function() {
 
       $('.card-actions').addClass('bordered');
       treeName.css('color', '#444');
+      treeDetails.addClass('full');
 
       requestAnimationFrame(function() {
         // wrapper.find('.tree-details .description').css('opacity', 1).removeClass('hidden');
@@ -99,6 +102,7 @@ $(function() {
           closeInfoButton.one('click', function() {
             $(this).removeClass('active');
             infoButton.removeClass('hidden');
+            treeDetails.removeClass('full');
             treeName.css('color', '#fff');
             treeDescription.css({
               'position': 'absolute',
@@ -107,7 +111,7 @@ $(function() {
             });
             surround.css({
               'height': treeImagesHeight,
-              'top': 20
+              'top': 8
             });
             wrapper.find('.img').animate({
               'top': 0
@@ -136,11 +140,20 @@ $(function() {
 
   function hideAllScreens() { $('.full-screen').addClass('hidden'); }
   function showSplashScreen() { hideAllScreens(); $('.full-screen.splash-screen').removeClass('hidden'); }
-  function showAboutScreen() { hideAllScreens(); $('.full-screen.who-did-dis').removeClass('hidden'); }
+  function showAboutScreen() {
+    hideAllScreens();
+    $('.full-screen.who-did-dis').removeClass('hidden');
+    savePageState({ about: true }, 'about', '/about');
+  }
   function showGender() { hideAllScreens(); $('.full-screen.match-with').removeClass('hidden'); }
-  function showChat() { hideAllScreens(); $('.full-screen.chat').removeClass('hidden'); }
+  function showChat() {
+    hideAllScreens();
+    $('.full-screen.chat').removeClass('hidden');
+    savePageState({ chat: true }, 'chat', '/chat');
+  }
   function showTrees() {
     hideAllScreens();
+    savePageState({ trees: true }, 'trees', '/trees');
     var treesScreen = $('.full-screen.trees');
     treesScreen.removeClass('hidden');
     if (!$('.match-with .button.radio.male').hasClass('selected'))
@@ -152,6 +165,7 @@ $(function() {
   }
   function showWalkthrough() {
     hideAllScreens();
+    savePageState({ walkthrough: true }, 'walkthrough', '/walkthrough');
     $('.full-screen.steps').removeClass('hidden');
     var carousel = $('.steps .swipe-container').flickity({ contain: true, prevNextButtons: false });
     carousel.on( 'change.flickity', function( event, index ) {
@@ -279,9 +293,10 @@ $(function() {
       startDragEvent: function(card) {
         $('.card-actions').removeClass('bordered');
         card.find('.card-wrapper').css('background-color', 'transparent');
-        card.css('top', '20px');
+        card.css('top', '8px');
         card.css('height', treeImagesHeight);
         card.find('.tree-details .name').css('color', '#fff');
+        card.find('.tree-details').removeClass('full');
         card.find('.img').css('top', '0');
         card.find('.tree-details .description')
           .css({
@@ -304,6 +319,40 @@ $(function() {
       e.preventDefault();
       $("#tree-cards").jTinder($(this).attr('class'));
     });
+  }
+
+
+  // NAVIGATION //
+  function savePageState(obj, pageName, pageUrl) {
+    try {
+      window.history.pushState(obj, pageName, pageUrl);
+      window.onpopstate = function(event) {
+        var state = event.state;
+        if (state.home) {
+          showSplashScreen();
+          return;
+        }
+        if (state.trees) {
+          showTrees();
+          return;
+        }
+        if (state.walkthrough) {
+          showWalkthrough();
+          return;
+        }
+        if (state.chat) {
+          showChat();
+          return;
+        }
+        if (state.about) {
+          showAboutScreen();
+          return;
+        }
+      };
+    }
+    catch (e) {
+      // do nothing...
+    }
   }
 
 });

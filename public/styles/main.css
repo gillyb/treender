@@ -47,12 +47,14 @@ a {
     cursor: pointer;
     min-width: 160px;
     padding: 0 40px;
+    font-weight: bold;
 }
 .button.primary {
     color: #fff;
     background: linear-gradient(180deg, #15CC57, #0E7F34);
     border: none;
     font-weight: bold;
+    text-transform: uppercase;
 }
 .button.radio.selected {
     background-color: rgba(21,204,87,0.3);
@@ -142,7 +144,11 @@ a {
 .who-did-dis .back.link {
     text-transform: uppercase;
     letter-spacing: 3px;
+    text-decoration: none;
+    font-weight: bold;
 }
+.who-did-dis .small-text { margin-top: 28px; }
+.who-did-dis .link { font-weight: bold; }
 
 .splash-screen .bottom-heart { position:absolute; bottom:0; }
 .splash-screen .link.who-did-dis { margin-top: 20px; text-transform: uppercase; }
