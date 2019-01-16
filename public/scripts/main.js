@@ -65,6 +65,8 @@ $(function() {
   function bindInfoButton() {
     $('.tree-details .info-button .info').on('click', function() {
 
+      pageEvent('open info', 'trees', 'info');  // TODO: maybe we can send the specific tree?
+
       var wrapper = $(this).parents('.card-wrapper');
       var surround = $(this).parents('li');
       var treeDetails = wrapper.find('.tree-details');
@@ -144,12 +146,18 @@ $(function() {
     hideAllScreens();
     $('.full-screen.who-did-dis').removeClass('hidden');
     savePageState({ about: true }, 'about', '/about');
+    pageView('about', '/about');
   }
-  function showGender() { hideAllScreens(); $('.full-screen.match-with').removeClass('hidden'); }
+  function showGender() {
+    hideAllScreens();
+    $('.full-screen.match-with').removeClass('hidden');
+    pageView('choose gender', '/choose-gender');
+  }
   function showChat() {
     hideAllScreens();
     $('.full-screen.chat').removeClass('hidden');
     savePageState({ chat: true }, 'chat', '/chat');
+    pageView('chat', '/chat');
   }
   function showTrees() {
     hideAllScreens();
@@ -162,6 +170,7 @@ $(function() {
       treesScreen.find('.female').addClass('hidden');
     setTreesImagesHeight();
     bindInfoButton();
+    pageView('trees', '/trees');
   }
   function showWalkthrough() {
     hideAllScreens();
@@ -175,6 +184,7 @@ $(function() {
         }, 600);
       }
     });
+    pageView('walkthrough', '/walkthrough');
   }
 
 
@@ -275,15 +285,15 @@ $(function() {
     $("#tree-cards").jTinder({
       // dislike callback
       onDislike: function (item) {
-        // set the status text
-        $('#status').html('Dislike image ' + (item.index() + 1));
+        pageEvent('like', 'swipe', 'like');
       },
       // like callback
       onLike: function (item) {
-        // set the status text
-        $('#status').html('Like image ' + (item.index() + 1));
+        pageEvent('like', 'swipe', 'like');
       },
       doneCallback: function() {
+        pageEvent('swiped all', 'trees', 'done');
+
         $('.full-screen.trees .cards-area-wrapper').addClass('hidden');
         $('.full-screen.trees .empty-message').removeClass('hidden');
         requestAnimationFrame(function() {
@@ -349,6 +359,31 @@ $(function() {
           return;
         }
       };
+    }
+    catch (e) {
+      // do nothing...
+    }
+  }
+
+
+  // ANALYTICS //
+  function pageView(title, url) {
+    try {
+      gtag('config', 'GA_TRACKING_ID', {
+        'page_title': title,
+        'page_path': url
+      });
+    }
+    catch (e) {
+      // do nothing...
+    }
+  }
+  function pageEvent(action, category, label) {
+    try {
+      gtag('event', action, {
+        'event_category': category,
+        'event_label': label
+      });
     }
     catch (e) {
       // do nothing...
