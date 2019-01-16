@@ -369,7 +369,7 @@ $(function() {
   // ANALYTICS //
   function pageView(title, url) {
     try {
-      gtag('config', 'GA_TRACKING_ID', {
+      gtag('config', 'UA-132268378-1', {
         'page_title': title,
         'page_path': url
       });
