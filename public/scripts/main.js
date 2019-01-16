@@ -27,6 +27,8 @@
 
 $(function() {
 
+  $('.hacks').addClass('hidden');
+
   var treeImagesHeight;
   var viewportHeight = $(window).height();
   var headerHeight = $('.trees .header').outerHeight(true);
@@ -153,9 +155,9 @@ $(function() {
     $('.full-screen.steps').removeClass('hidden');
     var carousel = $('.steps .swipe-container').flickity({ contain: true, prevNextButtons: false });
     carousel.on( 'change.flickity', function( event, index ) {
-      if (index === 1) {
+      if (index === 2) {
         setTimeout(function () {
-          $('.full-screen.steps .step-2 .tree-image .tree-heart').addClass('swiped');
+          $('.full-screen.steps .step-3 .tree-image .tree-heart, .full-screen.steps .step-3 .like').addClass('swiped');
         }, 600);
       }
     });
