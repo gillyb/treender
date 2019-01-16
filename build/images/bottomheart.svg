@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 360 200" preserveAspectRatio="none">
+    <defs>
+        <linearGradient id="linear-gradient" x1="-710.78" y1="-128.18" x2="-560.78" y2="-214.78" gradientTransform="matrix(0, -1, -1, 0, -96.48, -492.48)" gradientUnits="userSpaceOnUse">
+            <stop offset="0" stop-color="#0d8037"/>
+            <stop offset="1" stop-color="#15cc57"/>
+        </linearGradient>
+        <linearGradient id="linear-gradient-2" x1="-710.78" y1="-110.68" x2="-560.78" y2="-197.28" gradientTransform="translate(438.98 -492.48) rotate(-90)" xlink:href="#linear-gradient"/>
+    </defs>
+    <g id="Layer_2" data-name="Layer 2">
+        <g id="Layer_1-2" data-name="Layer 1">
+            <polygon fill="url(#linear-gradient)" class="cls-1" points="200 200 0 200 0 0 200 200"/>
+            <polygon fill="url(#linear-gradient-2)" class="cls-2" points="160 200 360 200 360 0 160 200"/>
+        </g>
+    </g>
+</svg>

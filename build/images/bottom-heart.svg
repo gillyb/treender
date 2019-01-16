@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="500px" height="260px" viewBox="0 0 500 260" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" preserveAspectRatio="none">
+    <linearGradient id="grad1" x1="0%" y1="0%" x2="0%" y2="100%">
+        <stop offset="0%" style="stop-color:#15CC57;stop-opacity:1" />
+        <stop offset="100%" style="stop-color:#15826A;stop-opacity:1" />
+    </linearGradient>
+
+    <linearGradient id="grad2" x1="100%" y1="100%" x2="0%" y2="0%">
+        <stop offset="0%" style="stop-color:#15CC57;stop-opacity:1" />
+        <stop offset="100%" style="stop-color:#15826A;stop-opacity:1" />
+    </linearGradient>
+
+    <polygon fill="url(#grad1)" points="0,0 260,260 0,260" />
+    <polygon fill="url(#grad2)" points="240,260 500,0 500,260" />
+</svg>
