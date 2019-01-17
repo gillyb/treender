@@ -32,13 +32,22 @@
     <meta property="og:type"          content="website" />
     <meta property="og:title"         content="treender :: a dating app for trees" />
     <meta property="og:description"   content="match. chat. blossom" />
-    <meta property="og:image"         content="http://treenderapp.com/images/fb-share-image.png" />
+    <meta property="og:image"         content="http://treenderapp.com/images/fb-share-image-2.png" />
 
     <link href="https://fonts.googleapis.com/css?family=Lato:400,400i,700,700i,900,900i|Open+Sans|Yellowtail" rel="stylesheet">
 
     <link rel="stylesheet" href="styles/main.min.css"/>
 
-    <script src="scripts/main.min.js"></script>
+    <script src="scripts/3rdparty/jquery-3.1.1.min.js"></script>
+
+    <!-- Flickity plugin -->
+    <script src="scripts/3rdparty/flickity/flickity.min.js"></script>
+
+    <!-- jTinder plugin -->
+    <script src="scripts/3rdparty/jTinder/js/jquery.transform2d.js"></script>
+    <script src="scripts/3rdparty/jTinder/js/jquery.jTinder.js"></script>
+
+    <script src="scripts/main.js"></script>
 </head>
 <body>
 
@@ -65,25 +74,26 @@
     <div class="page-container">
 
         <div class="full-screen splash-screen">
-            <div class="top-heart"></div>
-            <img class="logo" src="images/treender-logo.svg" alt="Treender!" class="logo">
-            <div class="bottom-heart"></div>
+            <img class="logo" src="images/logo-grad-white.svg" alt="Treender!" />
 
-            <div class="welcome-text">
-                <div class="logo-wrapper fade-in inline-block"></div>
-                <div class="header fade-in welcome">welcome to</div>
-                <div class="header fade-in treender">treender</div>
-                <div class="sub-header fade-in">The dating app for trees</div>
-            </div>
+            <div class="welcome-screen fade-in">
 
-            <div class="buttons-wrapper">
-                <div class="how-does-it-work button fade-in">How does it work?</div>
-                <div class="lets-start button primary fade-in">Let's start!</div>
-            </div>
+              <div class="welcome-text">
+                <img class="welcome-logo" src="images/logo-grad-white.svg" />
+                <div class="header welcome">welcome to</div>
+                <div class="header treender">treender</div>
+                <div class="sub-header">The dating app for trees</div>
+              </div>
 
-            <div class="bottom fade-in">
-                <a class="share-this-brilliance button" href="https://www.facebook.com/sharer/sharer.php?u=http://treenderapp.com" target="_blank">Share this brilliance</a>
-                <div class="link who-did-dis">Who did dis?</div>
+              <div class="buttons-wrapper">
+                <div class="how-does-it-work button">How does it work?</div>
+                <div class="lets-start button primary">Let's start!</div>
+              </div>
+
+              <div class="bottom">
+                <a class="link share-this-brilliance" href="https://www.facebook.com/sharer/sharer.php?u=http://treenderapp.com" target="_blank">Share</a>
+                <span class="link who-did-dis">Who did dis?</span>
+              </div>
             </div>
         </div>
 
@@ -198,14 +208,16 @@
                         <li class="tree_1 male invisible">
                           <div class="card-wrapper">
                             <div class="img"></div>
-                            <div class="tree-details">
+                            <div class="like"></div>
+                            <div class="dislike"></div>
+                            <div class="tree-details no-swipe">
                               <span class="info-button no-swipe">
                                 <img class="close" src="images/close-info.svg" />
                                 <img class="info" src="images/icons/info.svg" />
                               </span>
                               <div class="name">
                                 Oren
-                                <span class="age">, 43</span>
+                                <span class="age no-swipe">, 43</span>
                               </div>
                               <div class="description invisible">
                                 <div class="location-wrapper">
@@ -217,21 +229,21 @@
                                 איש של הידיים - מבשל, בונה ומפנק.
                               </div>
                             </div>
-                            <div class="like"></div>
-                            <div class="dislike"></div>
                           </div>
                         </li>
                         <li class="tree_2 male invisible">
                           <div class="card-wrapper">
                             <div class="img"></div>
-                            <div class="tree-details">
+                            <div class="like"></div>
+                            <div class="dislike"></div>
+                            <div class="tree-details no-swipe">
                               <span class="info-button no-swipe">
                                 <img class="close" src="images/close-info.svg" />
                                 <img class="info" src="images/icons/info.svg" />
                               </span>
                               <div class="name">
                                 Alon
-                                <span class="age">, 43</span>
+                                <span class="age no-swipe">, 43</span>
                               </div>
                               <div class="description invisible">
                                 <div class="location-wrapper">
@@ -241,21 +253,21 @@
                                 ״עדיף שתי ציפורים אצלי מאשר כלבה על ארבע״
                               </div>
                             </div>
-                            <div class="like"></div>
-                            <div class="dislike"></div>
                           </div>
                         </li>
                         <li class="tree_3 male invisible">
                           <div class="card-wrapper">
                             <div class="img"></div>
-                            <div class="tree-details">
+                            <div class="like"></div>
+                            <div class="dislike"></div>
+                            <div class="tree-details no-swipe">
                               <span class="info-button no-swipe">
                                 <img class="close" src="images/close-info.svg" />
                                 <img class="info" src="images/icons/info.svg" />
                               </span>
                               <div class="name">
                                 Ilan
-                                <span class="age">, 33</span>
+                                <span class="age no-swipe">, 33</span>
                               </div>
                               <div class="description invisible">
                                 <div class="location-wrapper">
@@ -275,21 +287,21 @@
                                 Netflix andChill lo
                               </div>
                             </div>
-                            <div class="like"></div>
-                            <div class="dislike"></div>
                           </div>
                         </li>
                         <li class="tree_4 male invisible">
                           <div class="card-wrapper">
                             <div class="img"></div>
-                            <div class="tree-details">
+                            <div class="like"></div>
+                            <div class="dislike"></div>
+                            <div class="tree-details no-swipe">
                               <span class="info-button no-swipe">
                                 <img class="close" src="images/close-info.svg" />
                                 <img class="info" src="images/icons/info.svg" />
                               </span>
                               <div class="name">
                                 Erez
-                                <span class="age">, 122</span>
+                                <span class="age no-swipe">, 122</span>
                               </div>
                               <div class="description invisible">
                                 <div class="location-wrapper">
@@ -302,21 +314,21 @@
                                 הנדסת קרקע ומים בפקולטה 🎓
                               </div>
                             </div>
-                            <div class="like"></div>
-                            <div class="dislike"></div>
                           </div>
                         </li>
                         <li class="tree_5 male invisible">
                           <div class="card-wrapper">
                             <div class="img"></div>
-                            <div class="tree-details">
+                            <div class="like"></div>
+                            <div class="dislike"></div>
+                            <div class="tree-details no-swipe">
                               <span class="info-button no-swipe">
                                 <img class="close" src="images/close-info.svg" />
                                 <img class="info" src="images/icons/info.svg" />
                               </span>
                               <div class="name">
                                 Eshel
-                                <span class="age">, 85</span>
+                                <span class="age no-swipe">, 85</span>
                               </div>
                               <div class="description invisible">
                                 <div class="location-wrapper">
@@ -326,21 +338,21 @@
                                 זה שאני מוגן עפ״י חוק לא אומר שאני לא פורע חוק 😎
                               </div>
                             </div>
-                            <div class="like"></div>
-                            <div class="dislike"></div>
                           </div>
                         </li>
                         <li class="tree_6 male invisible">
                           <div class="card-wrapper">
                             <div class="img"></div>
-                            <div class="tree-details">
+                            <div class="like"></div>
+                            <div class="dislike"></div>
+                            <div class="tree-details no-swipe">
                               <span class="info-button no-swipe">
                                 <img class="close" src="images/close-info.svg" />
                                 <img class="info" src="images/icons/info.svg" />
                               </span>
                               <div class="name">
                                 Dolev
-                                <span class="age">, 42</span>
+                                <span class="age no-swipe">, 42</span>
                               </div>
                               <div class="description english invisible">
                                 <div class="location-wrapper">
@@ -351,21 +363,21 @@
                                 Fitness 💪
                               </div>
                             </div>
-                            <div class="like"></div>
-                            <div class="dislike"></div>
                           </div>
                         </li>
                         <li class="tree_7 male invisible">
                           <div class="card-wrapper">
                             <div class="img"></div>
-                            <div class="tree-details">
+                            <div class="like"></div>
+                            <div class="dislike"></div>
+                            <div class="tree-details no-swipe">
                               <span class="info-button no-swipe">
                                 <img class="close" src="images/close-info.svg" />
                                 <img class="info" src="images/icons/info.svg" />
                               </span>
                               <div class="name">
                                 Shaked
-                                <span class="age">, 28</span>
+                                <span class="age no-swipe">, 28</span>
                               </div>
                               <div class="description invisible">
                                 <div class="location-wrapper">
@@ -380,21 +392,21 @@
                                 ❤️
                               </div>
                             </div>
-                            <div class="like"></div>
-                            <div class="dislike"></div>
                           </div>
                         </li>
                         <li class="tree_8 male invisible">
                           <div class="card-wrapper">
                             <div class="img"></div>
-                            <div class="tree-details">
+                            <div class="like"></div>
+                            <div class="dislike"></div>
+                            <div class="tree-details no-swipe">
                               <span class="info-button no-swipe">
                                 <img class="close" src="images/close-info.svg" />
                                 <img class="info" src="images/icons/info.svg" />
                               </span>
                               <div class="name">
                                 Dekel
-                                <span class="age">, 45</span>
+                                <span class="age no-swipe">, 45</span>
                               </div>
                               <div class="description invisible">
                                 <div class="location-wrapper">
@@ -405,21 +417,21 @@
                                 בואי נעוף עליהם.
                               </div>
                             </div>
-                            <div class="like"></div>
-                            <div class="dislike"></div>
                           </div>
                         </li>
                         <li class="tree_9 male invisible">
                           <div class="card-wrapper">
                             <div class="img"></div>
-                            <div class="tree-details">
+                            <div class="like"></div>
+                            <div class="dislike"></div>
+                            <div class="tree-details no-swipe">
                               <span class="info-button no-swipe">
                                 <img class="close" src="images/close-info.svg" />
                                 <img class="info" src="images/icons/info.svg" />
                               </span>
                               <div class="name">
                                 Ashor
-                                <span class="age">, 93</span>
+                                <span class="age no-swipe">, 93</span>
                               </div>
                               <div class="description invisible">
                                 <div class="location-wrapper">
@@ -429,21 +441,21 @@
                                 א
                               </div>
                             </div>
-                            <div class="like"></div>
-                            <div class="dislike"></div>
                           </div>
                         </li>
                         <li class="tree_10 male invisible">
                           <div class="card-wrapper">
                             <div class="img"></div>
-                            <div class="tree-details">
+                            <div class="like"></div>
+                            <div class="dislike"></div>
+                            <div class="tree-details no-swipe">
                               <span class="info-button no-swipe">
                                 <img class="close" src="images/close-info.svg" />
                                 <img class="info" src="images/icons/info.svg" />
                               </span>
                               <div class="name">
                                 Hadar
-                                <span class="age">, 39</span>
+                                <span class="age no-swipe">, 39</span>
                               </div>
                               <div class="description invisible">
                                 <div class="location-wrapper">
@@ -455,21 +467,21 @@
                                 🍊
                               </div>
                             </div>
-                            <div class="like"></div>
-                            <div class="dislike"></div>
                           </div>
                         </li>
                         <li class="tree_11 male invisible">
                           <div class="card-wrapper">
                             <div class="img"></div>
-                            <div class="tree-details">
+                            <div class="like"></div>
+                            <div class="dislike"></div>
+                            <div class="tree-details no-swipe">
                               <span class="info-button no-swipe">
                                 <img class="close" src="images/close-info.svg" />
                                 <img class="info" src="images/icons/info.svg" />
                               </span>
                               <div class="name">
                                 Bonsai
-                                <span class="age">, 25</span>
+                                <span class="age no-swipe">, 25</span>
                               </div>
                               <div class="description english invisible">
                                 <div class="location-wrapper">
@@ -481,22 +493,22 @@
                                 Short and quirky.
                               </div>
                             </div>
-                            <div class="like"></div>
-                            <div class="dislike"></div>
                           </div>
                         </li>
 
                         <li class="tree_1 female invisible">
                           <div class="card-wrapper">
                             <div class="img"></div>
-                            <div class="tree-details">
+                            <div class="like"></div>
+                            <div class="dislike"></div>
+                            <div class="tree-details no-swipe">
                               <span class="info-button no-swipe">
                                 <img class="close" src="images/close-info.svg" />
                                 <img class="info" src="images/icons/info.svg" />
                               </span>
                               <div class="name">
                                 Hadas
-                                <span class="age">, 34</span>
+                                <span class="age no-swipe">, 34</span>
                               </div>
                               <div class="description invisible">
                                 <div class="location-wrapper">
@@ -507,21 +519,21 @@
                                 אוהבת את שאר שלושת המינים😉
                               </div>
                             </div>
-                            <div class="like"></div>
-                            <div class="dislike"></div>
                           </div>
                         </li>
                         <li class="tree_2 female invisible">
                           <div class="card-wrapper">
                             <div class="img"></div>
-                            <div class="tree-details">
+                            <div class="like"></div>
+                            <div class="dislike"></div>
+                            <div class="tree-details no-swipe">
                               <span class="info-button no-swipe">
                                 <img class="close" src="images/close-info.svg" />
                                 <img class="info" src="images/icons/info.svg" />
                               </span>
                               <div class="name">
                                 Arava
-                                <span class="age">, 65</span>
+                                <span class="age no-swipe">, 65</span>
                               </div>
                               <div class="description english invisible">
                                 <div class="location-wrapper">
@@ -533,21 +545,21 @@
                                 ☀️🕉️🚬
                               </div>
                             </div>
-                            <div class="like"></div>
-                            <div class="dislike"></div>
                           </div>
                         </li>
                         <li class="tree_3 female invisible">
                           <div class="card-wrapper">
                             <div class="img"></div>
-                            <div class="tree-details">
+                            <div class="like"></div>
+                            <div class="dislike"></div>
+                            <div class="tree-details no-swipe">
                                 <span class="info-button no-swipe">
                                   <img class="close" src="images/close-info.svg" />
                                   <img class="info" src="images/icons/info.svg" />
                                 </span>
                               <div class="name">
                                 Ella
-                                <span class="age">, 35</span>
+                                <span class="age no-swipe">, 35</span>
                               </div>
                               <div class="description invisible">
                                 <div class="location-wrapper">
@@ -557,21 +569,21 @@
                                 ❤️🐶
                               </div>
                             </div>
-                            <div class="like"></div>
-                            <div class="dislike"></div>
                           </div>
                         </li>
                         <li class="tree_4 female invisible">
                           <div class="card-wrapper">
                             <div class="img"></div>
-                            <div class="tree-details">
+                            <div class="like"></div>
+                            <div class="dislike"></div>
+                            <div class="tree-details no-swipe">
                               <span class="info-button no-swipe">
                                 <img class="close" src="images/close-info.svg" />
                                 <img class="info" src="images/icons/info.svg" />
                               </span>
                               <div class="name">
                                 כליל החורש
-                                <span class="age">, 37</span>
+                                <span class="age no-swipe">, 37</span>
                               </div>
                               <div class="description invisible">
                                 <div class="location-wrapper">
@@ -583,21 +595,21 @@
                                 קטנה אך מסוכנת.
                               </div>
                             </div>
-                            <div class="like"></div>
-                            <div class="dislike"></div>
                           </div>
                         </li>
                         <li class="tree_5 female invisible">
                           <div class="card-wrapper">
                             <div class="img"></div>
-                            <div class="tree-details">
+                            <div class="like"></div>
+                            <div class="dislike"></div>
+                            <div class="tree-details no-swipe">
                               <span class="info-button no-swipe">
                                 <img class="close" src="images/close-info.svg" />
                                 <img class="info" src="images/icons/info.svg" />
                               </span>
                               <div class="name">
                                 Moran
-                                <span class="age">, 33</span>
+                                <span class="age no-swipe">, 33</span>
                               </div>
                               <div class="description invisible">
                                 <div class="location-wrapper">
@@ -607,21 +619,21 @@
                                 דרוש חבר לחורף עם אופציה לשאר עונות השנה ;)
                               </div>
                             </div>
-                            <div class="like"></div>
-                            <div class="dislike"></div>
                           </div>
                         </li>
                         <li class="tree_6 female invisible">
                           <div class="card-wrapper">
                             <div class="img"></div>
-                            <div class="tree-details">
+                            <div class="like"></div>
+                            <div class="dislike"></div>
+                            <div class="tree-details no-swipe">
                               <span class="info-button no-swipe">
                                 <img class="close" src="images/close-info.svg" />
                                 <img class="info" src="images/icons/info.svg" />
                               </span>
                               <div class="name">
                                 Shaked
-                                <span class="age">, 23</span>
+                                <span class="age no-swipe">, 23</span>
                               </div>
                               <div class="description english invisible">
                                 <div class="location-wrapper">
@@ -633,41 +645,40 @@
                                 Chocolate is salad
                               </div>
                             </div>
-                            <div class="like"></div>
-                            <div class="dislike"></div>
                           </div>
                         </li>
                         <li class="tree_7 female invisible">
                           <div class="card-wrapper">
                             <div class="img"></div>
-                            <div class="tree-details">
+                            <div class="like"></div>
+                            <div class="dislike"></div>
+                            <div class="tree-details no-swipe">
                               <span class="info-button no-swipe">
                                 <img class="close" src="images/close-info.svg" />
                                 <img class="info" src="images/icons/info.svg" />
                               </span>
                               <div class="name">
                                 Shikma
-                                <!--<span class="age">, 32</span>-->
                               </div>
                               <div class="description invisible">
                                 שקמה, 3 מטר, גרה ברוטשילד אבל לא העץ הטיפוסי.מחפשת מישהו לשים עליו ראש שגם אוהב כלבים. שותף לכרבולים מול הנטפליקס. שיהיה גאה כמוני שאני מחולון. תטעם ממני ותתאהב. אז בלי משחקים ובלי אגו.
                               </div>
                             </div>
-                            <div class="like"></div>
-                            <div class="dislike"></div>
                           </div>
                         </li>
                         <li class="tree_8 female invisible">
                           <div class="card-wrapper">
                             <div class="img"></div>
-                            <div class="tree-details">
+                            <div class="like"></div>
+                            <div class="dislike"></div>
+                            <div class="tree-details no-swipe">
                               <span class="info-button no-swipe">
                                 <img class="close" src="images/close-info.svg" />
                                 <img class="info" src="images/icons/info.svg" />
                               </span>
                               <div class="name">
                                 Tuti
-                                <span class="age">, 30</span>
+                                <span class="age no-swipe">, 30</span>
                               </div>
                               <div class="description invisible">
                                 <div class="location-wrapper">
@@ -681,42 +692,39 @@
                                 🍓
                               </div>
                             </div>
-                            <div class="like"></div>
-                            <div class="dislike"></div>
                           </div>
                         </li>
                         <li class="tree_9 female invisible">
                           <div class="card-wrapper">
                             <div class="img"></div>
-                            <div class="tree-details">
+                            <div class="like"></div>
+                            <div class="dislike"></div>
+                            <div class="tree-details no-swipe">
                               <span class="info-button no-swipe">
                                 <img class="close" src="images/close-info.svg" />
                                 <img class="info" src="images/icons/info.svg" />
                               </span>
                               <div class="name">
                                 Tamar
-                                <!--<span class="age">, 32</span>-->
                               </div>
                               <div class="description invisible">
-                                <!--This is just some silly description of the tree.<br/>-->
-                                <!--Hi, whatsup ? Cool, me too...-->
                               </div>
                             </div>
-                            <div class="like"></div>
-                            <div class="dislike"></div>
                           </div>
                         </li>
                         <li class="tree_10 female invisible">
                           <div class="card-wrapper">
                             <div class="img"></div>
-                            <div class="tree-details">
+                            <div class="like"></div>
+                            <div class="dislike"></div>
+                            <div class="tree-details no-swipe">
                               <span class="info-button no-swipe">
                                 <img class="close" src="images/close-info.svg" />
                                 <img class="info" src="images/icons/info.svg" />
                               </span>
                               <div class="name">
                                 Hadar
-                                <span class="age">, 44</span>
+                                <span class="age no-swipe">, 44</span>
                               </div>
                               <div class="description invisible">
                                 <div class="location-wrapper">
@@ -733,21 +741,21 @@
                                 "If you want my future, forget my past״ - ספייס גירלז
                               </div>
                             </div>
-                            <div class="like"></div>
-                            <div class="dislike"></div>
                           </div>
                         </li>
                         <li class="tree_11 female invisible">
                           <div class="card-wrapper">
                             <div class="img"></div>
-                            <div class="tree-details">
+                            <div class="like"></div>
+                            <div class="dislike"></div>
+                            <div class="tree-details no-swipe">
                               <span class="info-button no-swipe">
                                 <img class="close" src="images/close-info.svg" />
                                 <img class="info" src="images/icons/info.svg" />
                               </span>
                               <div class="name">
                                 Dekel
-                                <span class="age">, 22</span>
+                                <span class="age no-swipe">, 22</span>
                               </div>
                               <div class="description english invisible">
                                 <div class="location-wrapper">
@@ -757,13 +765,13 @@
                                 Let’s party ;)
                               </div>
                             </div>
-                            <div class="like"></div>
-                            <div class="dislike"></div>
                           </div>
                         </li>
                         <li class="tree_12 female invisible">
                           <div class="card-wrapper">
                             <div class="img"></div>
+                            <div class="like"></div>
+                            <div class="dislike"></div>
                             <div class="tree-details no-swipe">
                               <span class="info-button no-swipe">
                                 <img class="close" src="images/close-info.svg" />
@@ -771,7 +779,7 @@
                               </span>
                               <div class="name">
                                 Hadar
-                                <span class="age">, 36</span>
+                                <span class="age no-swipe">, 36</span>
                               </div>
                               <div class="description english invisible">
                                 <div class="location-wrapper">
@@ -783,8 +791,6 @@
                                 🚭
                               </div>
                             </div>
-                            <div class="like"></div>
-                            <div class="dislike"></div>
                           </div>
                         </li>
 
@@ -806,9 +812,11 @@
                   </div>
                   <div class="buttons-wrapper">
                     <div class="button start-over">Let's start over</div>
-                    <a class="share-this-brilliance button" href="https://www.facebook.com/sharer/sharer.php?u=http://treenderapp.com" target="_blank">Share this brilliance</a>
                   </div>
-                  <div class="link who-did-dis">Who did dis?</div>
+                  <div class="bottom-links">
+                    <a class="share-this-brilliance link" href="https://www.facebook.com/sharer/sharer.php?u=http://treenderapp.com" target="_blank">Share</a>
+                    <span class="link who-did-dis">Who did dis?</span>
+                  </div>
                 </div>
 
             </div>
