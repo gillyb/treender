@@ -71,6 +71,7 @@ a {
     color: #0D8037;
     text-decoration: underline;
     cursor: pointer;
+    font-weight: bold;
 }
 .link:hover {
     text-decoration: none;
@@ -152,6 +153,8 @@ a {
 .splash-screen .treender { margin-bottom: 22px; }
 .splash-screen .sub-header {  }
 .splash-screen .bottom { margin-bottom: 50px; }
+.splash-screen .bottom .link { font-weight: bold; text-decoration: none; text-transform: uppercase; }
+.splash-screen .bottom .link.share-this-brilliance { margin-right: 30px; }
 .splash-screen .buttons-wrapper .button.how-does-it-work { margin-bottom: 20px; }
 
 .splash-screen .fade-in {

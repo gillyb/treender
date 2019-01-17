@@ -105,6 +105,7 @@ $(function() {
             ev.preventDefault();
 
             $(this).removeClass('active');
+            $('.card-actions').removeClass('bordered');
             infoButton.removeClass('hidden');
             treeName.css('color', '#fff');
             treeDescription.css({

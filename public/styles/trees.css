@@ -37,7 +37,7 @@
 
 .trees { position: relative; }
 .trees ul {
-    margin: 6px 6px 40px 6px;
+    margin: 6px 6px 15px 6px;
     position: relative;
     display: block;
     height: 460px;
@@ -237,11 +237,19 @@
 .trees .empty-message .forest-trees {
     width: 160px;
 }
-.trees .empty-message .buttons-wrapper {
-    /*margin-bottom: 80px;*/
-}
 .trees .empty-message .buttons-wrapper .button.start-over {
     margin-bottom: 20px;
+}
+.trees .empty-message .bottom-links {
+    margin-bottom: 50px;
+}
+.trees .empty-message .bottom-links .link {
+    font-weight: bold;
+    text-transform: uppercase;
+    text-decoration: none;
+}
+.trees .empty-message .bottom-links .link.share-this-brilliance {
+    margin-right: 30px;
 }
 
 .trees .location-wrapper {

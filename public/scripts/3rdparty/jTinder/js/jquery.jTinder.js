@@ -89,6 +89,8 @@
 		handler: function (ev) {
 			if ($(ev.target).hasClass('no-swipe') || $(ev.target.parentElement).hasClass('no-swipe'))
 				return true;
+      if ($(ev.target).hasClass('link'))
+        return true;
 
 			ev.preventDefault();
 
