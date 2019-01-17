@@ -63,7 +63,7 @@ $(function() {
   preloadImages();
 
   function bindInfoButton() {
-    $('.tree-details .info-button .info').on('click', function() {
+    $('.tree-details').on('click', function() {
 
       pageEvent('open info', 'trees', 'info');  // TODO: maybe we can send the specific tree?
 
@@ -101,7 +101,10 @@ $(function() {
           'scrollTop': wrapper.height()
         }, 300, function() {
           closeInfoButton.addClass('active');
-          closeInfoButton.one('click', function() {
+          closeInfoButton.one('click', function(ev) {
+            ev.stopPropagation();
+            ev.preventDefault();
+
             $(this).removeClass('active');
             infoButton.removeClass('hidden');
             treeDetails.removeClass('full');

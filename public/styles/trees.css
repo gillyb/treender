@@ -80,6 +80,7 @@
     background-size: contain;
     width: 150px; height: 98px;
     margin: 20px;
+    opacity: 0;
 }
 .card-wrapper .dislike {
     opacity: 0;
@@ -137,6 +138,12 @@
     margin-top: 20px;
     color: #444;
     transition: opacity 400ms;
+    text-align: right;
+    direction: rtl;
+}
+.trees .card-wrapper .description.english {
+    direction: ltr;
+    text-align: left;
 }
 .trees .card-actions {
     position: absolute;
@@ -206,8 +213,9 @@
 .trees .female.tree_7 .img { background-image: url("../images/trees/shaked1.jpg"); }
 .trees .female.tree_8 .img { background-image: url("../images/trees/tooti1.jpg"); }
 .trees .female.tree_9 .img { background-image: url("../images/trees/tamar1.jpg"); }
-.trees .female.tree_10 .img { background-image: url("../images/trees/dekel1.jpg"); }
-.trees .female.tree_11 .img { background-image: url("../images/trees/hadar1.jpg"); }
+.trees .female.tree_10 .img { background-image: url("../images/trees/hadar2.jpg"); }
+.trees .female.tree_11 .img { background-image: url("../images/trees/dekel1.jpg"); }
+.trees .female.tree_12 .img { background-image: url("../images/trees/hadar1.jpg"); }
 
 .trees .trees-wrapper {
     height: 100%; min-height: 100%;
@@ -239,10 +247,14 @@
 .trees .location-wrapper {
     margin-bottom: 6px;
     color: #aeaeae;
+    text-align: left;
+    direction: ltr;
 }
 .trees .instagram-wrapper {
     margin-bottom: 12px;
     color: #aeaeae;
+    text-align: left;
+    direction: ltr;
 }
 .trees .location-wrapper .location-icon {
     vertical-align: middle;
