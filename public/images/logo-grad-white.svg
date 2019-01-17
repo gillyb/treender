@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 131.97 131.97">
+    <defs>
+        <linearGradient id="linear-gradient" x1="51.14" y1="130.3" x2="80.83" y2="1.68" gradientUnits="userSpaceOnUse">
+            <stop offset="0" stop-color="#0b662c"/>
+            <stop offset="0.17" stop-color="#0c6f30"/>
+            <stop offset="0.44" stop-color="#0e883a"/>
+            <stop offset="0.79" stop-color="#12b04b"/>
+            <stop offset="1" stop-color="#15cc57"/>
+        </linearGradient>
+        <linearGradient id="linear-gradient-2" x1="42.69" y1="96.61" x2="116.91" y2="-0.95" gradientUnits="userSpaceOnUse">
+            <stop offset="0" stop-color="#88a80d" stop-opacity="0"/>
+            <stop offset="0.11" stop-color="#8aa90d" stop-opacity="0.02"/>
+            <stop offset="0.23" stop-color="#91ac0e" stop-opacity="0.07"/>
+            <stop offset="0.36" stop-color="#9bb20e" stop-opacity="0.16"/>
+            <stop offset="0.5" stop-color="#aab90f" stop-opacity="0.28"/>
+            <stop offset="0.64" stop-color="#bdc311" stop-opacity="0.44"/>
+            <stop offset="0.78" stop-color="#d4cf12" stop-opacity="0.64"/>
+            <stop offset="0.92" stop-color="#efdd14" stop-opacity="0.87"/>
+            <stop offset="1" stop-color="#ffe515"/>
+        </linearGradient>
+    </defs>
+    <g id="Layer_1-2" data-name="Layer 1">
+        <circle fill="url(#linear-gradient)" cx="65.99" cy="65.99" r="65.99"/>
+        <circle fill="url(#linear-gradient-2)" cx="65.99" cy="65.99" r="65.99"/>
+        <path fill="#fff" d="M58.73,25.37c1.08-1.54,4-1.05,4.28.71l3.53,24.21c.29,2,3.78,2.23,4.49.32l3.18-8.52c.57-1.51,3.07-1.8,4.14-.48,8.28,10.19,31.53,40.47-3.13,50.69l-.45.13v15.1h-18V92C43.22,87.62,22.1,77.85,58.73,25.37Z"/>
+    </g>
+</svg>

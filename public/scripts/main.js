@@ -63,7 +63,7 @@ $(function() {
   preloadImages();
 
   function bindInfoButton() {
-    $('.tree-details').on('click', function() {
+    $('.tree-details .name, .tree-details .age, .tree-details .info').on('click', function() {
 
       pageEvent('open info', 'trees', 'info');  // TODO: maybe we can send the specific tree?
 
@@ -94,7 +94,6 @@ $(function() {
       treeDetails.addClass('full');
 
       requestAnimationFrame(function() {
-        // wrapper.find('.tree-details .description').css('opacity', 1).removeClass('hidden');
         var treeDetailsHeight = treeDetails.outerHeight(true);
         wrapper.find('.img').animate({
           'top': -1 * treeDetailsHeight,
@@ -107,7 +106,6 @@ $(function() {
 
             $(this).removeClass('active');
             infoButton.removeClass('hidden');
-            treeDetails.removeClass('full');
             treeName.css('color', '#fff');
             treeDescription.css({
               'position': 'absolute',
@@ -121,6 +119,9 @@ $(function() {
             wrapper.find('.img').animate({
               'top': 0
             }, 300, function() { });
+            setTimeout(function() {
+              treeDetails.removeClass('full');
+            }, 300);
           });
         });
       });
@@ -192,35 +193,17 @@ $(function() {
 
 
   function animateSplashScreen() {
-    var heart = $('.splash-screen .top-heart, .splash-screen .bottom-heart');
-
     var originalLogo = $('.splash-screen .logo');
-    var originalPosition = originalLogo.position();
 
-    originalLogo.css({
-      'height': originalLogo.height(),
-      'position': 'absolute',
-      'top': originalPosition.top
-    });
+    originalLogo.addClass('scale-out-center');
 
-    heart.animate({
-      'opacity': '0'
-    }, 400, function() {
-      heart.css({'display': 'none'});
-      $('.splash-screen .fade-in').css({'display': 'block'});
+      $('.splash-screen .fade-in').css({'display': 'flex'});
       $('.splash-screen .fade-in.inline-block').css({'display': 'inline-block'});
 
-      var logoWrapper = $('.splash-screen .logo-wrapper');
-
-      var finalLogoPosition = parseInt(logoWrapper.css('marginTop')) + parseInt(logoWrapper.css('paddingTop')) + (logoWrapper.height() - originalLogo.height()) / 2;
-
-      var scaleValue = 50 / originalLogo.width();
-      originalLogo.animate({
-        'transform': 'translateY(-' + (originalPosition.top - finalLogoPosition) + 'px) scale(' + scaleValue + ')'
-      }, 1000, function() {
+      setTimeout(function() {
+        $('.splash-screen .logo').css('display', 'none');
         $('.splash-screen .fade-in').css({'opacity': '1'});
-      });
-    });
+      }, 800);
   }
 
   setTimeout(function() {
@@ -309,7 +292,6 @@ $(function() {
         card.css('top', '8px');
         card.css('height', treeImagesHeight);
         card.find('.tree-details .name').css('color', '#fff');
-        card.find('.tree-details').removeClass('full');
         card.find('.img').css('top', '0');
         card.find('.tree-details .description')
           .css({
@@ -318,6 +300,10 @@ $(function() {
           }).addClass('invisible');
         card.find('.tree-details .info-button .close').removeClass('active');
         card.find('.tree-details .info-button .info').removeClass('hidden');
+        setTimeout(function() {
+          card.find('.tree-details').removeClass('full');
+        }, 300);
+
       },
       endDragEvent: function(card) {
         // debugger;
