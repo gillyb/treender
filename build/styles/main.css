@@ -7,6 +7,7 @@ http://yuilibrary.com/license/
 
 html{color:#000;background:#FFF}body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,code,form,fieldset,legend,input,textarea,p,blockquote,th,td{margin:0;padding:0}table{border-collapse:collapse;border-spacing:0}fieldset,img{border:0}address,caption,cite,code,dfn,em,strong,th,var{font-style:normal;font-weight:normal}ol,ul{list-style:none}caption,th{text-align:left}h1,h2,h3,h4,h5,h6{font-size:100%;font-weight:normal}q:before,q:after{content:''}abbr,acronym{border:0;font-variant:normal}sup{vertical-align:text-top}sub{vertical-align:text-bottom}input,textarea,select{font-family:inherit;font-size:inherit;font-weight:inherit;*font-size:100%}legend{color:#000}#yui3-css-stamp.cssreset{display:none}
 
+
 /** GENERAL STYLES **/
 html {
     height: 100%; min-height: 100%; width: 100%;
@@ -375,7 +376,7 @@ a {
         left: 50%;
         margin-left: -141px;
         top: 50%;
-        margin-top: -329px;
+        /*margin-top: -329px;*/
         height: 569px;
         min-height: auto;
         background-color: #fff;
@@ -426,7 +427,6 @@ a {
     .match-with .bottom .button { margin-bottom: 40px; }
 
 }
-
 
 
 .trees.full-screen {
@@ -641,12 +641,12 @@ a {
 .trees .female.tree_3 .img { background-image: url("../images/trees/ella1.jpg"); }
 .trees .female.tree_4 .img { background-image: url("../images/trees/klilhachoresh01.jpg"); }
 .trees .female.tree_5 .img { background-image: url("../images/trees/moran1.jpg"); }
-.trees .female.tree_6 .img { background-image: url("../images/trees/shaked1.jpg"); }
+.trees .female.tree_6 .img { background-image: url("../images/trees/shaked2.jpg"); }
 .trees .female.tree_7 .img { background-image: url("../images/trees/shikma1.jpg"); }
 .trees .female.tree_8 .img { background-image: url("../images/trees/tooti1.jpg"); }
 .trees .female.tree_9 .img { background-image: url("../images/trees/tamar1.jpg"); }
 .trees .female.tree_10 .img { background-image: url("../images/trees/hadar2.jpg"); }
-.trees .female.tree_11 .img { background-image: url("../images/trees/dekel1.jpg"); }
+.trees .female.tree_11 .img { background-image: url("../images/trees/tamar3.jpg"); }
 .trees .female.tree_12 .img { background-image: url("../images/trees/hadar1.jpg"); }
 
 .trees .trees-wrapper {
@@ -761,8 +761,6 @@ a {
         overflow: hidden;
     }
 }
-
-
 
 
 /*! Flickity v2.1.2
