@@ -159,6 +159,7 @@ $(function() {
   function showTrees() {
     hideAllScreens();
     savePageState({ trees: true }, 'trees', '/trees');
+    $('#tree-cards ul li').shuffle();
     var treesScreen = $('.full-screen.trees');
     treesScreen.removeClass('hidden');
     if (!$('.match-with .button.radio.male').hasClass('selected'))
