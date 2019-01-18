@@ -37,7 +37,7 @@ a {
 }
 
 .button {
-    display: inline-block;
+    display: block;
     border: solid 1px #15826A;
     color: #15826A;
     border-radius: 18px;
@@ -45,7 +45,8 @@ a {
     line-height: 2.5rem;
     text-align: center;
     cursor: pointer;
-    min-width: 160px;
+    max-width: 160px;
+    margin:0 auto;
     padding: 0 40px;
     font-weight: bold;
 }
@@ -69,7 +70,7 @@ a {
 .small-text { font-size: 1rem; line-height: 1.21rem; }
 .link {
     color: #0D8037;
-    text-decoration: underline;
+    text-decoration: none;
     cursor: pointer;
     font-weight: bold;
 }
@@ -103,9 +104,12 @@ a {
 }
 .splash-screen .logo {
     position: absolute;
-    top: 230px;
+    /*top: 230px;*/
     /*height: 170px;*/
-    width: 30%;
+    /*width: 30%;*/
+    top: 50%;
+    margin-top: -50px;
+    width: 100px;
     flex-grow: 10;
 }
 
@@ -133,7 +137,7 @@ a {
 .who-did-dis .link { font-weight: bold; }
 
 .splash-screen .bottom-heart { position:absolute; bottom:0; }
-.splash-screen .link.who-did-dis { margin-top: 20px; text-transform: uppercase; }
+.splash-screen .link.who-did-dis { text-transform: uppercase; }
 .empty-message .link.who-did-dis { margin-top: 20px; margin-bottom: 50px; text-transform: uppercase; }
 
 
@@ -142,6 +146,7 @@ a {
 .splash-screen .welcome-logo { width: 100px; margin: 60px 0 20px 0; }
 .splash-screen .welcome-screen {
     height: 100%;
+    width: 100%;
     display: flex;
     opacity: 1;
     justify-content: space-between;
@@ -152,9 +157,20 @@ a {
 .splash-screen .header.welcome { font-size: 1.57rem; margin-bottom: 10px; }
 .splash-screen .treender { margin-bottom: 22px; }
 .splash-screen .sub-header {  }
-.splash-screen .bottom { margin-bottom: 50px; }
+.splash-screen .bottom {
+    margin-bottom: 50px;
+    display: flex;
+    width: 100%;
+    max-width: 220px;
+    justify-content: space-between;
+    padding: 0 10px;
+}
 .splash-screen .bottom .link { font-weight: bold; text-decoration: none; text-transform: uppercase; }
 .splash-screen .bottom .link.share-this-brilliance { margin-right: 30px; }
+
+.splash-screen .buttons-wrapper {
+    width: 100%;
+}
 .splash-screen .buttons-wrapper .button.how-does-it-work { margin-bottom: 20px; }
 
 .splash-screen .fade-in {
@@ -253,6 +269,7 @@ a {
 }
 .full-screen.steps .swipe-container {
     flex-grow: 1;
+    max-height: 400px;
 }
 .full-screen.steps .swipe-container .header {
     margin: 50px 0;
@@ -322,11 +339,8 @@ a {
 
 
 @media only screen and (min-width: 768px) {
-    .button {
-        min-width: 100px;
-    }
     .no-mobile-message {
-        display: block !important;
+        display: none;
         width: 600px;
         text-align: center;
         margin: 0 auto;
@@ -335,33 +349,34 @@ a {
     }
     .page-container {
         margin: 0 auto;
-        height: auto; min-height: auto;
-        width: 255px;
-        background-image: url('../images/phone-border.png');
-        background-repeat: no-repeat;
-        background-position: -210px -44px;
+        height: 100%; min-height: 100%;
+        background: url('../images/desktop-bg.jpg') no-repeat center center fixed;
+        background-size: cover;
         padding: 90px 40px 80px 24px;
     }
+    .phone-bg {
+        position: fixed;
+        top: 0; left: 0;
+        width: 100%;
+        height: 100%;
+    }
     .full-screen {
-        margin: 0;
-        min-height: 454px; height: 454px;
+        width: 323px;
+        position: absolute;
+        left: 50%;
+        margin-left: -141px;
+        top: 50%;
+        margin-top: -329px;
+        height: 569px;
+        min-height: auto;
+        background-color: #fff;
     }
-    .full-screen .swipe-area {
-        padding: 0 1em;
-    }
-    .splash-screen .top-heart {
-        background-size: contain;
-    }
-    .splash-screen .bottom-heart {
-        height: 138px;
+    .full-screen.steps .swipe-area {
+        padding: 0 20px;
+        width: calc(100% - 40px);
     }
     .splash-screen .logo-wrapper {
         width: 60px; height: 60px;
-    }
-    .splash-screen .logo {
-        margin-top: 0;
-        height: 130px;
-        top: 165px;
     }
     .login-screen div.logo {
         margin: 16px 0 0 0;
@@ -371,10 +386,6 @@ a {
     }
     .login-screen .header {
         margin: 10px 0;
-    }
-    .button {
-        margin-right: 20px;
-        margin-left: 20px;
     }
 
     .who-did-dis .top-heart { height: 92px; }

@@ -32,7 +32,6 @@ $(function() {
   savePageState({ home: true }, 'home', '/');
 
   var treeImagesHeight;
-  var viewportHeight = $(window).height();
   var headerHeight = $('.trees .header').outerHeight(true);
 
   function preloadImages() {
@@ -129,20 +128,13 @@ $(function() {
     });
   }
 
-  function adjustSplashScreenLogo() {
-    var logoHeight = parseInt($('.splash-screen .logo').height());
-    var heartTop = (viewportHeight / 2) - (logoHeight / 2);
-    var logo = $('.splash-screen .logo');
-    logo.css('top', heartTop);
-  }
-  adjustSplashScreenLogo();
-
   function setTreesImagesHeight() {
+    var treesViewportHeight = $('.trees.full-screen').height();
     var treeActionsHeight = $('.trees .card-actions').outerHeight(true);
     var treeImagesPadding = parseInt($('#tree-cards ul').css('marginTop')) + parseInt($('#tree-cards ul').css('marginBottom'));
-    treeImagesHeight = viewportHeight - (headerHeight + treeActionsHeight + treeImagesPadding);
+    treeImagesHeight = treesViewportHeight - (headerHeight + treeActionsHeight + treeImagesPadding);
     $('#tree-cards li').css('height', treeImagesHeight);
-  };
+  }
 
 
   function hideAllScreens() { $('.full-screen').addClass('hidden'); }
@@ -219,7 +211,7 @@ $(function() {
   $('.lets-start.button').click(function() {
     showGender();
   });
-  $('.who-did-dis.link').click(function() {
+  $('.who-did-dis.link, .who-did-dis.button').click(function() {
     showAboutScreen();
   });
 
@@ -255,7 +247,7 @@ $(function() {
     }
   });
 
-  $('.button.start-over').click(function() {
+  $('.button.start-over, .empty-message .start-over').click(function() {
     window.location.reload();
   });
 

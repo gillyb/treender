@@ -237,6 +237,10 @@
 .trees .empty-message .forest-trees {
     width: 160px;
 }
+.trees .empty-message .buttons-wrapper {
+    width: 100%;
+    display: block;
+}
 .trees .empty-message .buttons-wrapper .button.start-over {
     margin-bottom: 20px;
 }
@@ -248,8 +252,8 @@
     text-transform: uppercase;
     text-decoration: none;
 }
-.trees .empty-message .bottom-links .link.share-this-brilliance {
-    margin-right: 30px;
+.trees .empty-message .share-this-brilliance {
+    margin-bottom: 20px;
 }
 
 .trees .location-wrapper {
@@ -278,13 +282,13 @@
 
 
 @media only screen and (min-width: 768px) {
+    .trees {
+        position: absolute !important;
+    }
     .trees ul {
         width: auto;
         margin: 10px;
         height: 360px;
-    }
-    .trees .img {
-        height: 260px;
     }
     .tree-cards {
         margin-bottom: -100px;
