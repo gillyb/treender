@@ -46,7 +46,7 @@ a {
 }
 
 .button {
-    display: inline-block;
+    display: block;
     border: solid 1px #15826A;
     color: #15826A;
     border-radius: 18px;
@@ -54,7 +54,8 @@ a {
     line-height: 2.5rem;
     text-align: center;
     cursor: pointer;
-    min-width: 160px;
+    max-width: 160px;
+    margin:0 auto;
     padding: 0 40px;
     font-weight: bold;
 }
@@ -78,7 +79,7 @@ a {
 .small-text { font-size: 1rem; line-height: 1.21rem; }
 .link {
     color: #0D8037;
-    text-decoration: underline;
+    text-decoration: none;
     cursor: pointer;
     font-weight: bold;
 }
@@ -112,9 +113,12 @@ a {
 }
 .splash-screen .logo {
     position: absolute;
-    top: 230px;
+    /*top: 230px;*/
     /*height: 170px;*/
-    width: 30%;
+    /*width: 30%;*/
+    top: 50%;
+    margin-top: -50px;
+    width: 100px;
     flex-grow: 10;
 }
 
@@ -142,7 +146,7 @@ a {
 .who-did-dis .link { font-weight: bold; }
 
 .splash-screen .bottom-heart { position:absolute; bottom:0; }
-.splash-screen .link.who-did-dis { margin-top: 20px; text-transform: uppercase; }
+.splash-screen .link.who-did-dis { text-transform: uppercase; }
 .empty-message .link.who-did-dis { margin-top: 20px; margin-bottom: 50px; text-transform: uppercase; }
 
 
@@ -151,6 +155,7 @@ a {
 .splash-screen .welcome-logo { width: 100px; margin: 60px 0 20px 0; }
 .splash-screen .welcome-screen {
     height: 100%;
+    width: 100%;
     display: flex;
     opacity: 1;
     justify-content: space-between;
@@ -161,9 +166,20 @@ a {
 .splash-screen .header.welcome { font-size: 1.57rem; margin-bottom: 10px; }
 .splash-screen .treender { margin-bottom: 22px; }
 .splash-screen .sub-header {  }
-.splash-screen .bottom { margin-bottom: 50px; }
+.splash-screen .bottom {
+    margin-bottom: 50px;
+    display: flex;
+    width: 100%;
+    max-width: 220px;
+    justify-content: space-between;
+    padding: 0 10px;
+}
 .splash-screen .bottom .link { font-weight: bold; text-decoration: none; text-transform: uppercase; }
 .splash-screen .bottom .link.share-this-brilliance { margin-right: 30px; }
+
+.splash-screen .buttons-wrapper {
+    width: 100%;
+}
 .splash-screen .buttons-wrapper .button.how-does-it-work { margin-bottom: 20px; }
 
 .splash-screen .fade-in {
@@ -262,6 +278,7 @@ a {
 }
 .full-screen.steps .swipe-container {
     flex-grow: 1;
+    max-height: 400px;
 }
 .full-screen.steps .swipe-container .header {
     margin: 50px 0;
@@ -331,11 +348,8 @@ a {
 
 
 @media only screen and (min-width: 768px) {
-    .button {
-        min-width: 100px;
-    }
     .no-mobile-message {
-        display: block !important;
+        display: none;
         width: 600px;
         text-align: center;
         margin: 0 auto;
@@ -344,33 +358,34 @@ a {
     }
     .page-container {
         margin: 0 auto;
-        height: auto; min-height: auto;
-        width: 255px;
-        background-image: url('../images/phone-border.png');
-        background-repeat: no-repeat;
-        background-position: -210px -44px;
+        height: 100%; min-height: 100%;
+        background: url('../images/desktop-bg.jpg') no-repeat center center fixed;
+        background-size: cover;
         padding: 90px 40px 80px 24px;
     }
+    .phone-bg {
+        position: fixed;
+        top: 0; left: 0;
+        width: 100%;
+        height: 100%;
+    }
     .full-screen {
-        margin: 0;
-        min-height: 454px; height: 454px;
+        width: 323px;
+        position: absolute;
+        left: 50%;
+        margin-left: -141px;
+        top: 50%;
+        margin-top: -329px;
+        height: 569px;
+        min-height: auto;
+        background-color: #fff;
     }
-    .full-screen .swipe-area {
-        padding: 0 1em;
-    }
-    .splash-screen .top-heart {
-        background-size: contain;
-    }
-    .splash-screen .bottom-heart {
-        height: 138px;
+    .full-screen.steps .swipe-area {
+        padding: 0 20px;
+        width: calc(100% - 40px);
     }
     .splash-screen .logo-wrapper {
         width: 60px; height: 60px;
-    }
-    .splash-screen .logo {
-        margin-top: 0;
-        height: 130px;
-        top: 165px;
     }
     .login-screen div.logo {
         margin: 16px 0 0 0;
@@ -380,10 +395,6 @@ a {
     }
     .login-screen .header {
         margin: 10px 0;
-    }
-    .button {
-        margin-right: 20px;
-        margin-left: 20px;
     }
 
     .who-did-dis .top-heart { height: 92px; }
@@ -623,14 +634,15 @@ a {
 .trees .male.tree_9 .img { background-image: url("../images/trees/ashor1.jpg"); }
 .trees .male.tree_10 .img { background-image: url("../images/trees/hadar1.jpg"); }
 .trees .male.tree_11 .img { background-image: url("../images/trees/bonsai.jpg"); }
+.trees .male.tree_12 .img { background-image: url("../images/trees/ilan-the-doll.jpg"); }
 
 .trees .female.tree_1 .img { background-image: url("../images/trees/hadas1.jpg"); }
 .trees .female.tree_2 .img { background-image: url("../images/trees/arava1.jpg"); }
-.trees .female.tree_3 .img { background-image: url("../images/trees/klilhachoresh01.jpg"); }
-.trees .female.tree_4 .img { background-image: url("../images/trees/moran1.jpg"); }
-.trees .female.tree_5 .img { background-image: url("../images/trees/shaked1.jpg"); }
-.trees .female.tree_6 .img { background-image: url("../images/trees/shikma1.jpg"); }
-.trees .female.tree_7 .img { background-image: url("../images/trees/shaked1.jpg"); }
+.trees .female.tree_3 .img { background-image: url("../images/trees/ella1.jpg"); }
+.trees .female.tree_4 .img { background-image: url("../images/trees/klilhachoresh01.jpg"); }
+.trees .female.tree_5 .img { background-image: url("../images/trees/moran1.jpg"); }
+.trees .female.tree_6 .img { background-image: url("../images/trees/shaked1.jpg"); }
+.trees .female.tree_7 .img { background-image: url("../images/trees/shikma1.jpg"); }
 .trees .female.tree_8 .img { background-image: url("../images/trees/tooti1.jpg"); }
 .trees .female.tree_9 .img { background-image: url("../images/trees/tamar1.jpg"); }
 .trees .female.tree_10 .img { background-image: url("../images/trees/hadar2.jpg"); }
@@ -657,6 +669,10 @@ a {
 .trees .empty-message .forest-trees {
     width: 160px;
 }
+.trees .empty-message .buttons-wrapper {
+    width: 100%;
+    display: block;
+}
 .trees .empty-message .buttons-wrapper .button.start-over {
     margin-bottom: 20px;
 }
@@ -668,8 +684,8 @@ a {
     text-transform: uppercase;
     text-decoration: none;
 }
-.trees .empty-message .bottom-links .link.share-this-brilliance {
-    margin-right: 30px;
+.trees .empty-message .share-this-brilliance {
+    margin-bottom: 20px;
 }
 
 .trees .location-wrapper {
@@ -696,15 +712,46 @@ a {
     margin-right: 4px;
 }
 
+.trees li.tutorial::before {
+    content: 'Tap the lower part of the photo to view the tree\'s bio';
+    position: absolute;
+    background-color: rgba(0,0,0,0.5);
+    top: 0;
+    height: calc(100% - 120px);
+    width: calc(100% - 120px);
+    z-index: 99;
+    border-radius: 20px;
+    color: #fff;
+    font-weight: bold;
+    padding: 120px 60px 0 60px;
+    line-height: 32px;
+    font-size: 24px;
+}
+.trees li.tutorial::after {
+    content: ' ';
+    background-image: url('../images/icon-click.svg');
+    z-index: 99999;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 80px;
+    left: 0;
+    background-repeat: no-repeat;
+    background-position-x: center;
+    background-size: 60px 60px;
+    margin-bottom: 10px;
+    border-top: dashed 4px white;
+    background-position-y: center;
+}
 
 @media only screen and (min-width: 768px) {
+    .trees {
+        position: absolute !important;
+    }
     .trees ul {
         width: auto;
         margin: 10px;
         height: 360px;
-    }
-    .trees .img {
-        height: 260px;
     }
     .tree-cards {
         margin-bottom: -100px;
@@ -714,6 +761,8 @@ a {
         overflow: hidden;
     }
 }
+
+
 
 
 /*! Flickity v2.1.2

@@ -61,70 +61,73 @@ $(function() {
   }
   preloadImages();
 
-  function bindInfoButton() {
-    $('.tree-details .name, .tree-details .age, .tree-details .info').on('click', function() {
+  function openInfoButton(treeCard) {
+    var wrapper = treeCard.parents('.card-wrapper');
+    var surround = treeCard.parents('li');
+    var treeDetails = wrapper.find('.tree-details');
+    var treeName = treeDetails.find('.name');
+    var infoButton = treeDetails.find('.info');
+    var closeInfoButton = treeDetails.find('.close');
+    var treeDescription = treeDetails.find('.description');
 
-      pageEvent('open info', 'trees', 'info');  // TODO: maybe we can send the specific tree?
+    wrapper.css({
+      'background-color': '#fff',
+      'overflow-y': 'scroll'
+    });
+    treeDescription.css({
+      'position': 'relative',
+      'color': '#444',
+      'opacity': 1
+    }).removeClass('invisible');
+    surround.css('top', 0);
+    surround.css('height', treeImagesHeight + 20);
 
-      var wrapper = $(this).parents('.card-wrapper');
-      var surround = $(this).parents('li');
-      var treeDetails = wrapper.find('.tree-details');
-      var treeName = treeDetails.find('.name');
-      var infoButton = treeDetails.find('.info');
-      var closeInfoButton = treeDetails.find('.close');
-      var treeDescription = treeDetails.find('.description');
+    infoButton.addClass('hidden');
 
-      wrapper.css({
-        'background-color': '#fff',
-        'overflow-y': 'scroll'
-      });
-      treeDescription.css({
-        'position': 'relative',
-        'color': '#444',
-        'opacity': 1
-      }).removeClass('invisible');
-      surround.css('top', 0);
-      surround.css('height', treeImagesHeight + 20);
+    $('.card-actions').addClass('bordered');
+    treeName.css('color', '#444');
+    treeDetails.addClass('full');
 
-      infoButton.addClass('hidden');
+    requestAnimationFrame(function() {
+      var treeDetailsHeight = treeDetails.outerHeight(true);
+      wrapper.find('.img').animate({
+        'top': -1 * treeDetailsHeight,
+        'scrollTop': wrapper.height()
+      }, 300, function() {
+        closeInfoButton.addClass('active');
+        closeInfoButton.one('click', function(ev) {
+          ev.stopPropagation();
+          ev.preventDefault();
 
-      $('.card-actions').addClass('bordered');
-      treeName.css('color', '#444');
-      treeDetails.addClass('full');
-
-      requestAnimationFrame(function() {
-        var treeDetailsHeight = treeDetails.outerHeight(true);
-        wrapper.find('.img').animate({
-          'top': -1 * treeDetailsHeight,
-          'scrollTop': wrapper.height()
-        }, 300, function() {
-          closeInfoButton.addClass('active');
-          closeInfoButton.one('click', function(ev) {
-            ev.stopPropagation();
-            ev.preventDefault();
-
-            $(this).removeClass('active');
-            $('.card-actions').removeClass('bordered');
-            infoButton.removeClass('hidden');
-            treeName.css('color', '#fff');
-            treeDescription.css({
-              'position': 'absolute',
-              'color': 'transparent',
-              'opacity': 0
-            });
-            surround.css({
-              'height': treeImagesHeight,
-              'top': 8
-            });
-            wrapper.find('.img').animate({
-              'top': 0
-            }, 300, function() { });
-            setTimeout(function() {
-              treeDetails.removeClass('full');
-            }, 300);
+          treeCard.removeClass('active');
+          closeInfoButton.removeClass('active');
+          $('.card-actions').removeClass('bordered');
+          infoButton.removeClass('hidden');
+          treeName.css('color', '#fff');
+          treeDescription.css({
+            'position': 'absolute',
+            'color': 'transparent',
+            'opacity': 0
           });
+          surround.css({
+            'height': treeImagesHeight,
+            'top': 8
+          });
+          wrapper.find('.img').animate({
+            'top': 0
+          }, 300, function() { });
+          setTimeout(function() {
+            treeDetails.removeClass('full');
+          }, 300);
         });
       });
+    });
+  }
+
+  function bindInfoButton() {
+    $('.tree-details .name, .tree-details .age, .tree-details .info').on('click', function() {
+      pageEvent('open info', 'trees', 'info');  // TODO: maybe we can send the specific tree?
+      openInfoButton($(this));
     });
   }
 
@@ -168,6 +171,14 @@ $(function() {
       treesScreen.find('.female').addClass('hidden');
     setTreesImagesHeight();
     bindInfoButton();
+
+    // show tutorial for first time around
+    $('#tree-cards ul li:not(.hidden):last').addClass('tutorial no-swipe');
+    $('#tree-cards li.tutorial').one('click', function() {
+      openInfoButton($(this).find('.info-button'));
+      $(this).removeClass('tutorial no-swipe');
+    });
+
     pageView('trees', '/trees');
   }
   function showWalkthrough() {
@@ -176,7 +187,7 @@ $(function() {
     $('.full-screen.steps').removeClass('hidden');
     var carousel = $('.steps .swipe-container').flickity({ contain: true, prevNextButtons: false });
     carousel.on( 'change.flickity', function( event, index ) {
-      if (index === 2) {
+      if (index === 1) {
         setTimeout(function () {
           $('.full-screen.steps .step-3 .tree-image .tree-heart, .full-screen.steps .step-3 .like').addClass('swiped');
         }, 600);

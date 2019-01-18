@@ -203,14 +203,15 @@
 .trees .male.tree_9 .img { background-image: url("../images/trees/ashor1.jpg"); }
 .trees .male.tree_10 .img { background-image: url("../images/trees/hadar1.jpg"); }
 .trees .male.tree_11 .img { background-image: url("../images/trees/bonsai.jpg"); }
+.trees .male.tree_12 .img { background-image: url("../images/trees/ilan-the-doll.jpg"); }
 
 .trees .female.tree_1 .img { background-image: url("../images/trees/hadas1.jpg"); }
 .trees .female.tree_2 .img { background-image: url("../images/trees/arava1.jpg"); }
-.trees .female.tree_3 .img { background-image: url("../images/trees/klilhachoresh01.jpg"); }
-.trees .female.tree_4 .img { background-image: url("../images/trees/moran1.jpg"); }
-.trees .female.tree_5 .img { background-image: url("../images/trees/shaked1.jpg"); }
-.trees .female.tree_6 .img { background-image: url("../images/trees/shikma1.jpg"); }
-.trees .female.tree_7 .img { background-image: url("../images/trees/shaked1.jpg"); }
+.trees .female.tree_3 .img { background-image: url("../images/trees/ella1.jpg"); }
+.trees .female.tree_4 .img { background-image: url("../images/trees/klilhachoresh01.jpg"); }
+.trees .female.tree_5 .img { background-image: url("../images/trees/moran1.jpg"); }
+.trees .female.tree_6 .img { background-image: url("../images/trees/shaked1.jpg"); }
+.trees .female.tree_7 .img { background-image: url("../images/trees/shikma1.jpg"); }
 .trees .female.tree_8 .img { background-image: url("../images/trees/tooti1.jpg"); }
 .trees .female.tree_9 .img { background-image: url("../images/trees/tamar1.jpg"); }
 .trees .female.tree_10 .img { background-image: url("../images/trees/hadar2.jpg"); }
@@ -280,6 +281,37 @@
     margin-right: 4px;
 }
 
+.trees li.tutorial::before {
+    content: 'Tap the lower part of the photo to view the tree\'s bio';
+    position: absolute;
+    background-color: rgba(0,0,0,0.5);
+    top: 0;
+    height: calc(100% - 120px);
+    width: calc(100% - 120px);
+    z-index: 99;
+    border-radius: 20px;
+    color: #fff;
+    font-weight: bold;
+    padding: 120px 60px 0 60px;
+    line-height: 32px;
+    font-size: 24px;
+}
+.trees li.tutorial::after {
+    content: ' ';
+    background-image: url('../images/icon-click.svg');
+    z-index: 99999;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 80px;
+    left: 0;
+    background-repeat: no-repeat;
+    background-position-x: center;
+    background-size: 60px 60px;
+    margin-bottom: 10px;
+    border-top: dashed 4px white;
+    background-position-y: center;
+}
 
 @media only screen and (min-width: 768px) {
     .trees {
