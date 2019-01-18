@@ -1,3 +1,58 @@
+window.treeImages = [
+  "images/trees/dekel1.jpg",
+  "images/trees/hadar1.jpg",
+  "images/trees/hadar2.jpg",
+  "images/trees/hadas1.jpg",
+  "images/trees/arava1.jpg",
+  "images/trees/ella1.jpg",
+  "images/trees/klilhachoresh01.jpg",
+  "images/trees/moran1.jpg",
+  "images/trees/shaked1.jpg",
+  "images/trees/shikma1.jpg",
+  "images/trees/shaked1.jpg",
+  "images/trees/shaked2.jpg",
+  "images/trees/tooti1.jpg",
+  "images/trees/tamar1.jpg",
+  "images/trees/tamar3.jpg",
+  "images/trees/oren1.jpg",
+  "images/trees/alon1.jpg",
+  "images/trees/ilan1.jpg",
+  "images/trees/ilan-the-doll.jpg",
+  "images/trees/erez1.jpg",
+  "images/trees/eshel1.jpg",
+  "images/trees/dolev1.jpg",
+  "images/trees/ashor1.jpg",
+  "images/trees/bonsai.jpg"];
+
+function showAllTrees() {
+  console.log('Displaying trees');
+  var treeImages = document.querySelectorAll('#tree-cards .card-wrapper .img');
+  for (var j = treeImages.length-1; j>=0; j--) {
+    treeImages[j].parentElement.parentElement.classList.remove('invisible');
+  }
+}
+
+function preloadImages() {
+  var loadedCounter = 0;
+  for (var i=0; i<window.treeImages.length; i++) {
+    var a = document.createElement('img');
+    a.onload = function() {
+      if (++loadedCounter === window.treeImages.length) {
+        showAllTrees();
+      }
+    };
+    a.onerror = function() {
+      if (++loadedCounter === window.treeImages.length) {
+        showAllTrees();
+      }
+    };
+    a.setAttribute('src', window.treeImages[i]);
+  }
+}
+preloadImages();
+
+
+
 // DOM elements shuffle plugin
 (function($){
 
@@ -34,32 +89,48 @@ $(function() {
   var treeImagesHeight;
   var headerHeight = $('.trees .header').outerHeight(true);
 
-  function preloadImages() {
-    var treeImages = [
-    "images/trees/dekel1.jpg",
-    "images/trees/hadar1.jpg",
-    "images/trees/hadas1.jpg",
-    "images/trees/arava1.jpg",
-    "images/trees/klilhachoresh01.jpg",
-    "images/trees/moran1.jpg",
-    "images/trees/shaked1.jpg",
-    "images/trees/shikma1.jpg",
-    "images/trees/shaked1.jpg",
-    "images/trees/tooti1.jpg",
-    "images/trees/tamar1.jpg",
-    "images/trees/oren1.jpg",
-    "images/trees/alon1.jpg",
-    "images/trees/ilan1.jpg",
-    "images/trees/erez1.jpg",
-    "images/trees/eshel1.jpg",
-    "images/trees/dolev1.jpg",
-    "images/trees/ashor1.jpg",
-    "images/trees/bonsai.jpg"];
-    for (var i=0; i<treeImages.length; i++) {
-      (new Image()).src = treeImages[i];
-    }
-  }
-  preloadImages();
+  // function preloadImages() {
+  //   var loadedCounter = 0;
+  //   var treeImages = [
+  //   "images/trees/dekel1.jpg",
+  //   "images/trees/hadar1.jpg",
+  //   "images/trees/hadar2.jpg",
+  //   "images/trees/hadas1.jpg",
+  //   "images/trees/arava1.jpg",
+  //   "images/trees/ella1.jpg",
+  //   "images/trees/klilhachoresh01.jpg",
+  //   "images/trees/moran1.jpg",
+  //   "images/trees/shaked1.jpg",
+  //   "images/trees/shikma1.jpg",
+  //   "images/trees/shaked1.jpg",
+  //   "images/trees/shaked2.jpg",
+  //   "images/trees/tooti1.jpg",
+  //   "images/trees/tamar1.jpg",
+  //   "images/trees/tamar3.jpg",
+  //   "images/trees/oren1.jpg",
+  //   "images/trees/alon1.jpg",
+  //   "images/trees/ilan1.jpg",
+  //   "images/trees/ilan-the-doll.jpg",
+  //   "images/trees/erez1.jpg",
+  //   "images/trees/eshel1.jpg",
+  //   "images/trees/dolev1.jpg",
+  //   "images/trees/ashor1.jpg",
+  //   "images/trees/bonsai.jpg"];
+  //   for (var i=0; i<treeImages.length; i++) {
+  //     var a = $('<img />');
+  //     a.one('load', function() {
+  //       if (++loadedCounter === treeImages.length) {
+  //         console.log('Displaying trees');
+  //         var treeImages = $('#tree-cards .card-wrapper .img');
+  //         treeImages.reverse().forEach(function() {
+  //           $(this).parents('.invisible').removeClass('invisible');
+  //         });
+  //       }
+  //     });
+  //     a.attr('src', treeImages[i]);
+  //   }
+  // }
+  // preloadImages();
 
   function openInfoButton(treeCard) {
     var wrapper = treeCard.parents('.card-wrapper');
@@ -235,9 +306,9 @@ $(function() {
     setupTreeCards();
 
     // make the trees visible now (small delay so rendering isn't messed up)
-    setTimeout(function() {
-      $('#tree-cards ul li').removeClass('invisible');
-    }, 200);
+    // setTimeout(function() {
+    //   $('#tree-cards ul li').removeClass('invisible');
+    // }, 200);
   });
 
   // who did dis
@@ -382,6 +453,73 @@ $(function() {
     catch (e) {
       // do nothing...
     }
+  }
+
+
+  // Desktop size calculations //
+
+  var imgWidth = 4000;
+  var imgHeight = 2592;
+  var imgRatio = imgWidth / imgHeight;  // 1.543
+  var phoneWidthPercent = 0.227;        // Percent of width of phone out of the image
+  var phoneHeightPercent = 0.619;       // Percent of height of phone out of full height of image
+  var originalPhoneFromTop = 130;       // distance of phone from top of the screen
+  var originalMarginLeft = -141;
+
+  var windowWidth = $(window).width();
+  var isDesktop = windowWidth > 768;
+
+  function calculatePhoneSize() {
+    // Desktop image calculations
+
+    var viewportHeight = $(window).height();
+    var viewportWidth = $(window).width();
+    var viewportRatio = viewportWidth / viewportHeight;
+
+    var targetWidth, targetHeight;
+    var targetPhoneTop, targetPhoneLeft;
+
+    if (viewportRatio > imgRatio) {
+      targetWidth = viewportWidth;
+      targetHeight = targetWidth / imgRatio;
+
+      targetPhoneTop = originalPhoneFromTop - ((targetHeight - viewportHeight) / 2.775);
+      targetPhoneLeft = (originalMarginLeft - (((targetHeight - viewportHeight) / imgRatio)) / 4);
+    }
+    else {
+      targetHeight = viewportHeight;
+      targetWidth = targetHeight * imgRatio;
+
+      targetPhoneTop = originalPhoneFromTop;
+      targetPhoneLeft = originalMarginLeft;
+    }
+
+    // use targetWidth and targetHeight to get position of phone
+    var targetPhoneWidth = targetWidth * phoneWidthPercent;
+    var targetPhoneHeight = targetHeight * phoneHeightPercent;
+
+    $('.full-screen').css({
+      'width': targetPhoneWidth,
+      'height': targetPhoneHeight,
+      'top': targetPhoneTop,
+      'margin-left': targetPhoneLeft
+    });
+  }
+
+  if (isDesktop) {
+    calculatePhoneSize();
+
+    var sleeper = false;
+    $(window).on('resize', function() {
+      if (sleeper) {
+        return;
+      }
+      sleeper = true;
+      setTimeout(function() {
+        calculatePhoneSize();
+        sleeper = false;
+      }, 100);
+    });
   }
 
 });

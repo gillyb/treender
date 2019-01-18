@@ -366,7 +366,7 @@ a {
         left: 50%;
         margin-left: -141px;
         top: 50%;
-        margin-top: -329px;
+        /*margin-top: -329px;*/
         height: 569px;
         min-height: auto;
         background-color: #fff;
