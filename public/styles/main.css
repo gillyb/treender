@@ -52,6 +52,9 @@ a {
 }
 .button.primary {
     color: #fff;
+    background: -webkit-gradient(linear, left top, left bottom, from(#15CC57), to(#0E7F34));
+    background: -webkit-linear-gradient(top, #15CC57, #0E7F34);
+    background: -o-linear-gradient(top, #15CC57, #0E7F34);
     background: linear-gradient(180deg, #15CC57, #0E7F34);
     border: none;
     font-weight: bold;
@@ -87,16 +90,26 @@ a {
     line-height: 1.21rem;
 }
 .full-screen {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
     flex-direction: column;
     position: relative;
     height: 100%; min-height: 100%;
     text-align: center;
+    -ms-flex-pack: distribute;
     justify-content: space-around;
 }
 
 .splash-screen {
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
     justify-content: space-between;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
     align-items: center;
 }
 .splash-screen .treender {
@@ -110,6 +123,8 @@ a {
     top: 50%;
     margin-top: -50px;
     width: 100px;
+    -webkit-box-flex: 10;
+    -ms-flex-positive: 10;
     flex-grow: 10;
 }
 
@@ -147,10 +162,19 @@ a {
 .splash-screen .welcome-screen {
     height: 100%;
     width: 100%;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
     opacity: 1;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
     justify-content: space-between;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
     flex-direction: column;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
     align-items: center;
 }
 .splash-screen .header { font-weight: bold; margin-bottom: 3px; }
@@ -159,9 +183,13 @@ a {
 .splash-screen .sub-header {  }
 .splash-screen .bottom {
     margin-bottom: 50px;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
     width: 100%;
     max-width: 220px;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
     justify-content: space-between;
     padding: 0 10px;
 }
@@ -176,31 +204,55 @@ a {
 .splash-screen .fade-in {
     display: none;
     opacity: 0;
+    -webkit-transition: opacity 400ms;
+    -o-transition: opacity 400ms;
     transition: opacity 400ms;
 }
 
 
 .match-with {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
     flex-direction: column;
     text-align: center;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
     justify-content: center;
 }
 .match-with .text {
+    -webkit-box-flex: 3;
+    -ms-flex-positive: 3;
     flex-grow: 3;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
     align-items: center;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
     justify-content: center;
     text-align: center;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
     flex-direction: column;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
 }
 .match-with .match-options {
+    -webkit-box-flex: 3;
+    -ms-flex-positive: 3;
     flex-grow: 3;
 }
 .match-with .button.male {
     margin-bottom: 20px;
 }
 .match-with .bottom {
+    -webkit-box-flex: 0;
+    -ms-flex-positive: 0;
     flex-grow: 0;
 }
 .match-with .bottom .button {
@@ -214,6 +266,8 @@ a {
 }
 .upload-image .camera-area {
     margin-top: 64px;
+    -webkit-box-flex: 4;
+    -ms-flex-positive: 4;
     flex-grow: 4;
 }
 .upload-image .camera-icon {
@@ -237,7 +291,7 @@ a {
 
 
 
-.who-did-dis.full-screen { justify-content: space-between; align-items: center; overflow: hidden; }
+.who-did-dis.full-screen { -webkit-box-pack: justify; -ms-flex-pack: justify; justify-content: space-between; -webkit-box-align: center; -ms-flex-align: center; align-items: center; overflow: hidden; }
 .who-did-dis .text {
     margin: 0 20px;
     text-align: left;
@@ -261,14 +315,24 @@ a {
 .full-screen.steps .dot { opacity: 1 !important; background-color: #d9d9d9; }
 .full-screen.steps .dot.is-selected { background-color: #0D8037; }
 .full-screen.steps .swipe-area {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
     flex-direction: column;
+    -ms-flex-pack: distribute;
     justify-content: space-around;
+    -webkit-box-flex: 3;
+    -ms-flex-positive: 3;
     flex-grow: 3;
     padding: 0 60px;
     width: calc(100% - 120px);
 }
 .full-screen.steps .swipe-container {
+    -webkit-box-flex: 1;
+    -ms-flex-positive: 1;
     flex-grow: 1;
     max-height: 400px;
 }
@@ -276,9 +340,13 @@ a {
     margin: 50px 0;
 }
 .full-screen.steps .spacer {
+    -webkit-box-flex: 1;
+    -ms-flex-positive: 1;
     flex-grow: 1;
 }
 .full-screen.steps .bottom {
+    -webkit-box-flex: 0;
+    -ms-flex-positive: 0;
     flex-grow: 0;
     margin-bottom: 80px;
 }
@@ -294,13 +362,19 @@ a {
 .full-screen.steps .step-2 .tree-image img { width: 100%; position:absolute; left: 0; }
 .full-screen.steps .step-2 .info { width: 22px; vertical-align: middle; margin: 0 4px; }
 .full-screen.steps .step-3 .tree-image img { width: 100%; position:absolute; left: 0; }
-.full-screen.steps .step-3 .like { width: 100px !important; left: 34px !important; opacity: 0; transition: opacity 400ms; }
+.full-screen.steps .step-3 .like { width: 100px !important; left: 34px !important; opacity: 0; -webkit-transition: opacity 400ms; -o-transition: opacity 400ms; transition: opacity 400ms; }
 .full-screen.steps .step-3 .like.swiped { opacity: 1; }
 
 .full-screen.steps .step-3 .tree-image .tree-heart {
+    -webkit-transition: left 200ms, top 800ms, -webkit-transform 200ms;
+    transition: left 200ms, top 800ms, -webkit-transform 200ms;
+    -o-transition: transform 200ms, left 200ms, top 800ms;
     transition: transform 200ms, left 200ms, top 800ms;
+    transition: transform 200ms, left 200ms, top 800ms, -webkit-transform 200ms;
 }
 .full-screen.steps .step-3 .tree-image .tree-heart.swiped {
+    -webkit-transform: rotate(10deg);
+    -ms-transform: rotate(10deg);
     transform: rotate(10deg);
     left: 16px;
     /*top: -16px;*/
@@ -406,7 +480,7 @@ a {
     .upload-image .bottom {
         margin-bottom: 48px;
     }
-  }
+}
 
 
 /* For extra small screens - Especially if the height is small */

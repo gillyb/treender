@@ -230,7 +230,8 @@ $(function() {
     savePageState({ chat: true }, 'chat', '/chat');
     pageView('chat', '/chat');
     $('.full-screen.chat .header .logo').one('click', function() {
-      showTrees();
+      hideAllScreens();
+      $('.full-screen.trees').removeClass('hidden');
     });
   }
   function showTrees() {
@@ -408,7 +409,8 @@ $(function() {
           return;
         }
         if (state.trees) {
-          showTrees();
+          hideAllScreens();
+          $('.full-screen.trees').removeClass('hidden');
           return;
         }
         if (state.walkthrough) {
