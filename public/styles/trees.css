@@ -235,8 +235,9 @@
 .trees .female.tree_11 .img { background-image: url("../images/trees/tamar3.jpg"); }
 .trees .female.tree_12 .img { background-image: url("../images/trees/hadar1.jpg"); }
 
-.trees .trees-wrapper {
+.trees .trees-wrapper, .full-screen.chat .trees-wrapper {
     height: 100%; min-height: 100%;
+    position: relative;
 }
 .trees .empty-message .main-text {
     font-size: 1.29rem;

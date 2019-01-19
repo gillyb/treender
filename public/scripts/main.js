@@ -387,7 +387,7 @@ $(function() {
         // debugger;
       },
       animationRevertSpeed: 200,
-      animationSpeed: 400,
+      animationSpeed: 200,
       threshold: 1,
       likeSelector: '.like',
       dislikeSelector: '.dislike'
@@ -456,73 +456,6 @@ $(function() {
     catch (e) {
       // do nothing...
     }
-  }
-
-
-  // Desktop size calculations //
-
-  var imgWidth = 4000;
-  var imgHeight = 2592;
-  var imgRatio = imgWidth / imgHeight;  // 1.543
-  var phoneWidthPercent = 0.227;        // Percent of width of phone out of the image
-  var phoneHeightPercent = 0.619;       // Percent of height of phone out of full height of image
-  var originalPhoneFromTop = 130;       // distance of phone from top of the screen
-  var originalMarginLeft = -141;
-
-  var windowWidth = $(window).width();
-  var isDesktop = windowWidth > 768;
-
-  function calculatePhoneSize() {
-    // Desktop image calculations
-
-    var viewportHeight = $(window).height();
-    var viewportWidth = $(window).width();
-    var viewportRatio = viewportWidth / viewportHeight;
-
-    var targetWidth, targetHeight;
-    var targetPhoneTop, targetPhoneLeft;
-
-    if (viewportRatio > imgRatio) {
-      targetWidth = viewportWidth;
-      targetHeight = targetWidth / imgRatio;
-
-      targetPhoneTop = originalPhoneFromTop - ((targetHeight - viewportHeight) / 2.775);
-      targetPhoneLeft = (originalMarginLeft - (((targetHeight - viewportHeight) / imgRatio)) / 4);
-    }
-    else {
-      targetHeight = viewportHeight;
-      targetWidth = targetHeight * imgRatio;
-
-      targetPhoneTop = originalPhoneFromTop;
-      targetPhoneLeft = originalMarginLeft;
-    }
-
-    // use targetWidth and targetHeight to get position of phone
-    var targetPhoneWidth = targetWidth * phoneWidthPercent;
-    var targetPhoneHeight = targetHeight * phoneHeightPercent;
-
-    $('.full-screen').css({
-      'width': targetPhoneWidth,
-      'height': targetPhoneHeight,
-      'top': targetPhoneTop,
-      'margin-left': targetPhoneLeft
-    });
-  }
-
-  if (isDesktop) {
-    calculatePhoneSize();
-
-    var sleeper = false;
-    $(window).on('resize', function() {
-      if (sleeper) {
-        return;
-      }
-      sleeper = true;
-      setTimeout(function() {
-        calculatePhoneSize();
-        sleeper = false;
-      }, 100);
-    });
   }
 
 });

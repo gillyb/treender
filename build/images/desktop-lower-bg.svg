@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="1024px" height="232px" viewBox="0 0 1024 232" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" preserveAspectRatio="none">
+    <defs>
+        <linearGradient x1="50%" y1="100%" x2="50%" y2="0%" id="linearGradient-1">
+            <stop stop-color="#0D8037" offset="0%"></stop>
+            <stop stop-color="#15CC57" offset="100%"></stop>
+        </linearGradient>
+        <path d="M5.68434189e-13,94.7566813 C90.5410787,55.7389778 195.42105,46.5587528 314.639914,67.2160061 C493.46821,98.201886 557.560848,215.3531 737.400033,150.348523 C887.761663,95.9988886 983.294985,68.2880495 1024,67.2160061 L1024,232 L5.68434189e-13,232 L5.68434189e-13,94.7566813 Z" id="path-2"></path>
+        <filter x="-3.9%" y="-24.8%" width="107.7%" height="145.0%" filterUnits="objectBoundingBox" id="filter-3">
+            <feOffset dx="0" dy="-4" in="SourceAlpha" result="shadowOffsetOuter1"></feOffset>
+            <feGaussianBlur stdDeviation="12.5" in="shadowOffsetOuter1" result="shadowBlurOuter1"></feGaussianBlur>
+            <feColorMatrix values="0 0 0 0 0.0509803922   0 0 0 0 0.501960784   0 0 0 0 0.215686275  0 0 0 1 0" type="matrix" in="shadowBlurOuter1"></feColorMatrix>
+        </filter>
+        <path d="M0,159.643245 C60.4213106,146.144912 133.742963,152.851139 219.964957,179.761928 C349.297948,220.128111 609.475799,175.36527 734.083086,145.008099 C817.154611,124.769985 913.793582,124.769985 1024,145.008099 L1024,232 L0,232 L0,159.643245 Z" id="path-4"></path>
+        <filter x="-3.9%" y="-42.6%" width="107.7%" height="177.3%" filterUnits="objectBoundingBox" id="filter-5">
+            <feOffset dx="0" dy="-4" in="SourceAlpha" result="shadowOffsetOuter1"></feOffset>
+            <feGaussianBlur stdDeviation="12.5" in="shadowOffsetOuter1" result="shadowBlurOuter1"></feGaussianBlur>
+            <feColorMatrix values="0 0 0 0 0.0509803922   0 0 0 0 0.501960784   0 0 0 0 0.215686275  0 0 0 0.4 0" type="matrix" in="shadowBlurOuter1"></feColorMatrix>
+        </filter>
+    </defs>
+    <g id="Treender" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Desktop-version-v2" transform="translate(0.000000, -548.000000)">
+            <g id="desktop-lowe-bg" transform="translate(0.000000, 548.000000)">
+                <path d="M0,32.3480685 C88.4302477,29.421085 193.358884,51.9410006 314.785908,99.9078152 C496.926445,171.858037 549.489888,21.4851735 719.067653,3.59925941 C832.119497,-8.32468331 933.763612,12.8808989 1024,67.2160061 L1024,232 L0,232 L0,32.3480685 Z" id="Path-3-Copy" fill="url(#linearGradient-1)"></path>
+                <g id="Path-3-Copy" transform="translate(512.000000, 144.244923) scale(-1, 1) translate(-512.000000, -144.244923) ">
+                    <use fill="black" fill-opacity="1" filter="url(#filter-3)" xlink:href="#path-2"></use>
+                    <use fill="url(#linearGradient-1)" fill-rule="evenodd" xlink:href="#path-2"></use>
+                </g>
+                <g id="Path-3">
+                    <use fill="black" fill-opacity="1" filter="url(#filter-5)" xlink:href="#path-4"></use>
+                    <use fill="url(#linearGradient-1)" fill-rule="evenodd" xlink:href="#path-4"></use>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

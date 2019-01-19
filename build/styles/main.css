@@ -7,6 +7,7 @@ http://yuilibrary.com/license/
 
 html{color:#000;background:#FFF}body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,code,form,fieldset,legend,input,textarea,p,blockquote,th,td{margin:0;padding:0}table{border-collapse:collapse;border-spacing:0}fieldset,img{border:0}address,caption,cite,code,dfn,em,strong,th,var{font-style:normal;font-weight:normal}ol,ul{list-style:none}caption,th{text-align:left}h1,h2,h3,h4,h5,h6{font-size:100%;font-weight:normal}q:before,q:after{content:''}abbr,acronym{border:0;font-variant:normal}sup{vertical-align:text-top}sub{vertical-align:text-bottom}input,textarea,select{font-family:inherit;font-size:inherit;font-weight:inherit;*font-size:100%}legend{color:#000}#yui3-css-stamp.cssreset{display:none}
 
+
 /** GENERAL STYLES **/
 html {
     height: 100%; min-height: 100%; width: 100%;
@@ -433,10 +434,10 @@ a {
     }
     .page-container {
         margin: 0 auto;
-        height: 100%; min-height: 100%;
-        background: url('../images/desktop-bg.jpg') no-repeat center center fixed;
+        height: calc(100% - 40px); min-height: calc(100% - 40px);
+        background: url('../images/desktop-lower-bg.svg') no-repeat center center fixed;
         background-size: cover;
-        padding: 90px 40px 80px 24px;
+        padding-top: 40px;
     }
     .phone-bg {
         position: fixed;
@@ -445,15 +446,16 @@ a {
         height: 100%;
     }
     .full-screen {
-        width: 323px;
+        width: 367px;
         position: absolute;
         left: 50%;
-        margin-left: -141px;
-        top: 50%;
-        /*margin-top: -329px;*/
-        height: 569px;
+        margin-left: 0;
+        background-image: url(../images/phone-mock.svg);
+        height: 642px;
         min-height: auto;
-        background-color: #fff;
+        background-color: transparent;
+        background-size: cover;
+        padding: 105px 26px 105px 26px;
     }
     .full-screen.steps .swipe-area {
         padding: 0 20px;
@@ -501,6 +503,9 @@ a {
     .match-with .bottom .button { margin-bottom: 40px; }
 
 }
+
+
+
 
 .trees.full-screen {
     -webkit-box-pack: start;
@@ -739,8 +744,9 @@ a {
 .trees .female.tree_11 .img { background-image: url("../images/trees/tamar3.jpg"); }
 .trees .female.tree_12 .img { background-image: url("../images/trees/hadar1.jpg"); }
 
-.trees .trees-wrapper {
+.trees .trees-wrapper, .full-screen.chat .trees-wrapper {
     height: 100%; min-height: 100%;
+    position: relative;
 }
 .trees .empty-message .main-text {
     font-size: 1.29rem;
