@@ -8,6 +8,7 @@ http://yuilibrary.com/license/
 html{color:#000;background:#FFF}body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,code,form,fieldset,legend,input,textarea,p,blockquote,th,td{margin:0;padding:0}table{border-collapse:collapse;border-spacing:0}fieldset,img{border:0}address,caption,cite,code,dfn,em,strong,th,var{font-style:normal;font-weight:normal}ol,ul{list-style:none}caption,th{text-align:left}h1,h2,h3,h4,h5,h6{font-size:100%;font-weight:normal}q:before,q:after{content:''}abbr,acronym{border:0;font-variant:normal}sup{vertical-align:text-top}sub{vertical-align:text-bottom}input,textarea,select{font-family:inherit;font-size:inherit;font-weight:inherit;*font-size:100%}legend{color:#000}#yui3-css-stamp.cssreset{display:none}
 
 
+
 /** GENERAL STYLES **/
 html {
     height: 100%; min-height: 100%; width: 100%;
@@ -143,11 +144,11 @@ a {
 .who-did-dis .top-heart .logo-white {
     position: absolute;
     height: 38px;
-    top: 102px;
+    top: 6px;
     left: 50%;
     width: auto;
     margin-left: -13px;
-    margin-top: 16px;
+    margin-top: 2px;
 }
 .who-did-dis .top-heart img, .who-did-dis .bottom-heart img {
     width: 100%; height: 100%;
@@ -314,8 +315,8 @@ a {
 }
 .who-did-dis .strong { font-weight: bold; }
 .who-did-dis .top-heart, .who-did-dis .bottom-heart { background-size: 100% 100%; }
-.who-did-dis .top-heart { height: 114px; }
-.who-did-dis .bottom-heart { height: 90px; }
+.who-did-dis .top-heart { height: 80px; }
+.who-did-dis .bottom-heart { height: 60px; }
 
 
 
@@ -424,20 +425,52 @@ a {
 
 
 @media only screen and (min-width: 768px) {
+    .full-screen {
+        box-shadow: 0 6px 14px 0 rgba(0, 0, 0, 0.33);
+        border-radius: 60px;
+    }
     .no-mobile-message {
-        display: none;
-        width: 600px;
+        display: inline-block !important;
+        position: absolute;
+        width: 200px;
+        left: 50%;
+        margin-left: -495px;
+        text-align: center;
+    }
+    .no-mobile-message .logo {
+        width: 36px;
         text-align: center;
         margin: 0 auto;
-        margin-top: 40px;
-        margin-bottom: 40px;
+        margin-top: 10px;
+        margin-bottom: 24px;
+    }
+    .no-mobile-message .app-title {
+        font-size: 40px;
+        color: #565656;
+        font-weight: bold;
+        margin-top: 20px;
+    }
+    .no-mobile-message .text {
+        margin-top: 50px;
+        text-align: left;
+        line-height: 23px;
+        font-size: 18px;
+    }
+    .no-mobile-message .text p {
+        margin-bottom: 20px;
+    }
+    .no-mobile-message .button.share {
+        margin-top: 50px;
+        padding: 0 !important;
+        float: left;
+        width: 120px !important;
     }
     .page-container {
         margin: 0 auto;
-        height: calc(100% - 40px); min-height: calc(100% - 40px);
-        background: url('../images/desktop-lower-bg.svg') no-repeat center center fixed;
-        background-size: cover;
-        padding-top: 40px;
+        height: calc(100% - 20px); min-height: calc(100% - 20px);
+        background: url('../images/desktop-lower-bg.svg') no-repeat center bottom fixed;
+        background-size: contain;
+        padding-top: 20px;
     }
     .phone-bg {
         position: fixed;
@@ -446,16 +479,16 @@ a {
         height: 100%;
     }
     .full-screen {
-        width: 367px;
+        width: 318px;
         position: absolute;
         left: 50%;
-        margin-left: 0;
+        margin-left: -181px;
         background-image: url(../images/phone-mock.svg);
-        height: 642px;
+        height: 557px;
         min-height: auto;
         background-color: transparent;
         background-size: cover;
-        padding: 105px 26px 105px 26px;
+        padding: 90px 22px 88px 22px;
     }
     .full-screen.steps .swipe-area {
         padding: 0 40px;
@@ -474,8 +507,9 @@ a {
         margin: 10px 0;
     }
 
-    .who-did-dis .top-heart { height: 92px; }
-    .who-did-dis .bottom-heart { height: 56px; }
+    .who-did-dis .top-heart { height: 74px; }
+    .who-did-dis .logo-white { top: 100px !important; height: 30px !important; margin-left: -10px !important; }
+    .who-did-dis .bottom-heart { height: 48px; }
     .who-did-dis .back.link { margin-top: 1em; }
     .who-did-dis .text {
         margin: 0 1em;

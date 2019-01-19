@@ -1,5 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<svg width="1024px" height="232px" viewBox="0 0 1024 232" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" preserveAspectRatio="none">
+<svg width="1024px" height="232px" viewBox="0 0 1024 232" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 51.3 (57544) - http://www.bohemiancoding.com/sketch -->
+    <title>desktop-lowe-bg</title>
+    <desc>Created with Sketch.</desc>
     <defs>
         <linearGradient x1="50%" y1="100%" x2="50%" y2="0%" id="linearGradient-1">
             <stop stop-color="#0D8037" offset="0%"></stop>
@@ -9,13 +12,13 @@
         <filter x="-3.9%" y="-24.8%" width="107.7%" height="145.0%" filterUnits="objectBoundingBox" id="filter-3">
             <feOffset dx="0" dy="-4" in="SourceAlpha" result="shadowOffsetOuter1"></feOffset>
             <feGaussianBlur stdDeviation="12.5" in="shadowOffsetOuter1" result="shadowBlurOuter1"></feGaussianBlur>
-            <feColorMatrix values="0 0 0 0 0.0509803922   0 0 0 0 0.501960784   0 0 0 0 0.215686275  0 0 0 1 0" type="matrix" in="shadowBlurOuter1"></feColorMatrix>
+            <feColorMatrix values="0 0 0 0 0   0 0 0 0 0   0 0 0 0 0  0 0 0 0.2 0" type="matrix" in="shadowBlurOuter1"></feColorMatrix>
         </filter>
         <path d="M0,159.643245 C60.4213106,146.144912 133.742963,152.851139 219.964957,179.761928 C349.297948,220.128111 609.475799,175.36527 734.083086,145.008099 C817.154611,124.769985 913.793582,124.769985 1024,145.008099 L1024,232 L0,232 L0,159.643245 Z" id="path-4"></path>
         <filter x="-3.9%" y="-42.6%" width="107.7%" height="177.3%" filterUnits="objectBoundingBox" id="filter-5">
             <feOffset dx="0" dy="-4" in="SourceAlpha" result="shadowOffsetOuter1"></feOffset>
             <feGaussianBlur stdDeviation="12.5" in="shadowOffsetOuter1" result="shadowBlurOuter1"></feGaussianBlur>
-            <feColorMatrix values="0 0 0 0 0.0509803922   0 0 0 0 0.501960784   0 0 0 0 0.215686275  0 0 0 0.4 0" type="matrix" in="shadowBlurOuter1"></feColorMatrix>
+            <feColorMatrix values="0 0 0 0 0   0 0 0 0 0   0 0 0 0 0  0 0 0 0.2 0" type="matrix" in="shadowBlurOuter1"></feColorMatrix>
         </filter>
     </defs>
     <g id="Treender" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
