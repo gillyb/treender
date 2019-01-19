@@ -22,7 +22,8 @@ window.treeImages = [
   "images/trees/eshel1.jpg",
   "images/trees/dolev1.jpg",
   "images/trees/ashor1.jpg",
-  "images/trees/bonsai.jpg"];
+  "images/trees/bonsai.jpg",
+  "images/icon-click.svg"];
 
 function showAllTrees() {
   console.log('Displaying trees');
