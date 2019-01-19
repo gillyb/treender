@@ -143,7 +143,7 @@ a {
 .who-did-dis .top-heart .logo-white {
     position: absolute;
     height: 38px;
-    top: 0;
+    top: 102px;
     left: 50%;
     width: auto;
     margin-left: -13px;
@@ -458,8 +458,8 @@ a {
         padding: 105px 26px 105px 26px;
     }
     .full-screen.steps .swipe-area {
-        padding: 0 20px;
-        width: calc(100% - 40px);
+        padding: 0 40px;
+        width: calc(100% - 80px);
     }
     .splash-screen .logo-wrapper {
         width: 60px; height: 60px;
