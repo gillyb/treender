@@ -171,7 +171,7 @@ a {
 .splash-screen .buttons-wrapper {
     width: 100%;
 }
-.splash-screen .buttons-wrapper .button.how-does-it-work { margin-bottom: 20px; }
+.splash-screen .buttons-wrapper .button.how-does-it-work { margin-bottom: 10px; }
 
 .splash-screen .fade-in {
     display: none;
@@ -243,6 +243,7 @@ a {
     text-align: left;
     font-size: 1.14rem;
     line-height: 1.57rem;
+    overflow-y: scroll;
 }
 .who-did-dis p {
     margin-bottom: 14px;

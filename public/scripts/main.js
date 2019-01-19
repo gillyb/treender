@@ -229,6 +229,9 @@ $(function() {
     $('.full-screen.chat').removeClass('hidden');
     savePageState({ chat: true }, 'chat', '/chat');
     pageView('chat', '/chat');
+    $('.full-screen.chat .header .logo').one('click', function() {
+      showTrees();
+    });
   }
   function showTrees() {
     hideAllScreens();
@@ -337,9 +340,6 @@ $(function() {
   // header buttons
   $('.full-screen .header .chat-icon').click(function() {
     showChat();
-    $('.full-screen.chat .header .logo').one('click', function() {
-      showTrees();
-    });
   });
 
   // treender cards
@@ -385,7 +385,7 @@ $(function() {
         // debugger;
       },
       animationRevertSpeed: 200,
-      animationSpeed: 200,
+      animationSpeed: 400,
       threshold: 1,
       likeSelector: '.like',
       dislikeSelector: '.dislike'

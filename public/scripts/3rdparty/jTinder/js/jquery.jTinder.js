@@ -69,6 +69,7 @@
 		},
 
 		dislike: function() {
+      panes.eq(current_pane).find($that.settings.dislikeSelector).css('opacity', 1);
 			panes.eq(current_pane).animate({"transform": "translate(-" + (pane_width) + "px," + (pane_width*-0.5) + "px) rotate(-20deg)"}, $that.settings.animationSpeed, function () {
 				if($that.settings.onDislike) {
 					$that.settings.onDislike(panes.eq(current_pane));
@@ -78,6 +79,7 @@
 		},
 
 		like: function() {
+      panes.eq(current_pane).find($that.settings.likeSelector).css('opacity', 0.99);
 			panes.eq(current_pane).animate({"transform": "translate(" + (pane_width) + "px," + (pane_width*-0.5) + "px) rotate(20deg)"}, $that.settings.animationSpeed, function () {
 				if($that.settings.onLike) {
 					$that.settings.onLike(panes.eq(current_pane));
