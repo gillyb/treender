@@ -160,6 +160,8 @@ $(function() {
     treeName.css('color', '#444');
     treeDetails.addClass('full');
 
+    pageEvent('info', 'click', treeName.innerText);
+
     requestAnimationFrame(function() {
       var treeDetailsHeight = treeDetails.outerHeight(true);
       wrapper.find('.img').animate({
@@ -305,8 +307,15 @@ $(function() {
 
   // choosing gender match
   $('.match-with .continue').click(function() {
-    if (!$('.match-with .button.radio.male').hasClass('selected') && !$('.match-with .button.radio.female').hasClass('selected'))
+    var selectedMale = $('.match-with .button.radio.male').hasClass('selected');
+    var selectedFemale = $('.match-with .button.radio.female').hasClass('selected');
+
+    if (!selectedMale && !selectedFemale)
       return;
+
+    var genderEvent = (selectedMale && selectedFemale) ? 'both' : (selectedMale ? 'male' : 'female');
+    pageEvent('gender', 'click', genderEvent);
+
     showTrees();
     setupTreeCards();
 
@@ -336,11 +345,13 @@ $(function() {
   });
 
   $('.button.start-over, .empty-message .start-over').click(function() {
+    pageEvent('restart', 'click', 'start over');
     window.location.reload();
   });
 
   // header buttons
   $('.full-screen .header .chat-icon').click(function() {
+    pageEvent('chat', 'click', 'opened chat');
     showChat();
   });
 
@@ -349,7 +360,7 @@ $(function() {
     $("#tree-cards").jTinder({
       // dislike callback
       onDislike: function (item) {
-        pageEvent('like', 'swipe', 'like');
+        pageEvent('dislike', 'swipe', 'dislike');
       },
       // like callback
       onLike: function (item) {
