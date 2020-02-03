@@ -241,30 +241,89 @@ $(function() {
     hideAllScreens();
     savePageState({ trees: true }, 'trees', '/trees');
     $('#tree-cards ul li').shuffle();
+
     var treesScreen = $('.full-screen.trees');
     treesScreen.removeClass('hidden');
     if (!$('.match-with .button.radio.male').hasClass('selected'))
       treesScreen.find('.male').addClass('hidden');
     if (!$('.match-with .button.radio.female').hasClass('selected'))
       treesScreen.find('.female').addClass('hidden');
+
     setTreesImagesHeight();
     bindInfoButton();
 
     // show tutorial for first time around
-    $('#tree-cards ul li:not(.hidden):last').addClass('tutorial no-swipe');
-    $('#tree-cards li.tutorial').one('click', function() {
-      openInfoButton($(this).find('.info-button'));
-      $(this).removeClass('tutorial no-swipe');
+    //$('#tree-cards ul li:not(.hidden):last').addClass('tutorial no-swipe');
+    //$('#tree-cards li.tutorial').one('click', function() {
+      //openInfoButton($(this).find('.info-button'));
+      //$(this).removeClass('tutorial no-swipe');
+    //});
+
+    // Find first tree that isn't hidden and add the 'glow' effect to the info button
+    var lastDisplayedTree = $('#tree-cards ul li').not('.hidden').last();
+    //lastDisplayedTree.find('.info-button .info').addClass('puffOut');
+    // Create overlay effect
+    var glowPadding = 10;
+    var treesWrapper = treesScreen.find('.trees-wrapper');
+    var infoButton = lastDisplayedTree.find('.info-button');
+
+    var glowBackdrop = $('<div />').addClass('glow-backdrop');
+    treesWrapper.append(glowBackdrop);
+    var glow = $('<div />').addClass('glow no-swipe');
+    glow.css({
+      position: 'absolute',
+      top: (infoButton.offset().top - treesWrapper.offset().top - glowPadding) + 'px',
+      left: (infoButton.offset().left - treesWrapper.offset().left - glowPadding) + 'px',
+      borderRadius: '50%',
+      width: '32px',
+      height: '32px',
+      backgroundColor: 'transparent',
+      zIndex: 99,
+      transition: 'all 400ms',
+      transitionTimingFunction: 'ease-in'
+    });
+    
+    treesWrapper.append(glow);
+    setTimeout(function() {
+      glow.css({
+        boxShadow: '0 0 0 240px #78CC15, 0 0 0 2000px rgba(0,0,0,0.4)',
+        padding: '10px',
+        transform: 'translate(glowPadding, glowPadding)'
+      });
+    }, 100);
+
+    function hideGlow() {
+      console.log('hiding backdrop');
+      glow.addClass('hide');
+      glowBackdrop.remove();
+      setTimeout(function() {
+        glow.remove();
+      }, 500);
+    }
+
+    glowBackdrop.one('click', function() {
+      hideGlow();
     });
 
+    glow.click(function() {
+      hideGlow();
+      // Open tree info
+      var infoButton = lastDisplayedTree.find('.tree-details .info');
+      if (infoButton) {
+        openInfoButton(infoButton);
+      }
+    });
+
+    // Save for analytics
     pageView('trees', '/trees');
   }
+
   function showWalkthrough() {
     hideAllScreens();
     savePageState({ walkthrough: true }, 'walkthrough', '/walkthrough');
     $('.full-screen.steps').removeClass('hidden');
     var carousel = $('.steps .swipe-container').flickity({ contain: true, prevNextButtons: false });
-    carousel.on( 'change.flickity', function( event, index ) {
+    carousel.on('change.flickity', function(event, index ) {
       if (index === 1) {
         setTimeout(function () {
           $('.full-screen.steps .step-3 .tree-image .tree-heart, .full-screen.steps .step-3 .like').addClass('swiped');

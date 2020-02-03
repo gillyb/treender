@@ -10,5 +10,6 @@
   "author": "Gilly Barr",
   "license": "ISC",
   "dependencies": {
+    "uglify-js": "^3.7.5"
   }
 }
